@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PocketBook.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:views="clr-namespace:PocketBook.Views">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Label
+                    Margin="10"
+                    FontAttributes="Bold"
+                    FontSize="23"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Modifier"
+                    TextColor="{StaticResource Primary}" />
+                <Image
+                    Margin="10"
+                    HorizontalOptions="End"
+                    Source="{StaticResource PlusIcon}"
+                    VerticalOptions="Center">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
+                    </Image.Behaviors>
+                </Image>
+            </StackLayout>
+
+            <Label
+                Margin="15,0,0,20"
+                FontAttributes="Bold"
+                FontSize="32"
+                HorizontalOptions="Start"
+                Text="Mes Livres" />
+
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <views:FilterView Title="Tous" Icon="{StaticResource TrayFillIcon}" />
+            <views:FilterView Title="En prêt" Icon="{StaticResource PersonBadgeClockFillIcon}" />
+            <views:FilterView Title="À lire plus tard" Icon="{StaticResource ArrowForwardIcon}" />
+            <views:FilterView Title="Statut de lecture" Icon="{StaticResource EyeglassesIcon}" />
+            <views:FilterView Title="Favoris" Icon="{StaticResource HeartFillIcon}" />
+            <views:FilterView Title="Étiquettes" Icon="{StaticResource TagFillIcon}" />
+            <Line BackgroundColor="{StaticResource Gray200}" />
+
+            <Label
+                Margin="15,20,0,20"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Start"
+                Text="Filtres" />
+
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <views:FilterView Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
+            <views:FilterView Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
+            <views:FilterView Title="Note" Icon="{StaticResource SparklesIcon}" />
+            <Line BackgroundColor="{StaticResource Gray200}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

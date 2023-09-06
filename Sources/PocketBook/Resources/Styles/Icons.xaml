@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <x:String x:Key="PlusIcon">plus.png</x:String>
+    <x:String x:Key="BooksVerticalFillIcon">books_vertical_fill.png</x:String>
+    <x:String x:Key="ListBulletIcon">list_bullet.png</x:String>
+    <x:String x:Key="BookmarkFillIcon">bookmark_fill.png</x:String>
+    <x:String x:Key="MagnifyingglassIcon">magnifyingglass.png</x:String>
+    <x:String x:Key="ChevronRightIcon">chevron_right.png</x:String>
+
+    <x:String x:Key="TrayFillIcon">tray_fill.png</x:String>
+    <x:String x:Key="PersonBadgeClockFillIcon">person_badge_clock_fill.png</x:String>
+    <x:String x:Key="ArrowForwardIcon">arrow_forward.png</x:String>
+    <x:String x:Key="EyeglassesIcon">eyeglasses.png</x:String>
+    <x:String x:Key="HeartFillIcon">heart_fill.png</x:String>
+    <x:String x:Key="TagFillIcon">tag_fill.png</x:String>
+
+    <x:String x:Key="PersonFillIcon">person_fill.png</x:String>
+    <x:String x:Key="CalendarIcon">calendar.png</x:String>
+    <x:String x:Key="SparklesIcon">sparkles.png</x:String>
+
+</ResourceDictionary>
