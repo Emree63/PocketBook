@@ -8,12 +8,8 @@ trigger:
 
 steps:
   - name: build
-    image: mcr.microsoft.com/dotnet/sdk:6.0
-    volumes:
-      - name: docs
-        path: /docs
+    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
     commands:
       - cd Sources/
       - dotnet restore PocketBook.sln
-      - dotnet build PocketBook.sln -c Release --no-restore
-      - dotnet publish PocketBook.sln -c Release --no-restore -o CI_PROJECT_DIR/build/release
+      - dotnet build PocketBook.sln -c Release --no-restore /p:AndroidSdkDirectory=$ANDROID_SDK_ROOT -property:Aapt2ToolPath=$ANDROID_SDK_ROOT/build-tools/33.0.0
