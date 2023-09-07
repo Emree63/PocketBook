@@ -18,6 +18,20 @@ public partial class FilterView : ContentView
         set => SetValue(FilterView.TitleProperty, value);
     }
 
+    public static readonly BindableProperty NumberProperty = BindableProperty.Create(nameof(Number), typeof(string), typeof(FilterView), string.Empty);
+    public string Number
+    {
+        get => (string)GetValue(FilterView.NumberProperty);
+        set => SetValue(FilterView.NumberProperty, value);
+    }
+
+    public static readonly BindableProperty BottomBorderProperty = BindableProperty.Create(nameof(BottomBorder), typeof(bool), typeof(FilterView), true);
+    public bool BottomBorder
+    {
+        get => (bool)GetValue(FilterView.BottomBorderProperty);
+        set => SetValue(FilterView.BottomBorderProperty, value);
+    }
+
     public FilterView()
 	{
 		InitializeComponent();

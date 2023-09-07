@@ -5,13 +5,23 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Name="root">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <toolkit:BoolToObjectConverter
+                x:Key="BoolToObjectConverter"
+                FalseObject="false"
+                TrueObject="true" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+
     <VerticalStackLayout BackgroundColor="{StaticResource ListBackground}" VerticalOptions="FillAndExpand">
         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
             <Image
                 Margin="20,0,0,0"
-                HeightRequest="23"
                 HorizontalOptions="Start"
-                Source="{Binding Icon, Source={x:Reference root}}" />
+                Source="{Binding Icon, Source={x:Reference root}}"
+                WidthRequest="23" />
             <Label
                 Margin="10"
                 FontAttributes="Bold"
@@ -23,7 +33,7 @@
                 FontAttributes="Bold"
                 FontSize="15"
                 HorizontalOptions="EndAndExpand"
-                Text="30"
+                Text="{Binding Number, Source={x:Reference root}}"
                 TextColor="{StaticResource Gray300}" />
             <Image
                 Margin="0,0,15,0"
@@ -35,7 +45,10 @@
                 </Image.Behaviors>
             </Image>
         </StackLayout>
-        <Line Margin="20,0,0,0" BackgroundColor="{StaticResource Gray200}" />
+        <Line
+            Margin="20,0,0,0"
+            BackgroundColor="{StaticResource Gray200}"
+            IsVisible="{Binding BottomBorder, Source={x:Reference root}, Converter={StaticResource BoolToObjectConverter}}" />
     </VerticalStackLayout>
 
 </ContentView>

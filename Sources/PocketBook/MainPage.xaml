@@ -35,12 +35,21 @@
                 Text="Mes Livres" />
 
             <Line BackgroundColor="{StaticResource Gray200}" />
-            <views:FilterView Title="Tous" Icon="{StaticResource TrayFillIcon}" />
-            <views:FilterView Title="En prêt" Icon="{StaticResource PersonBadgeClockFillIcon}" />
+            <views:FilterView
+                Title="Tous"
+                Icon="{StaticResource TrayFillIcon}"
+                Number="45" />
+            <views:FilterView
+                Title="En prêt"
+                Icon="{StaticResource PersonBadgeClockFillIcon}"
+                Number="1" />
             <views:FilterView Title="À lire plus tard" Icon="{StaticResource ArrowForwardIcon}" />
             <views:FilterView Title="Statut de lecture" Icon="{StaticResource EyeglassesIcon}" />
             <views:FilterView Title="Favoris" Icon="{StaticResource HeartFillIcon}" />
-            <views:FilterView Title="Étiquettes" Icon="{StaticResource TagFillIcon}" />
+            <views:FilterView
+                Title="Étiquettes"
+                BottomBorder="false"
+                Icon="{StaticResource TagFillIcon}" />
             <Line BackgroundColor="{StaticResource Gray200}" />
 
             <Label
@@ -53,7 +62,10 @@
             <Line BackgroundColor="{StaticResource Gray200}" />
             <views:FilterView Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
             <views:FilterView Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
-            <views:FilterView Title="Note" Icon="{StaticResource SparklesIcon}" />
+            <views:FilterView
+                Title="Note"
+                BottomBorder="false"
+                Icon="{StaticResource SparklesIcon}" />
             <Line BackgroundColor="{StaticResource Gray200}" />
 
         </VerticalStackLayout>
