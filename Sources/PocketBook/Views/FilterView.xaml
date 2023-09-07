@@ -5,16 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Name="root">
-
-    <ContentView.Resources>
-        <ResourceDictionary>
-            <toolkit:BoolToObjectConverter
-                x:Key="BoolToObjectConverter"
-                FalseObject="false"
-                TrueObject="true" />
-        </ResourceDictionary>
-    </ContentView.Resources>
-
+    
     <VerticalStackLayout BackgroundColor="{StaticResource ListBackground}" VerticalOptions="FillAndExpand">
         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
             <Image
@@ -48,7 +39,7 @@
         <Line
             Margin="20,0,0,0"
             BackgroundColor="{StaticResource Gray200}"
-            IsVisible="{Binding BottomBorder, Source={x:Reference root}, Converter={StaticResource BoolToObjectConverter}}" />
+            IsVisible="{Binding BottomBorder, Source={x:Reference root}}" />
     </VerticalStackLayout>
 
 </ContentView>
