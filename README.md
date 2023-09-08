@@ -30,7 +30,7 @@
 # Technicien 
 
 <a href = "https://codefirst.iut.uca.fr/git/emre.kartal">
-<img src="https://codefirst.iut.uca.fr/git/avatars/402cf312e853192f42c0135a888725c2?size=870" width="75" >
+<img src="https://codefirst.iut.uca.fr/git/avatars/1ff65c9c5ab0e8c8883fb48adbcf972f?size=72" width="75" >
 </br>
 Emre.kartal@etu.uca.fr
 </br>
