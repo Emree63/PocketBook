@@ -23,7 +23,7 @@
             Icon="{StaticResource BookmarkFillIcon}" />
         <ShellContent
             Title="Search"
-            ContentTemplate="{DataTemplate local:MainPage}"
+            ContentTemplate="{DataTemplate pages:BookPage}"
             Icon="{StaticResource MagnifyingglassIcon}" />
     </TabBar>
 
