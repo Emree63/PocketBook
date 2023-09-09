@@ -1,12 +1,205 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PocketBook.Pages.BookPage"
-             Title="BookPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="PocketBook.Pages.BookPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:views="clr-namespace:PocketBook.Views"
+    Title="BookPage">
+    <ScrollView>
+
+        <VerticalStackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
+
+            <StackLayout
+                Margin="10"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal">
+
+                <Image Source="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg" WidthRequest="100" />
+
+                <StackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        VerticalOptions="StartAndExpand">
+                        La horde du contrevent
+                    </Label>
+                    <Label VerticalOptions="End">*****</Label>
+                </StackLayout>
+
+            </StackLayout>
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <StackLayout
+                Margin="10"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="StartAndExpand">
+                <Label
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Black}">
+                    Infos en ligne
+                </Label>
+                <Image
+                    Margin="0,0,15,0"
+                    HeightRequest="15"
+                    HorizontalOptions="End"
+                    Source="{StaticResource ChevronRightIcon}">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray300}" />
+                    </Image.Behaviors>
+                </Image>
+            </StackLayout>
+
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <StackLayout
+                Margin="10"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Black}">
+                    Auteur
+                </Label>
+                <Label
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Gray500}">
+                    Alain Damasio
+                </Label>
+            </StackLayout>
+
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <StackLayout
+                Margin="10"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Black}">
+                    Maison d'édition
+                </Label>
+                <Label
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Gray500}">
+                    Gallimard (2015)
+                </Label>
+            </StackLayout>
+
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <StackLayout
+                Margin="10"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Black}">
+                    Résumé
+                </Label>
+                <Label
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Gray500}">
+                    Un groupe d'élite, formé dès l'enfance à faire face, part des confins d'une terre féroce, saignée de rafales, pour aller chercher l'origine du vent. Ils sont vingt-trois, un bloc, un nœud de courage : la Horde. Ils sont pilier, ailier, traceur, aéromètre et géomètre, feuleuse et sourcière, troubadour et scribe. Ils traversent leur monde debout, à pied, en quête d'un Extrême-Amont qui fuit devant eux comme un horizon fou. Expérience de lecture unique, La Horde du Contrevent est un livre-univers qui fond d'un même feu l'aventure et la poésie des parcours, le combat nu et la quête d'un sens profond du vivant qui unirait le mouvement et le lien. Chaque mot résonne, claque, fuse : Alain Damasio joue de sa plume comme d'un pinceau, d'une caméra ou d'une arme...
+                </Label>
+            </StackLayout>
+
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <StackLayout
+                Margin="10"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Black}">
+                    Détails
+                </Label>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="{StaticResource Gray500}">
+                        Nombre de pages
+                    </Label>
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="End"
+                        TextColor="{StaticResource Gray500}">
+                        700
+                    </Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="{StaticResource Gray500}">
+                        Langue
+                    </Label>
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="End"
+                        TextColor="{StaticResource Gray500}">
+                        français
+                    </Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="{StaticResource Gray500}">
+                        ISBN
+                    </Label>
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="End"
+                        TextColor="{StaticResource Gray500}">
+                        9782070464234
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <StackLayout
+                Margin="10"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Black}">
+                    Bibliothèque
+                </Label>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="{StaticResource Gray500}">
+                        Ajouté le
+                    </Label>
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="End"
+                        TextColor="{StaticResource Gray500}">
+                        10 août 2023
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <BoxView HeightRequest="100" Color="Transparent" />
+            <views:OptionView Title="Déplacer le livre" Icon="{StaticResource FolderIcon}" />
+            <views:OptionView Title="Ajouter à la liste À lire plus tard" Icon="{StaticResource AddCircledOutlineIcon}" />
+            <views:OptionView Title="Changer le statut de lecture" Icon="{StaticResource EyeglassesIcon}" />
+            <views:OptionView Title="Prêter le livre" Icon="{StaticResource PersonIcon}" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
