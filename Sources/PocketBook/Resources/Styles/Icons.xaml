@@ -17,5 +17,7 @@
     <x:String x:Key="PersonIcon">person.png</x:String>
     <x:String x:Key="CalendarIcon">calendar.png</x:String>
     <x:String x:Key="SparklesIcon">sparkles.png</x:String>
+    <x:String x:Key="AddCircledOutlineIcon">add_circled_outline.png</x:String>
+    <x:String x:Key="FolderIcon">Folder.png</x:String>
 
 </ResourceDictionary>

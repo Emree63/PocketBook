@@ -9,6 +9,26 @@
     <ScrollView>
 
         <VerticalStackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
+
+            <StackLayout
+                Margin="10"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal">
+
+                <Image Source="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg" WidthRequest="100" />
+
+                <StackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        VerticalOptions="StartAndExpand">
+                        La horde du contrevent
+                    </Label>
+                    <Label VerticalOptions="End">*****</Label>
+                </StackLayout>
+
+            </StackLayout>
+            <Line BackgroundColor="{StaticResource Gray200}" />
             <StackLayout
                 Margin="10"
                 HorizontalOptions="FillAndExpand"
@@ -176,8 +196,8 @@
             </StackLayout>
             <Line BackgroundColor="{StaticResource Gray200}" />
             <BoxView HeightRequest="100" Color="Transparent" />
-            <views:OptionView Title="Déplacer le livre" Icon="{StaticResource EyeglassesIcon}" />
-            <views:OptionView Title="Ajouter à la liste À lire plus tard" Icon="{StaticResource EyeglassesIcon}" />
+            <views:OptionView Title="Déplacer le livre" Icon="{StaticResource FolderIcon}" />
+            <views:OptionView Title="Ajouter à la liste À lire plus tard" Icon="{StaticResource AddCircledOutlineIcon}" />
             <views:OptionView Title="Changer le statut de lecture" Icon="{StaticResource EyeglassesIcon}" />
             <views:OptionView Title="Prêter le livre" Icon="{StaticResource PersonIcon}" />
         </VerticalStackLayout>

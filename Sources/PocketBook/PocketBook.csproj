@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\add_circled_outline.svg" />
 	  <None Remove="Resources\Images\arrow_forward.svg" />
 	  <None Remove="Resources\Images\binoculars.svg" />
 	  <None Remove="Resources\Images\binoculars_fill.svg" />
@@ -63,6 +64,7 @@
 	  <None Remove="Resources\Images\calendar_badge_clock.svg" />
 	  <None Remove="Resources\Images\chevron_right.svg" />
 	  <None Remove="Resources\Images\eyeglasses.svg" />
+	  <None Remove="Resources\Images\folder.svg" />
 	  <None Remove="Resources\Images\gear.svg" />
 	  <None Remove="Resources\Images\heart.svg" />
 	  <None Remove="Resources\Images\heart_fill.svg" />
