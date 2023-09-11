@@ -6,30 +6,30 @@ public partial class FilterView : ContentView
 
     public string Icon
     {
-        get => (string)GetValue(FilterView.IconProperty);
-        set => SetValue(FilterView.IconProperty, value);
+        get => (string)GetValue(IconProperty);
+        set => SetValue(IconProperty, value);
     }
 
     public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(FilterView), string.Empty);
 
     public string Title
     {
-        get => (string)GetValue(FilterView.TitleProperty);
-        set => SetValue(FilterView.TitleProperty, value);
+        get => (string)GetValue(TitleProperty);
+        set => SetValue(TitleProperty, value);
     }
 
     public static readonly BindableProperty NumberProperty = BindableProperty.Create(nameof(Number), typeof(string), typeof(FilterView), string.Empty);
     public string Number
     {
-        get => (string)GetValue(FilterView.NumberProperty);
-        set => SetValue(FilterView.NumberProperty, value);
+        get => (string)GetValue(NumberProperty);
+        set => SetValue(NumberProperty, value);
     }
 
     public static readonly BindableProperty BottomBorderProperty = BindableProperty.Create(nameof(BottomBorder), typeof(bool), typeof(FilterView), true);
     public bool BottomBorder
     {
-        get => (bool)GetValue(FilterView.BottomBorderProperty);
-        set => SetValue(FilterView.BottomBorderProperty, value);
+        get => (bool)GetValue(BottomBorderProperty);
+        set => SetValue(BottomBorderProperty, value);
     }
 
     public FilterView()
