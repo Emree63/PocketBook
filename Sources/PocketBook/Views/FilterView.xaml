@@ -4,27 +4,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    x:Name="root">
+    x:Name="this">
     
     <VerticalStackLayout BackgroundColor="{StaticResource ListBackground}" VerticalOptions="FillAndExpand">
         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
             <Image
                 Margin="20,0,0,0"
                 HorizontalOptions="Start"
-                Source="{Binding Icon, Source={x:Reference root}}"
+                Source="{Binding Icon, Source={x:Reference this}}"
                 WidthRequest="23" />
             <Label
                 Margin="10"
                 FontAttributes="Bold"
                 FontSize="15"
                 HorizontalOptions="StartAndExpand"
-                Text="{Binding Title, Source={x:Reference root}}" />
+                Text="{Binding Title, Source={x:Reference this}}" />
             <Label
                 Margin="10"
                 FontAttributes="Bold"
                 FontSize="15"
                 HorizontalOptions="EndAndExpand"
-                Text="{Binding Number, Source={x:Reference root}}"
+                Text="{Binding Number, Source={x:Reference this}}"
                 TextColor="{StaticResource Gray300}" />
             <Image
                 Margin="0,0,15,0"
@@ -39,7 +39,7 @@
         <Line
             Margin="20,0,0,0"
             BackgroundColor="{StaticResource Gray200}"
-            IsVisible="{Binding BottomBorder, Source={x:Reference root}}" />
+            IsVisible="{Binding BottomBorder, Source={x:Reference this}}" />
     </VerticalStackLayout>
 
 </ContentView>

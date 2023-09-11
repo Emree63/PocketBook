@@ -4,14 +4,14 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    x:Name="root">
+    x:Name="this">
     <VerticalStackLayout VerticalOptions="FillAndExpand">
-        <Line Margin="0,0,0,0" BackgroundColor="{StaticResource Gray200}" />
+        <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
             <Image
                 Margin="10,0,0,0"
                 HorizontalOptions="Start"
-                Source="{Binding Icon, Source={x:Reference root}}"
+                Source="{Binding Icon, Source={x:Reference this}}"
                 WidthRequest="23">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
@@ -21,7 +21,7 @@
                 Margin="10"
                 FontSize="15"
                 HorizontalOptions="StartAndExpand"
-                Text="{Binding Title, Source={x:Reference root}}"
+                Text="{Binding Title, Source={x:Reference this}}"
                 TextColor="{StaticResource Primary}" />
         </StackLayout>
     </VerticalStackLayout>

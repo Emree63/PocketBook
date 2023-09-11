@@ -35,7 +35,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FFFFFF" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -53,6 +53,7 @@
 	  <None Remove="Resources\Images\arrow_forward.svg" />
 	  <None Remove="Resources\Images\binoculars.svg" />
 	  <None Remove="Resources\Images\binoculars_fill.svg" />
+	  <None Remove="Resources\Images\book.svg" />
 	  <None Remove="Resources\Images\bookmark.svg" />
 	  <None Remove="Resources\Images\bookmark_fill.svg" />
 	  <None Remove="Resources\Images\books_vertical.svg" />
@@ -80,6 +81,7 @@
 	  <None Remove="Resources\Images\person_fill.svg" />
 	  <None Remove="Resources\Images\plus.svg" />
 	  <None Remove="Resources\Images\sparkles.svg" />
+	  <None Remove="Resources\Images\star_fill.svg" />
 	  <None Remove="Resources\Images\sunglasses.svg" />
 	  <None Remove="Resources\Images\tag.svg" />
 	  <None Remove="Resources\Images\tag_fill.svg" />
@@ -95,16 +97,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\AuthorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\BookPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\Icons.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\AuthorBooksView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\FilterView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\OptionView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\StarsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

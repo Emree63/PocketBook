@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PocketBook.Pages.AuthorPage"
+             xmlns:views="clr-namespace:PocketBook.Views"
+             Title="AuthorPage">
+    <VerticalStackLayout VerticalOptions="FillAndExpand">
+        <SearchBar BackgroundColor="{StaticResource Gray100}" TextColor="{StaticResource Gray600}" Placeholder="Rechercher" Margin="10" ></SearchBar>
+        <Line BackgroundColor="{StaticResource Gray200}" />
+        <ScrollView Orientation="Vertical">
+            <VerticalStackLayout VerticalOptions="FillAndExpand" Margin="20,0,0,0">
+                <views:AuthorBooksView Title="Alain Damasio" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Cixin Liu" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Alain Damasio" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Cixin Liu" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Alain Damasio" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Cixin Liu" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Alain Damasio" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Cixin Liu" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Alain Damasio" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Cixin Liu" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Alain Damasio" Number="2" Icon="{StaticResource BookIcon}"/>
+                <views:AuthorBooksView Title="Cixin Liu" Number="2" Icon="{StaticResource BookIcon}"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </VerticalStackLayout>
+</ContentPage>

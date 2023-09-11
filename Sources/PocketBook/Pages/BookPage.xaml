@@ -24,11 +24,11 @@
                         VerticalOptions="StartAndExpand">
                         La horde du contrevent
                     </Label>
-                    <Label VerticalOptions="End">*****</Label>
+                    <views:StarsView/>
                 </StackLayout>
 
             </StackLayout>
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Margin ="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
             <StackLayout
                 Margin="10"
                 HorizontalOptions="FillAndExpand"
@@ -51,7 +51,7 @@
                 </Image>
             </StackLayout>
 
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Margin ="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
             <StackLayout
                 Margin="10"
                 Orientation="Vertical"
@@ -71,7 +71,7 @@
                 </Label>
             </StackLayout>
 
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Margin ="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
             <StackLayout
                 Margin="10"
                 Orientation="Vertical"
@@ -91,7 +91,7 @@
                 </Label>
             </StackLayout>
 
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Margin ="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
             <StackLayout
                 Margin="10"
                 Orientation="Vertical"
@@ -111,7 +111,7 @@
                 </Label>
             </StackLayout>
 
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Margin ="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
             <StackLayout
                 Margin="10"
                 Orientation="Vertical"
@@ -166,8 +166,35 @@
                     </Label>
                 </StackLayout>
             </StackLayout>
+            <Line Margin ="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
+            <StackLayout
+                Margin="10"
+                Orientation="Vertical"
+                VerticalOptions="Fill">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    HorizontalOptions="StartAndExpand"
+                    TextColor="{StaticResource Black}">
+                    Statut de lecture
+                </Label>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="{StaticResource Gray500}">
+                        Statut
+                    </Label>
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="End"
+                        TextColor="{StaticResource Gray500}">
+                        Non lu
+                    </Label>
+                </StackLayout>
+            </StackLayout>
 
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Margin ="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
             <StackLayout
                 Margin="10"
                 Orientation="Vertical"
@@ -194,7 +221,7 @@
                     </Label>
                 </StackLayout>
             </StackLayout>
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Margin ="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
             <BoxView HeightRequest="100" Color="Transparent" />
             <views:OptionView Title="Déplacer le livre" Icon="{StaticResource FolderIcon}" />
             <views:OptionView Title="Ajouter à la liste À lire plus tard" Icon="{StaticResource AddCircledOutlineIcon}" />
