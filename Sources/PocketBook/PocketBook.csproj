@@ -49,6 +49,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\SF-Pro-Text-Heavy.otf" />
+	  <None Remove="Resources\Fonts\SF-Pro-Text-Semibold.otf" />
 	  <None Remove="Resources\Images\add_circled_outline.svg" />
 	  <None Remove="Resources\Images\arrow_forward.svg" />
 	  <None Remove="Resources\Images\binoculars.svg" />

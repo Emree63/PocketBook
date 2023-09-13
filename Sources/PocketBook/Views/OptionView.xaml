@@ -7,7 +7,7 @@
     x:Name="this">
     <VerticalStackLayout VerticalOptions="FillAndExpand">
         <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
-        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0,10,0,10">
             <Image
                 Margin="10,0,0,0"
                 HorizontalOptions="Start"
@@ -18,8 +18,9 @@
                 </Image.Behaviors>
             </Image>
             <Label
-                Margin="10"
+                Margin="20,0,0,0"
                 FontSize="15"
+                FontAttributes="Bold"
                 HorizontalOptions="StartAndExpand"
                 Text="{Binding Title, Source={x:Reference this}}"
                 TextColor="{StaticResource Primary}" />

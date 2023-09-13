@@ -5,15 +5,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:PocketBook.Views"
     Title="AuthorPage">
-    <VerticalStackLayout VerticalOptions="FillAndExpand">
-        <SearchBar
-            Margin="10"
-            BackgroundColor="{StaticResource Gray100}"
-            Placeholder="Rechercher"
-            TextColor="{StaticResource Gray600}" />
-        <Line BackgroundColor="{StaticResource Gray200}" />
-        <ScrollView Orientation="Vertical">
+    <Grid RowDefinitions="0.14*,*">
+        <StackLayout Orientation="Vertical" Grid.Row="0">
+            <SearchBar
+                Margin="10"
+                BackgroundColor="{StaticResource Gray100}"
+                Placeholder="Rechercher"
+                TextColor="{StaticResource Gray600}"
+                    Grid.Row="0"/>
+            <Line BackgroundColor="{StaticResource Gray200}" />
+        </StackLayout>
+        <ScrollView Orientation="Vertical" Grid.Row="1" BackgroundColor="{StaticResource White}">
             <VerticalStackLayout Margin="20,0,0,0" VerticalOptions="FillAndExpand">
+                <views:AuthorBooksView
+                    Title="Alain Damasio"
+                    Icon="{StaticResource BookIcon}"
+                    Number="2" />
+                <views:AuthorBooksView
+                    Title="Cixin Liu"
+                    Icon="{StaticResource BookIcon}"
+                    Number="3" />
                 <views:AuthorBooksView
                     Title="Alain Damasio"
                     Icon="{StaticResource BookIcon}"
@@ -60,6 +71,5 @@
                     Number="1" />
             </VerticalStackLayout>
         </ScrollView>
-
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>

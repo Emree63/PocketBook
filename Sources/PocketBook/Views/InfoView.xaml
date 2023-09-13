@@ -3,20 +3,30 @@
     x:Class="PocketBook.Views.InfoView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:PocketBook.Views"
     x:Name="this">
-    <VerticalStackLayout VerticalOptions="Fill">
-        <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
-        <StackLayout
-            Margin="10"
-            Orientation="Vertical"
-            VerticalOptions="Fill">
-            <Label
-                FontAttributes="Bold"
-                FontSize="13"
-                HorizontalOptions="StartAndExpand"
-                Text="{Binding Title, Source={x:Reference this}}"
-                TextColor="{StaticResource Black}" />
-            <ContentPresenter Content="{TemplateBinding Content}" HorizontalOptions="StartAndExpand" />
-        </StackLayout>
-    </VerticalStackLayout>
+    <ContentView.Resources>
+        <ControlTemplate x:Key="InfoView">
+            <VerticalStackLayout VerticalOptions="Fill">
+                <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
+                <StackLayout
+                    Margin="10"
+                    Orientation="Vertical"
+                    VerticalOptions="Fill">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        HorizontalOptions="StartAndExpand"
+                        Text="{Binding Title, Source={x:Reference this}}"
+                        TextColor="{StaticResource Black}" />
+                    <ContentPresenter Content="{TemplateBinding Content}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </VerticalStackLayout>
+        </ControlTemplate>
+
+        <Style TargetType="views:InfoView">
+            <Setter Property="ControlTemplate" Value="{StaticResource InfoView}"/>
+        </Style>
+    </ContentView.Resources>
+
 </ContentView>

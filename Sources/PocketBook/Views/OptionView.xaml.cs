@@ -6,16 +6,16 @@ public partial class OptionView : ContentView
 
     public string Icon
     {
-        get => (string)GetValue(IconProperty);
-        set => SetValue(IconProperty, value);
+        get => (string)GetValue(OptionView.IconProperty);
+        set => SetValue(OptionView.IconProperty, value);
     }
 
     public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(OptionView), string.Empty);
 
     public string Title
     {
-        get => (string)GetValue(TitleProperty);
-        set => SetValue(TitleProperty, value);
+        get => (string)GetValue(OptionView.TitleProperty);
+        set => SetValue(OptionView.TitleProperty, value);
     }
     public OptionView()
 	{
