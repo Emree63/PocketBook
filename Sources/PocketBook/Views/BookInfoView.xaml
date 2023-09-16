@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="PocketBook.Views.BookInfoView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:PocketBook.Views"
+    x:Name="this">
+    <StackLayout
+        BackgroundColor="{StaticResource White}"
+        HorizontalOptions="FillAndExpand"
+        Orientation="Vertical">
+        <StackLayout
+            Margin="20,10,0,10"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal">
+
+            <AbsoluteLayout WidthRequest="90">
+                <Image
+                    Margin="1"
+                    HeightRequest="93"
+                    Source="{Binding Image, Source={x:Reference this}}" />
+
+                <Image HeightRequest="106" Source="{StaticResource BookMockupIcon}" />
+            </AbsoluteLayout>
+
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    Text="{Binding Title, Source={x:Reference this}}"
+                    TextColor="{StaticResource Black}"
+                    VerticalOptions="Start" />
+                <Label
+                    FontSize="14"
+                    Text="{Binding Author, Source={x:Reference this}}"
+                    TextColor="{StaticResource Black}"
+                    VerticalOptions="Start" />
+                <Label
+                    FontSize="14"
+                    Text="{Binding Status, Source={x:Reference this}}"
+                    TextColor="{StaticResource Gray300}"
+                    VerticalOptions="StartAndExpand" />
+                <views:StarsView />
+            </StackLayout>
+        </StackLayout>
+        <Line BackgroundColor="{StaticResource Gray100}" IsVisible="{Binding BottomBorder, Source={x:Reference this}}" />
+    </StackLayout>
+</ContentView>

@@ -5,173 +5,212 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:views="clr-namespace:PocketBook.Views"
-    Title="BookPage">
-    <ScrollView>
+    Title="BookPage"
+    Shell.BackgroundColor="{StaticResource Gray100}">
+    <Shell.TitleView>
+        <Grid>
+            <Image
+                Margin="5,0,0,0"
+                HeightRequest="16"
+                HorizontalOptions="Start"
+                Source="{StaticResource ChevronLeftIcon}">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
+                </Image.Behaviors>
+            </Image>
+            <Label
+                Margin="20,0,0,0"
+                FontSize="18"
+                HorizontalOptions="Start"
+                Text="Tous"
+                TextColor="{StaticResource Primary}"
+                VerticalTextAlignment="Center" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="16"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="{StaticResource Black}"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center">
+                Détails du livre
+            </Label>
+        </Grid>
+    </Shell.TitleView>
 
-        <VerticalStackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
-            <StackLayout
-                Margin="10"
-                HorizontalOptions="FillAndExpand"
-                Orientation="Horizontal">
-                <Image Source="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg" WidthRequest="100" />
-                <StackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
+    <ScrollView>
+        <VerticalStackLayout>
+            <BoxView HeightRequest="35" Color="{StaticResource Gray100}" />
+            <Line BackgroundColor="{StaticResource Gray200}" />
+            <VerticalStackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
+                <StackLayout
+                    Margin="10"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                    <AbsoluteLayout HorizontalOptions="End" WidthRequest="90">
+                        <Image
+                            Margin="1"
+                            HeightRequest="120"
+                            Source="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg" />
+                        <Image HeightRequest="137" Source="{StaticResource BookMockupIcon}" />
+                    </AbsoluteLayout>
+                    <StackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            VerticalOptions="StartAndExpand">
+                            La horde du contrevent
+                        </Label>
+                        <views:StarsView />
+                    </StackLayout>
+                </StackLayout>
+                <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
+                <StackLayout
+                    Margin="10"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="StartAndExpand">
                     <Label
-                        FontAttributes="Bold"
                         FontSize="15"
-                        VerticalOptions="StartAndExpand">
-                        La horde du contrevent
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="{StaticResource Black}">
+                        Infos en ligne
                     </Label>
-                    <views:StarsView />
+                    <Image
+                        Margin="0,0,15,0"
+                        HeightRequest="15"
+                        HorizontalOptions="End"
+                        Source="{StaticResource ChevronRightIcon}">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray300}" />
+                        </Image.Behaviors>
+                    </Image>
                 </StackLayout>
 
-            </StackLayout>
-            <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
-            <StackLayout
-                Margin="10"
-                HorizontalOptions="FillAndExpand"
-                Orientation="Horizontal"
-                VerticalOptions="StartAndExpand">
-                <Label
-                    FontSize="15"
-                    HorizontalOptions="StartAndExpand"
-                    TextColor="{StaticResource Black}">
-                    Infos en ligne
-                </Label>
-                <Image
-                    Margin="0,0,15,0"
-                    HeightRequest="15"
-                    HorizontalOptions="End"
-                    Source="{StaticResource ChevronRightIcon}">
-                    <Image.Behaviors>
-                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray300}" />
-                    </Image.Behaviors>
-                </Image>
-            </StackLayout>
+                <views:InfoView Title="Auteur">
+                    <views:InfoView.Content>
+                        <Label FontSize="15" TextColor="{StaticResource Gray500}">
+                            Alain Damasio
+                        </Label>
+                    </views:InfoView.Content>
+                </views:InfoView>
 
-            <views:InfoView Title="Auteur">
-                <views:InfoView.Content>
-                    <Label FontSize="15" TextColor="{StaticResource Gray500}">
-                        Alain Damasio
-                    </Label>
-                </views:InfoView.Content>
-            </views:InfoView>
+                <views:InfoView Title="Maison d'édition">
+                    <views:InfoView.Content>
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="{StaticResource Gray500}">
+                            Gallimard (2015)
+                        </Label>
+                    </views:InfoView.Content>
+                </views:InfoView>
 
-            <views:InfoView Title="Maison d'édition">
-                <views:InfoView.Content>
-                    <Label
-                        FontSize="15"
-                        HorizontalOptions="StartAndExpand"
-                        TextColor="{StaticResource Gray500}">
-                        Gallimard (2015)
-                    </Label>
-                </views:InfoView.Content>
-            </views:InfoView>
+                <views:InfoView Title="Résumé">
+                    <views:InfoView.Content>
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="{StaticResource Gray500}">
+                            Un groupe d'élite, formé dès l'enfance à faire face, part des confins d'une terre féroce, saignée de rafales, pour aller chercher l'origine du vent. Ils sont vingt-trois, un bloc, un nœud de courage : la Horde. Ils sont pilier, ailier, traceur, aéromètre et géomètre, feuleuse et sourcière, troubadour et scribe. Ils traversent leur monde debout, à pied, en quête d'un Extrême-Amont qui fuit devant eux comme un horizon fou. Expérience de lecture unique, La Horde du Contrevent est un livre-univers qui fond d'un même feu l'aventure et la poésie des parcours, le combat nu et la quête d'un sens profond du vivant qui unirait le mouvement et le lien. Chaque mot résonne, claque, fuse : Alain Damasio joue de sa plume comme d'un pinceau, d'une caméra ou d'une arme...
+                        </Label>
+                    </views:InfoView.Content>
+                </views:InfoView>
 
-            <views:InfoView Title="Résumé">
-                <views:InfoView.Content>
-                    <Label
-                        FontSize="15"
-                        HorizontalOptions="StartAndExpand"
-                        TextColor="{StaticResource Gray500}">
-                        Un groupe d'élite, formé dès l'enfance à faire face, part des confins d'une terre féroce, saignée de rafales, pour aller chercher l'origine du vent. Ils sont vingt-trois, un bloc, un nœud de courage : la Horde. Ils sont pilier, ailier, traceur, aéromètre et géomètre, feuleuse et sourcière, troubadour et scribe. Ils traversent leur monde debout, à pied, en quête d'un Extrême-Amont qui fuit devant eux comme un horizon fou. Expérience de lecture unique, La Horde du Contrevent est un livre-univers qui fond d'un même feu l'aventure et la poésie des parcours, le combat nu et la quête d'un sens profond du vivant qui unirait le mouvement et le lien. Chaque mot résonne, claque, fuse : Alain Damasio joue de sa plume comme d'un pinceau, d'une caméra ou d'une arme...
-                    </Label>
-                </views:InfoView.Content>
-            </views:InfoView>
+                <views:InfoView Title="Détails">
+                    <views:InfoView.Content>
+                        <VerticalStackLayout VerticalOptions="FillAndExpand">
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label
+                                    FontSize="15"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="{StaticResource Gray500}">
+                                    Nombre de pages
+                                </Label>
+                                <Label
+                                    FontSize="15"
+                                    HorizontalOptions="End"
+                                    TextColor="{StaticResource Gray500}">
+                                    700
+                                </Label>
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label
+                                    FontSize="15"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="{StaticResource Gray500}">
+                                    Langue
+                                </Label>
+                                <Label
+                                    FontSize="15"
+                                    HorizontalOptions="End"
+                                    TextColor="{StaticResource Gray500}">
+                                    français
+                                </Label>
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label
+                                    FontSize="15"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="{StaticResource Gray500}">
+                                    ISBN
+                                </Label>
+                                <Label
+                                    FontSize="15"
+                                    HorizontalOptions="End"
+                                    TextColor="{StaticResource Gray500}">
+                                    9782070464234
+                                </Label>
+                            </StackLayout>
+                        </VerticalStackLayout>
+                    </views:InfoView.Content>
+                </views:InfoView>
 
-            <views:InfoView Title="Détails">
-                <views:InfoView.Content>
-                    <VerticalStackLayout VerticalOptions="FillAndExpand">
+
+                <views:InfoView Title="Résumé">
+                    <views:InfoView.Content>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <Label
-                            FontSize="15"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{StaticResource Gray500}">
-                                Nombre de pages
+                                FontSize="15"
+                                HorizontalOptions="StartAndExpand"
+                                TextColor="{StaticResource Gray500}">
+                                Statut
                             </Label>
                             <Label
-                            FontSize="15"
-                            HorizontalOptions="End"
-                            TextColor="{StaticResource Gray500}">
-                                700
+                                FontSize="15"
+                                HorizontalOptions="End"
+                                TextColor="{StaticResource Gray500}">
+                                Non lu
                             </Label>
                         </StackLayout>
+                    </views:InfoView.Content>
+                </views:InfoView>
+
+                <views:InfoView Title="Bibliothèque">
+                    <views:InfoView.Content>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                             <Label
-                            FontSize="15"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{StaticResource Gray500}">
-                                Langue
+                                FontSize="15"
+                                HorizontalOptions="StartAndExpand"
+                                TextColor="{StaticResource Gray500}">
+                                Ajouté le
                             </Label>
                             <Label
-                            FontSize="15"
-                            HorizontalOptions="End"
-                            TextColor="{StaticResource Gray500}">
-                                français
+                                FontSize="15"
+                                HorizontalOptions="End"
+                                TextColor="{StaticResource Gray500}">
+                                10 août 2023
                             </Label>
                         </StackLayout>
-                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <Label
-                            FontSize="15"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{StaticResource Gray500}">
-                                ISBN
-                            </Label>
-                            <Label
-                            FontSize="15"
-                            HorizontalOptions="End"
-                            TextColor="{StaticResource Gray500}">
-                                9782070464234
-                            </Label>
-                        </StackLayout>
-                    </VerticalStackLayout>
-                </views:InfoView.Content>
-            </views:InfoView>
+                    </views:InfoView.Content>
+                </views:InfoView>
 
-
-            <views:InfoView Title="Résumé">
-                <views:InfoView.Content>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{StaticResource Gray500}">
-                            Statut
-                        </Label>
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="End"
-                            TextColor="{StaticResource Gray500}">
-                            Non lu
-                        </Label>
-                    </StackLayout>
-                </views:InfoView.Content>
-            </views:InfoView>
-
-            <views:InfoView Title="Bibliothèque">
-                <views:InfoView.Content>
-                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{StaticResource Gray500}">
-                            Ajouté le
-                        </Label>
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="End"
-                            TextColor="{StaticResource Gray500}">
-                            10 août 2023
-                        </Label>
-                    </StackLayout>
-                </views:InfoView.Content>
-            </views:InfoView>
-
-            <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
-            <BoxView HeightRequest="100" Color="Transparent" />
-            <views:OptionView Title="Déplacer le livre" Icon="{StaticResource FolderIcon}" />
-            <views:OptionView Title="Ajouter à la liste À lire plus tard" Icon="{StaticResource AddCircledOutlineIcon}" />
-            <views:OptionView Title="Changer le statut de lecture" Icon="{StaticResource EyeglassesIcon}" />
-            <views:OptionView Title="Prêter le livre" Icon="{StaticResource PersonIcon}" />
+                <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
+                <BoxView HeightRequest="100" Color="Transparent" />
+                <views:OptionView Title="Déplacer le livre" Icon="{StaticResource FolderIcon}" />
+                <views:OptionView Title="Ajouter à la liste À lire plus tard" Icon="{StaticResource AddCircledOutlineIcon}" />
+                <views:OptionView Title="Changer le statut de lecture" Icon="{StaticResource EyeglassesIcon}" />
+                <views:OptionView Title="Prêter le livre" Icon="{StaticResource PersonIcon}" />
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

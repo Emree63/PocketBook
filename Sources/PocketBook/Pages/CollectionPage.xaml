@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PocketBook.Pages.CollectionPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:views="clr-namespace:PocketBook.Views"
+    Title="CollectionPage"
+    Shell.BackgroundColor="{StaticResource White}">
+    <Shell.TitleView>
+        <Grid>
+            <Image
+                Margin="5,0,0,0"
+                HeightRequest="16"
+                HorizontalOptions="Start"
+                Source="{StaticResource ChevronLeftIcon}"
+                VerticalOptions="Center">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
+                </Image.Behaviors>
+            </Image>
+            <Label
+                Margin="20,0,0,0"
+                FontSize="16"
+                HorizontalOptions="Start"
+                Text="Mes livres"
+                TextColor="{StaticResource Primary}"
+                VerticalOptions="Center" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                TextColor="{StaticResource Black}"
+                VerticalOptions="Center">
+                Tous
+            </Label>
+            <Image
+                Margin="0,0,40,0"
+                HeightRequest="18"
+                HorizontalOptions="End"
+                Source="{StaticResource PlusIcon}">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
+                </Image.Behaviors>
+            </Image>
+            <Image
+                Margin="0,0,10,0"
+                HeightRequest="20"
+                HorizontalOptions="End"
+                Source="{StaticResource ArrowUpDownIcon}">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
+                </Image.Behaviors>
+            </Image>
+
+        </Grid>
+    </Shell.TitleView>
+
+    <Grid>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                <views:AuthorTitleView Title="Alain Damasio" />
+                <views:BookInfoView
+                    Title="La horde du contrevent"
+                    Author="Alain Damasio"
+                    Image="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg"
+                    Status="Non lu" />
+                <views:BookInfoView
+                    Title="Alain Damasio"
+                    Author="Alain Damasio"
+                    BottomBorder="False"
+                    Image="https://www.eurekastreet.fr/cache/images/product/0001241-image-9782072927522.jpg"
+                    Status="Terminé" />
+                <views:AuthorTitleView Title="Cixin Liu" />
+                <views:BookInfoView
+                    Title="L'équateur d'Einstein"
+                    Author="Cixin Liu"
+                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330160906.jpg"
+                    Status="Terminé" />
+                <views:BookInfoView
+                    Title="La forêt sombre"
+                    Author="Cixin Liu"
+                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330125110.jpg"
+                    Status="Terminé" />
+                <views:BookInfoView
+                    Title="Le problème à trois corps"
+                    Author="Cixin Liu"
+                    BottomBorder="False"
+                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330070748.jpg"
+                    Status="Terminé" />
+            </StackLayout>
+        </ScrollView>
+        <ScrollView
+            HeightRequest="200"
+            HorizontalOptions="End"
+            VerticalOptions="Center">
+            <VerticalStackLayout Margin="0,0,2,0" HorizontalOptions="End">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    A
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    B
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    C
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    D
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    E
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    F
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    G
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    H
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    I
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    J
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    K
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    L
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    M
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    N
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    O
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    P
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    Q
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    R
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    S
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    T
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    U
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    V
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    W
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    X
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    Y
+                </Label>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    TextColor="{StaticResource BlueAlphabet}">
+                    Z
+                </Label>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

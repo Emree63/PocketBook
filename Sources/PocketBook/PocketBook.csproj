@@ -53,6 +53,7 @@
 	  <None Remove="Resources\Fonts\SF-Pro-Text-Semibold.otf" />
 	  <None Remove="Resources\Images\add_circled_outline.svg" />
 	  <None Remove="Resources\Images\arrow_forward.svg" />
+	  <None Remove="Resources\Images\arrow_up_down.svg" />
 	  <None Remove="Resources\Images\binoculars.svg" />
 	  <None Remove="Resources\Images\binoculars_fill.svg" />
 	  <None Remove="Resources\Images\book.svg" />
@@ -63,8 +64,10 @@
 	  <None Remove="Resources\Images\book_closed.svg" />
 	  <None Remove="Resources\Images\book_closed_fill.svg" />
 	  <None Remove="Resources\Images\book_fill.svg" />
+	  <None Remove="Resources\Images\book_mockup.svg" />
 	  <None Remove="Resources\Images\calendar.svg" />
 	  <None Remove="Resources\Images\calendar_badge_clock.svg" />
+	  <None Remove="Resources\Images\chevron_left.png" />
 	  <None Remove="Resources\Images\chevron_right.svg" />
 	  <None Remove="Resources\Images\eyeglasses.svg" />
 	  <None Remove="Resources\Images\folder.svg" />
@@ -99,7 +102,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\AuthorPage.xaml">
+	  <Compile Update="Pages\FilteringPage.xaml.cs">
+	    <DependentUpon>FilteringPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\BookPage.xaml.cs">
+	    <DependentUpon>BookPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\BooksView.xaml.cs">
+	    <DependentUpon>BooksView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\CollectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\FilteringPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\BookPage.xaml">
@@ -108,7 +126,13 @@
 	  <MauiXaml Update="Resources\Styles\Icons.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AuthorBooksView.xaml">
+	  <MauiXaml Update="Views\BookInfoView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BooksView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AuthorTitleView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\FilterView.xaml">
