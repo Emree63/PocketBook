@@ -10,7 +10,6 @@
     <Shell.TitleView>
         <Grid>
             <Image
-                Margin="5,0,0,0"
                 HeightRequest="16"
                 HorizontalOptions="Start"
                 Source="{StaticResource ChevronLeftIcon}"
@@ -21,7 +20,8 @@
             </Image>
             <Label
                 Margin="20,0,0,0"
-                FontSize="16"
+                FontAttributes="Bold"
+                FontSize="14"
                 HorizontalOptions="Start"
                 Text="Mes livres"
                 TextColor="{StaticResource Primary}"
@@ -53,7 +53,7 @@
             <SearchBar
                 Grid.Row="0"
                 Margin="10"
-                BackgroundColor="{StaticResource Gray100}"
+                BackgroundColor="{StaticResource GrayLight}"
                 Placeholder="Rechercher"
                 TextColor="{StaticResource Gray600}" />
             <Line BackgroundColor="{StaticResource Gray200}" />

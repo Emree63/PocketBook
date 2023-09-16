@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Name="this">
     <StackLayout
-        BackgroundColor="{StaticResource Gray100}"
+        BackgroundColor="{StaticResource GrayLight}"
         HorizontalOptions="FillAndExpand"
         Orientation="Horizontal">
         <Label

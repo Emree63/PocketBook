@@ -21,7 +21,6 @@
                 Text="{Binding Title, Source={x:Reference this}}" />
             <Label
                 Margin="10"
-                FontAttributes="Bold"
                 FontSize="15"
                 HorizontalOptions="EndAndExpand"
                 Text="{Binding Number, Source={x:Reference this}}"

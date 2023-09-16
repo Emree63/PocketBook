@@ -10,7 +10,6 @@
     <Shell.TitleView>
         <Grid>
             <Image
-                Margin="5,0,0,0"
                 HeightRequest="16"
                 HorizontalOptions="Start"
                 Source="{StaticResource ChevronLeftIcon}"
@@ -21,12 +20,12 @@
             </Image>
             <Label
                 Margin="20,0,0,0"
-                FontSize="16"
+                FontAttributes="Bold"
+                FontSize="14"
                 HorizontalOptions="Start"
                 Text="Mes livres"
                 TextColor="{StaticResource Primary}"
                 VerticalOptions="Center" />
-
             <Label
                 FontAttributes="Bold"
                 FontSize="18"

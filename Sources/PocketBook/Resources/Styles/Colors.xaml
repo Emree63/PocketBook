@@ -15,6 +15,7 @@
     <Color x:Key="Gray600">#404040</Color>
     <Color x:Key="Gray900">#212121</Color>
     <Color x:Key="Gray950">#141414</Color>
+    <Color x:Key="GrayLight">#f2f1f6</Color>
     <Color x:Key="ListBackground">#F8F8F8</Color>
     <Color x:Key="BlueAlphabet">#007BFE</Color>
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}" />

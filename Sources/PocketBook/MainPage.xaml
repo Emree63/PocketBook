@@ -9,7 +9,6 @@
     <Shell.TitleView>
         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
             <Label
-                Margin="10"
                 FontAttributes="Bold"
                 FontSize="23"
                 HorizontalOptions="StartAndExpand"

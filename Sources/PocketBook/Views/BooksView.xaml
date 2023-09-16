@@ -28,7 +28,6 @@
                 VerticalOptions="Center" />
             <Label
                 Margin="0,0,15,0"
-                FontAttributes="Bold"
                 FontSize="15"
                 HorizontalOptions="EndAndExpand"
                 Text="{Binding Number, Source={x:Reference this}}"

@@ -20,7 +20,7 @@
                     HeightRequest="93"
                     Source="{Binding Image, Source={x:Reference this}}" />
 
-                <Image HeightRequest="106" Source="{StaticResource BookMockupIcon}" />
+                <Image HeightRequest="108" Source="{StaticResource BookMockupIcon}" />
             </AbsoluteLayout>
 
             <StackLayout VerticalOptions="FillAndExpand">
