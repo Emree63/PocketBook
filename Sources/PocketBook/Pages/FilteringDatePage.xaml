@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="PocketBook.Pages.FilteringPage"
+    x:Class="PocketBook.Pages.FilteringDatePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:views="clr-namespace:PocketBook.Views"
-    Title="FilteringPage">
+    Title="FilteringDatePage">
     <Shell.TitleView>
         <Grid>
             <Image
@@ -32,7 +32,7 @@
                 HorizontalOptions="Center"
                 TextColor="{StaticResource Black}"
                 VerticalOptions="Center">
-                Auteur
+                Date de publication
             </Label>
             <Image
                 Margin="0,0,10,0"
@@ -61,55 +61,47 @@
             Orientation="Vertical">
             <VerticalStackLayout Margin="20,0,0,0" VerticalOptions="FillAndExpand">
                 <views:BooksView
-                    Title="Alain Damasio"
-                    Icon="{StaticResource BookIcon}"
-                    Number="2" />
-                <views:BooksView
-                    Title="Cixin Liu"
-                    Icon="{StaticResource BookIcon}"
-                    Number="3" />
-                <views:BooksView
-                    Title="Alain Damasio"
-                    Icon="{StaticResource BookIcon}"
-                    Number="2" />
-                <views:BooksView
-                    Title="Cixin Liu"
-                    Icon="{StaticResource BookIcon}"
-                    Number="3" />
-                <views:BooksView
-                    Title="Daniel Pennac"
-                    Icon="{StaticResource BookIcon}"
-                    Number="2" />
-                <views:BooksView
-                    Title="Evgenij Ivanovic Zamatin"
+                    Title="2022"
                     Icon="{StaticResource BookIcon}"
                     Number="1" />
                 <views:BooksView
-                    Title="Frank Herbert"
+                    Title="2021"
                     Icon="{StaticResource BookIcon}"
                     Number="6" />
                 <views:BooksView
-                    Title="Herbert George Wells"
-                    Icon="{StaticResource BookIcon}"
-                    Number="3" />
-                <views:BooksView
-                    Title="James S. A. Corey"
+                    Title="2020"
                     Icon="{StaticResource BookIcon}"
                     Number="6" />
                 <views:BooksView
-                    Title="James Tynion"
+                    Title="2019"
+                    Icon="{StaticResource BookIcon}"
+                    Number="3" />
+                <views:BooksView
+                    Title="2018"
+                    Icon="{StaticResource BookIcon}"
+                    Number="2" />
+                <views:BooksView
+                    Title="2016"
+                    Icon="{StaticResource BookIcon}"
+                    Number="4" />
+                <views:BooksView
+                    Title="2015"
+                    Icon="{StaticResource BookIcon}"
+                    Number="4" />
+                <views:BooksView
+                    Title="2012"
                     Icon="{StaticResource BookIcon}"
                     Number="1" />
                 <views:BooksView
-                    Title="James Tynion (IV)"
+                    Title="2010"
                     Icon="{StaticResource BookIcon}"
                     Number="1" />
                 <views:BooksView
-                    Title="Ken Kesey"
+                    Title="2004"
                     Icon="{StaticResource BookIcon}"
                     Number="1" />
                 <views:BooksView
-                    Title="Ken Liu"
+                    Title="1997"
                     Icon="{StaticResource BookIcon}"
                     Number="1" />
             </VerticalStackLayout>

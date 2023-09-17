@@ -244,10 +244,10 @@
     </Style>
 
     <Style TargetType="SearchBar">
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource White}}" />
         <Setter Property="PlaceholderColor" Value="{StaticResource Gray500}" />
         <Setter Property="CancelButtonColor" Value="{StaticResource Gray500}" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="{StaticResource GrayLight}" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="MinimumHeightRequest" Value="44" />
@@ -375,7 +375,7 @@
     </Style>
 
     <Style ApplyToDerivedTypes="True" TargetType="Shell">
-        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}" />
+        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
         <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource White}}" />
         <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
         <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />

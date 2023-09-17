@@ -43,6 +43,9 @@
                 <views:StarsView />
             </StackLayout>
         </StackLayout>
-        <Line BackgroundColor="{StaticResource Gray100}" IsVisible="{Binding BottomBorder, Source={x:Reference this}}" />
+        <Line
+            Margin="20,0,0,0"
+            BackgroundColor="{StaticResource GrayLight}"
+            IsVisible="{Binding BottomBorder, Source={x:Reference this}}" />
     </StackLayout>
 </ContentView>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="PocketBook.Pages.CollectionPage"
+    x:Class="PocketBook.Pages.LoanPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:views="clr-namespace:PocketBook.Views"
-    Title="CollectionPage">
+    Title="LoanPage">
     <Shell.TitleView>
         <Grid>
             <Image
@@ -58,34 +58,19 @@
     <Grid>
         <ScrollView>
             <StackLayout Orientation="Vertical" VerticalOptions="Fill">
-                <views:AuthorTitleView Title="Alain Damasio" />
+                <views:AuthorTitleView Title="Scott Snyder" />
                 <views:BookInfoView
-                    Title="La horde du contrevent"
-                    Author="Alain Damasio"
-                    Image="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg"
-                    Status="Non lu" />
-                <views:BookInfoView
-                    Title="Alain Damasio"
-                    Author="Alain Damasio"
+                    Title="The wake"
+                    Author="Scott Snyder"
                     BottomBorder="False"
-                    Image="https://www.eurekastreet.fr/cache/images/product/0001241-image-9782072927522.jpg"
+                    Image="https://bdi.dlpdomain.com/album/9782365774208/couv/M385x862/the-wake.jpg"
                     Status="Terminé" />
-                <views:AuthorTitleView Title="Cixin Liu" />
+                <views:AuthorTitleView Title="James S. A. Corey" />
                 <views:BookInfoView
-                    Title="L'équateur d'Einstein"
-                    Author="Cixin Liu"
-                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330160906.jpg"
-                    Status="Terminé" />
-                <views:BookInfoView
-                    Title="La forêt sombre"
-                    Author="Cixin Liu"
-                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330125110.jpg"
-                    Status="Terminé" />
-                <views:BookInfoView
-                    Title="Le problème à trois corps"
-                    Author="Cixin Liu"
+                    Title="Les feux de cibola"
+                    Author="James S. A. Corey"
                     BottomBorder="False"
-                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330070748.jpg"
+                    Image="https://m.media-amazon.com/images/I/51q7bgAN8DL.jpg"
                     Status="Terminé" />
             </StackLayout>
         </ScrollView>
