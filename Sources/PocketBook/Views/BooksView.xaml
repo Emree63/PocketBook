@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Name="this">
-    <VerticalStackLayout VerticalOptions="FillAndExpand">
+    <VerticalStackLayout Style="{StaticResource BooksViewLayout}">
         <StackLayout
             Margin="0,10,0,10"
             HorizontalOptions="FillAndExpand"
@@ -26,18 +26,8 @@
                 HorizontalOptions="StartAndExpand"
                 Text="{Binding Title, Source={x:Reference this}}"
                 VerticalOptions="Center" />
-            <Label
-                Margin="0,0,15,0"
-                FontSize="15"
-                HorizontalOptions="EndAndExpand"
-                Text="{Binding Number, Source={x:Reference this}}"
-                TextColor="{StaticResource Gray400}"
-                VerticalOptions="Center" />
-            <Image
-                Margin="0,0,15,0"
-                HeightRequest="15"
-                HorizontalOptions="End"
-                Source="{StaticResource ChevronRightIcon}">
+            <Label Style="{StaticResource NumberOptionLabel}" Text="{Binding Number, Source={x:Reference this}}" />
+            <Image Source="{StaticResource ChevronRightIcon}" Style="{StaticResource ChevronRightImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray300}" />
                 </Image.Behaviors>

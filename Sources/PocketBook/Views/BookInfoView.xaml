@@ -5,47 +5,32 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:PocketBook.Views"
     x:Name="this">
-    <StackLayout
-        BackgroundColor="{StaticResource White}"
-        HorizontalOptions="FillAndExpand"
-        Orientation="Vertical">
+    <StackLayout Style="{StaticResource LayoutBookInfo}">
         <StackLayout
             Margin="20,10,0,10"
             HorizontalOptions="FillAndExpand"
             Orientation="Horizontal">
-
             <AbsoluteLayout WidthRequest="90">
                 <Image
                     Margin="1"
                     HeightRequest="93"
                     Source="{Binding Image, Source={x:Reference this}}" />
-
                 <Image HeightRequest="108" Source="{StaticResource BookMockupIcon}" />
             </AbsoluteLayout>
 
             <StackLayout VerticalOptions="FillAndExpand">
                 <Label
-                    FontAttributes="Bold"
-                    FontSize="16"
+                    Style="{StaticResource TitleBookInfo}"
                     Text="{Binding Title, Source={x:Reference this}}"
-                    TextColor="{StaticResource Black}"
                     VerticalOptions="Start" />
-                <Label
-                    FontSize="14"
-                    Text="{Binding Author, Source={x:Reference this}}"
-                    TextColor="{StaticResource Black}"
-                    VerticalOptions="Start" />
-                <Label
-                    FontSize="14"
-                    Text="{Binding Status, Source={x:Reference this}}"
-                    TextColor="{StaticResource Gray300}"
-                    VerticalOptions="StartAndExpand" />
+                <Label Style="{StaticResource DescriptionBookInfo}" Text="{Binding Author, Source={x:Reference this}}" />
+                <Label Style="{StaticResource StatusBookInfo}" Text="{Binding Status, Source={x:Reference this}}" />
                 <views:StarsView />
             </StackLayout>
         </StackLayout>
         <Line
             Margin="20,0,0,0"
-            BackgroundColor="{StaticResource GrayLight}"
-            IsVisible="{Binding BottomBorder, Source={x:Reference this}}" />
+            IsVisible="{Binding BottomBorder, Source={x:Reference this}}"
+            Style="{StaticResource GrayLine}" />
     </StackLayout>
 </ContentView>

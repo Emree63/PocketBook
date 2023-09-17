@@ -8,45 +8,21 @@
     Title="LoanPage">
     <Shell.TitleView>
         <Grid>
-            <Image
-                HeightRequest="16"
-                HorizontalOptions="Start"
-                Source="{StaticResource ChevronLeftIcon}"
-                VerticalOptions="Center">
+            <Image Source="{StaticResource ChevronLeftIcon}" Style="{StaticResource ChevronLeftImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                 </Image.Behaviors>
             </Image>
-            <Label
-                Margin="20,0,0,0"
-                FontAttributes="Bold"
-                FontSize="14"
-                HorizontalOptions="Start"
-                Text="Mes livres"
-                TextColor="{StaticResource Primary}"
-                VerticalOptions="Center" />
-            <Label
-                FontAttributes="Bold"
-                FontSize="18"
-                HorizontalOptions="Center"
-                TextColor="{StaticResource Black}"
-                VerticalOptions="Center">
+            <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" />
+            <Label Style="{StaticResource TitlePage}">
                 Tous
             </Label>
-            <Image
-                Margin="0,0,40,0"
-                HeightRequest="18"
-                HorizontalOptions="End"
-                Source="{StaticResource PlusIcon}">
+            <Image Source="{StaticResource PlusIcon}" Style="{StaticResource PlusTitleImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                 </Image.Behaviors>
             </Image>
-            <Image
-                Margin="0,0,10,0"
-                HeightRequest="20"
-                HorizontalOptions="End"
-                Source="{StaticResource ArrowUpDownIcon}">
+            <Image Source="{StaticResource ArrowUpDownIcon}" Style="{StaticResource ArrowUpDownImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                 </Image.Behaviors>
@@ -55,213 +31,23 @@
         </Grid>
     </Shell.TitleView>
 
-    <Grid>
-        <ScrollView>
-            <StackLayout Orientation="Vertical" VerticalOptions="Fill">
-                <views:AuthorTitleView Title="Scott Snyder" />
-                <views:BookInfoView
-                    Title="The wake"
-                    Author="Scott Snyder"
-                    BottomBorder="False"
-                    Image="https://bdi.dlpdomain.com/album/9782365774208/couv/M385x862/the-wake.jpg"
-                    Status="Terminé" />
-                <views:AuthorTitleView Title="James S. A. Corey" />
-                <views:BookInfoView
-                    Title="Les feux de cibola"
-                    Author="James S. A. Corey"
-                    BottomBorder="False"
-                    Image="https://m.media-amazon.com/images/I/51q7bgAN8DL.jpg"
-                    Status="Terminé" />
-            </StackLayout>
-        </ScrollView>
-        <ScrollView
-            HeightRequest="200"
-            HorizontalOptions="End"
-            VerticalOptions="Center">
-            <VerticalStackLayout Margin="0,0,2,0" HorizontalOptions="End">
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    A
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    B
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    C
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    D
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    E
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    F
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    G
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    H
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    I
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    J
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    K
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    L
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    M
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    N
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    O
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    P
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    Q
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    R
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    S
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    T
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    U
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    V
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    W
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    X
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    Y
-                </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
-                    Z
-                </Label>
-            </VerticalStackLayout>
-        </ScrollView>
-    </Grid>
+
+    <ScrollView Style="{StaticResource ScrollView}">
+        <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+            <views:AuthorTitleView Title="Scott Snyder" />
+            <views:BookInfoView
+                Title="The wake"
+                Author="Scott Snyder"
+                BottomBorder="False"
+                Image="https://bdi.dlpdomain.com/album/9782365774208/couv/M385x862/the-wake.jpg"
+                Status="Terminé" />
+            <views:AuthorTitleView Title="James S. A. Corey" />
+            <views:BookInfoView
+                Title="Les feux de cibola"
+                Author="James S. A. Corey"
+                BottomBorder="False"
+                Image="https://m.media-amazon.com/images/I/51q7bgAN8DL.jpg"
+                Status="Terminé" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

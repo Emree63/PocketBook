@@ -18,11 +18,11 @@
             Icon="{StaticResource BooksVerticalFillIcon}" />
         <ShellContent
             Title="My Lists"
-            ContentTemplate="{DataTemplate pages:FilteringDatePage}"
+            ContentTemplate="{DataTemplate pages:FilteringPage}"
             Icon="{StaticResource ListBulletIcon}" />
         <ShellContent
             Title="My Readings"
-            ContentTemplate="{DataTemplate pages:LoanPage}"
+            ContentTemplate="{DataTemplate pages:CollectionPage}"
             Icon="{StaticResource BookmarkFillIcon}" />
         <ShellContent
             Title="Search"

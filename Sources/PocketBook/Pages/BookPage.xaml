@@ -9,29 +9,13 @@
     Shell.BackgroundColor="{StaticResource GrayLight}">
     <Shell.TitleView>
         <Grid>
-            <Image
-                HeightRequest="16"
-                HorizontalOptions="Start"
-                Source="{StaticResource ChevronLeftIcon}">
+            <Image Source="{StaticResource ChevronLeftIcon}" Style="{StaticResource ChevronLeftImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                 </Image.Behaviors>
             </Image>
-            <Label
-                Margin="20,0,0,0"
-                FontAttributes="Bold"
-                FontSize="16"
-                HorizontalOptions="Start"
-                Text="Tous"
-                TextColor="{StaticResource Primary}"
-                VerticalTextAlignment="Center" />
-            <Label
-                FontAttributes="Bold"
-                FontSize="16"
-                HorizontalOptions="CenterAndExpand"
-                TextColor="{StaticResource Black}"
-                VerticalOptions="Center"
-                VerticalTextAlignment="Center">
+            <Label Style="{StaticResource ComeBackLabel}" Text="Tous" />
+            <Label Style="{StaticResource TitlePage}" TextColor="{StaticResource Black}">
                 Détails du livre
             </Label>
         </Grid>
@@ -55,8 +39,7 @@
                     </AbsoluteLayout>
                     <StackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
                         <Label
-                            FontAttributes="Bold"
-                            FontSize="15"
+                            Style="{StaticResource TitleBookInfo}"
                             VerticalOptions="StartAndExpand">
                             La horde du contrevent
                         </Label>
@@ -67,12 +50,8 @@
                 <StackLayout
                     Margin="10"
                     HorizontalOptions="FillAndExpand"
-                    Orientation="Horizontal"
-                    VerticalOptions="StartAndExpand">
-                    <Label
-                        FontSize="15"
-                        HorizontalOptions="StartAndExpand"
-                        TextColor="{StaticResource Black}">
+                    Orientation="Horizontal">
+                    <Label HorizontalOptions="StartAndExpand" Style="{StaticResource TitleBookPage}">
                         Infos en ligne
                     </Label>
                     <Image
@@ -88,7 +67,7 @@
 
                 <views:InfoView Title="Auteur">
                     <views:InfoView.Content>
-                        <Label FontSize="15" TextColor="{StaticResource Gray500}">
+                        <Label Style="{StaticResource DescriptionBookPage}">
                             Alain Damasio
                         </Label>
                     </views:InfoView.Content>
@@ -96,10 +75,7 @@
 
                 <views:InfoView Title="Maison d'édition">
                     <views:InfoView.Content>
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{StaticResource Gray500}">
+                        <Label Style="{StaticResource DescriptionBookPage}">
                             Gallimard (2015)
                         </Label>
                     </views:InfoView.Content>
@@ -107,10 +83,7 @@
 
                 <views:InfoView Title="Résumé">
                     <views:InfoView.Content>
-                        <Label
-                            FontSize="15"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{StaticResource Gray500}">
+                        <Label Style="{StaticResource DescriptionBookPage}">
                             Un groupe d'élite, formé dès l'enfance à faire face, part des confins d'une terre féroce, saignée de rafales, pour aller chercher l'origine du vent. Ils sont vingt-trois, un bloc, un nœud de courage : la Horde. Ils sont pilier, ailier, traceur, aéromètre et géomètre, feuleuse et sourcière, troubadour et scribe. Ils traversent leur monde debout, à pied, en quête d'un Extrême-Amont qui fuit devant eux comme un horizon fou. Expérience de lecture unique, La Horde du Contrevent est un livre-univers qui fond d'un même feu l'aventure et la poésie des parcours, le combat nu et la quête d'un sens profond du vivant qui unirait le mouvement et le lien. Chaque mot résonne, claque, fuse : Alain Damasio joue de sa plume comme d'un pinceau, d'une caméra ou d'une arme...
                         </Label>
                     </views:InfoView.Content>
@@ -120,44 +93,26 @@
                     <views:InfoView.Content>
                         <VerticalStackLayout VerticalOptions="FillAndExpand">
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label
-                                    FontSize="15"
-                                    HorizontalOptions="StartAndExpand"
-                                    TextColor="{StaticResource Gray500}">
+                                <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                     Nombre de pages
                                 </Label>
-                                <Label
-                                    FontSize="15"
-                                    HorizontalOptions="End"
-                                    TextColor="{StaticResource Gray500}">
+                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
                                     700
                                 </Label>
                             </StackLayout>
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label
-                                    FontSize="15"
-                                    HorizontalOptions="StartAndExpand"
-                                    TextColor="{StaticResource Gray500}">
+                                <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                     Langue
                                 </Label>
-                                <Label
-                                    FontSize="15"
-                                    HorizontalOptions="End"
-                                    TextColor="{StaticResource Gray500}">
+                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
                                     français
                                 </Label>
                             </StackLayout>
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label
-                                    FontSize="15"
-                                    HorizontalOptions="StartAndExpand"
-                                    TextColor="{StaticResource Gray500}">
+                                <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                     ISBN
                                 </Label>
-                                <Label
-                                    FontSize="15"
-                                    HorizontalOptions="End"
-                                    TextColor="{StaticResource Gray500}">
+                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
                                     9782070464234
                                 </Label>
                             </StackLayout>
@@ -169,16 +124,10 @@
                 <views:InfoView Title="Résumé">
                     <views:InfoView.Content>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <Label
-                                FontSize="15"
-                                HorizontalOptions="StartAndExpand"
-                                TextColor="{StaticResource Gray500}">
+                            <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                 Statut
                             </Label>
-                            <Label
-                                FontSize="15"
-                                HorizontalOptions="End"
-                                TextColor="{StaticResource Gray500}">
+                            <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
                                 Non lu
                             </Label>
                         </StackLayout>
@@ -188,24 +137,18 @@
                 <views:InfoView Title="Bibliothèque">
                     <views:InfoView.Content>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                            <Label
-                                FontSize="15"
-                                HorizontalOptions="StartAndExpand"
-                                TextColor="{StaticResource Gray500}">
+                            <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                 Ajouté le
                             </Label>
-                            <Label
-                                FontSize="15"
-                                HorizontalOptions="End"
-                                TextColor="{StaticResource Gray500}">
+                            <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
                                 10 août 2023
                             </Label>
                         </StackLayout>
                     </views:InfoView.Content>
                 </views:InfoView>
 
-                <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
-                <BoxView HeightRequest="100" Color="Transparent" />
+                <Line Margin="5,0,0,0" Style="{StaticResource GrayLine}" />
+                <BoxView Style="{StaticResource BookBoxView}" />
                 <views:OptionView Title="Déplacer le livre" Icon="{StaticResource FolderIcon}" />
                 <views:OptionView Title="Ajouter à la liste À lire plus tard" Icon="{StaticResource AddCircledOutlineIcon}" />
                 <views:OptionView Title="Changer le statut de lecture" Icon="{StaticResource EyeglassesIcon}" />

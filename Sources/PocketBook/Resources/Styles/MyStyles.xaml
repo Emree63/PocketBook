@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--  Label  -->
+    <Style x:Key="TitlePage" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+    <Style x:Key="ModifyLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+        <Setter Property="FontSize" Value="23" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style x:Key="TitleMainPage" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontSize" Value="32" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="Margin" Value="15,0,0,20" />
+    </Style>
+    <Style x:Key="NumberOptionLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Gray400}" />
+        <Setter Property="Margin" Value="0,0,15,0" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+    </Style>
+    <Style x:Key="TitleFilterView" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+    </Style>
+    <Style x:Key="ComeBackLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Primary}" />
+        <Setter Property="Margin" Value="20,0,0,0" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="AlphabetLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource BlueAlphabet}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style x:Key="TitleBookPage" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+    <Style x:Key="DescriptionBookPage" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Gray500}" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+    <Style x:Key="TitleCategoryBookPage" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+    <Style x:Key="TitleBookInfo" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style x:Key="DescriptionBookInfo" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalOptions" Value="Start" />
+    </Style>
+    <Style x:Key="StatusBookInfo" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Gray300}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalOptions" Value="StartAndExpand" />
+    </Style>
+    <Style x:Key="AuthorTitle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Gray500}" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="Margin" Value="20,5,0,5" />
+    </Style>
+
+    <!--  Image  -->
+    <Style x:Key="ChevronRightImage" TargetType="Image">
+        <Setter Property="Margin" Value="0,0,15,0" />
+        <Setter Property="HeightRequest" Value="15" />
+        <Setter Property="HorizontalOptions" Value="End" />
+    </Style>
+    <Style x:Key="IconOption" TargetType="Image">
+        <Setter Property="Margin" Value="20,0,0,0" />
+        <Setter Property="WidthRequest" Value="23" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+    <Style x:Key="ArrowUpDownImage" TargetType="Image">
+        <Setter Property="Margin" Value="0,0,10,0" />
+        <Setter Property="HeightRequest" Value="20" />
+        <Setter Property="HorizontalOptions" Value="End" />
+    </Style>
+    <Style x:Key="PlusTitleImage" TargetType="Image">
+        <Setter Property="Margin" Value="0,0,40,0" />
+        <Setter Property="HeightRequest" Value="18" />
+        <Setter Property="HorizontalOptions" Value="End" />
+    </Style>
+    <Style x:Key="ChevronLeftImage" TargetType="Image">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HeightRequest" Value="16" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+    <Style x:Key="StarIcon" TargetType="Image">
+        <Setter Property="WidthRequest" Value="20" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <!--  Layout  -->
+    <Style x:Key="Layout" TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+    </Style>
+    <Style x:Key="FilterLayout" TargetType="VerticalStackLayout">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ListBackground}, Dark={StaticResource GrayDark}}" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+    <Style x:Key="LayoutBookInfo" TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource GrayDark}}" />
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+    </Style>
+    <Style x:Key="AuthorLayout" TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="{StaticResource GrayLight}" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+    </Style>
+    <Style x:Key="BooksViewLayout" TargetType="VerticalStackLayout">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource GrayDark}}" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <!--  Line  -->
+    <Style x:Key="GrayLine" TargetType="Line">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
+    </Style>
+
+    <!--  BoxView  -->
+    <Style x:Key="BookBoxView" TargetType="BoxView">
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="Color" Value="Transparent" />
+    </Style>
+
+    <!--  ScrollView  -->
+    <Style x:Key="ScrollView" TargetType="ScrollView">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource GrayDark}}" />
+    </Style>
+    <Style x:Key="ScrollViewAlphabet" TargetType="ScrollView">
+        <Setter Property="HeightRequest" Value="200" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!--  SearchBar  -->
+    <Style x:Key="SearchBarFiltering" TargetType="SearchBar">
+        <Setter Property="PlaceholderColor" Value="{StaticResource Gray500}" />
+        <Setter Property="TextColor" Value="{StaticResource Gray600}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource GrayLight}" />
+        <Setter Property="Margin" Value="10" />
+    </Style>
+
+</ResourceDictionary>

@@ -5,42 +5,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
     <StackLayout HorizontalOptions="Fill" Orientation="Horizontal">
-        <Image
-            HorizontalOptions="Start"
-            Source="{StaticResource StarFillIcon}"
-            WidthRequest="20">
+        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
             <Image.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
             </Image.Behaviors>
         </Image>
-        <Image
-            HorizontalOptions="Start"
-            Source="{StaticResource StarFillIcon}"
-            WidthRequest="20">
+        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
             <Image.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
             </Image.Behaviors>
         </Image>
-        <Image
-            HorizontalOptions="Start"
-            Source="{StaticResource StarFillIcon}"
-            WidthRequest="20">
+        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
             <Image.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
             </Image.Behaviors>
         </Image>
-        <Image
-            HorizontalOptions="Start"
-            Source="{StaticResource StarFillIcon}"
-            WidthRequest="20">
+        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
             <Image.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
             </Image.Behaviors>
         </Image>
-        <Image
-            HorizontalOptions="Start"
-            Source="{StaticResource StarFillIcon}"
-            WidthRequest="20">
+        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
             <Image.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
             </Image.Behaviors>

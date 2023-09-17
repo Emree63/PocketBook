@@ -8,11 +8,10 @@
     <Shell.TitleView>
         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
             <Label
-                FontAttributes="Bold"
-                FontSize="23"
                 HorizontalOptions="StartAndExpand"
+                Style="{StaticResource ModifyLabel}"
                 Text="Modifier"
-                TextColor="{StaticResource Primary}" />
+                VerticalOptions="Center" />
             <Image
                 Margin="10"
                 HeightRequest="20"
@@ -29,12 +28,9 @@
     <ScrollView>
         <VerticalStackLayout VerticalOptions="FillAndExpand">
             <Label
-                Margin="15,0,0,20"
-                FontAttributes="Bold"
-                FontSize="32"
-                HorizontalOptions="Start"
+                Style="{StaticResource TitleMainPage}"
                 Text="Mes Livres" />
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Style="{StaticResource GrayLine}" />
             <views:FilterView
                 Title="Tous"
                 Icon="{StaticResource TrayFillIcon}"
@@ -50,7 +46,7 @@
                 Title="Étiquettes"
                 BottomBorder="false"
                 Icon="{StaticResource TagFillIcon}" />
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Style="{StaticResource GrayLine}" />
 
             <Label
                 Margin="15,20,0,20"
@@ -59,14 +55,14 @@
                 HorizontalOptions="Start"
                 Text="Filtres" />
 
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Style="{StaticResource GrayLine}" />
             <views:FilterView Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
             <views:FilterView Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
             <views:FilterView
                 Title="Note"
                 BottomBorder="false"
                 Icon="{StaticResource SparklesIcon}" />
-            <Line BackgroundColor="{StaticResource Gray200}" />
+            <Line Style="{StaticResource GrayLine}" />
 
         </VerticalStackLayout>
     </ScrollView>

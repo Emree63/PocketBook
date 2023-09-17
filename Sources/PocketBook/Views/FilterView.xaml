@@ -6,30 +6,15 @@
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Name="this">
 
-    <VerticalStackLayout BackgroundColor="{StaticResource ListBackground}" VerticalOptions="FillAndExpand">
+    <VerticalStackLayout Style="{StaticResource FilterLayout}">
         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-            <Image
-                Margin="20,0,0,0"
-                HorizontalOptions="Start"
-                Source="{Binding Icon, Source={x:Reference this}}"
-                WidthRequest="23" />
+            <Image Source="{Binding Icon, Source={x:Reference this}}" Style="{StaticResource IconOption}" />
+            <Label Style="{StaticResource TitleFilterView}" Text="{Binding Title, Source={x:Reference this}}" />
             <Label
-                Margin="10"
-                FontAttributes="Bold"
-                FontSize="15"
-                HorizontalOptions="StartAndExpand"
-                Text="{Binding Title, Source={x:Reference this}}" />
-            <Label
-                Margin="10"
-                FontSize="15"
-                HorizontalOptions="EndAndExpand"
+                Style="{StaticResource NumberOptionLabel}"
                 Text="{Binding Number, Source={x:Reference this}}"
-                TextColor="{StaticResource Gray300}" />
-            <Image
-                Margin="0,0,15,0"
-                HeightRequest="15"
-                HorizontalOptions="End"
-                Source="{StaticResource ChevronRightIcon}">
+                VerticalOptions="Center" />
+            <Image Source="{StaticResource ChevronRightIcon}" Style="{StaticResource ChevronRightImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray300}" />
                 </Image.Behaviors>
@@ -37,8 +22,8 @@
         </StackLayout>
         <Line
             Margin="20,0,0,0"
-            BackgroundColor="{StaticResource Gray200}"
-            IsVisible="{Binding BottomBorder, Source={x:Reference this}}" />
+            IsVisible="{Binding BottomBorder, Source={x:Reference this}}"
+            Style="{StaticResource GrayLine}" />
     </VerticalStackLayout>
 
 </ContentView>

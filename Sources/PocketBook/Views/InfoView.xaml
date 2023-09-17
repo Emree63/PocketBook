@@ -8,17 +8,12 @@
     <ContentView.Resources>
         <ControlTemplate x:Key="InfoView">
             <VerticalStackLayout VerticalOptions="Fill">
-                <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
+                <Line Margin="5,0,0,0" Style="{StaticResource GrayLine}" />
                 <StackLayout
                     Margin="10"
                     Orientation="Vertical"
                     VerticalOptions="Fill">
-                    <Label
-                        FontAttributes="Bold"
-                        FontSize="13"
-                        HorizontalOptions="StartAndExpand"
-                        Text="{Binding Title, Source={x:Reference this}}"
-                        TextColor="{StaticResource Black}" />
+                    <Label Style="{StaticResource TitleCategoryBookPage}" Text="{Binding Title, Source={x:Reference this}}" />
                     <ContentPresenter Content="{TemplateBinding Content}" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
             </VerticalStackLayout>

@@ -8,45 +8,24 @@
     Title="CollectionPage">
     <Shell.TitleView>
         <Grid>
-            <Image
-                HeightRequest="16"
-                HorizontalOptions="Start"
-                Source="{StaticResource ChevronLeftIcon}"
-                VerticalOptions="Center">
+            <Image Source="{StaticResource ChevronLeftIcon}" Style="{StaticResource ChevronLeftImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                 </Image.Behaviors>
             </Image>
             <Label
-                Margin="20,0,0,0"
-                FontAttributes="Bold"
-                FontSize="14"
-                HorizontalOptions="Start"
+                Style="{StaticResource ComeBackLabel}"
                 Text="Mes livres"
-                TextColor="{StaticResource Primary}"
-                VerticalOptions="Center" />
-            <Label
-                FontAttributes="Bold"
-                FontSize="18"
-                HorizontalOptions="Center"
-                TextColor="{StaticResource Black}"
-                VerticalOptions="Center">
+                TextColor="{StaticResource Primary}" />
+            <Label Style="{StaticResource TitlePage}">
                 Tous
             </Label>
-            <Image
-                Margin="0,0,40,0"
-                HeightRequest="18"
-                HorizontalOptions="End"
-                Source="{StaticResource PlusIcon}">
+            <Image Source="{StaticResource PlusIcon}" Style="{StaticResource PlusTitleImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                 </Image.Behaviors>
             </Image>
-            <Image
-                Margin="0,0,10,0"
-                HeightRequest="20"
-                HorizontalOptions="End"
-                Source="{StaticResource ArrowUpDownIcon}">
+            <Image Source="{StaticResource ArrowUpDownIcon}" Style="{StaticResource ArrowUpDownImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                 </Image.Behaviors>
@@ -56,7 +35,7 @@
     </Shell.TitleView>
 
     <Grid>
-        <ScrollView>
+        <ScrollView Style="{StaticResource ScrollView}">
             <StackLayout Orientation="Vertical" VerticalOptions="Fill">
                 <views:AuthorTitleView Title="Alain Damasio" />
                 <views:BookInfoView
@@ -89,191 +68,84 @@
                     Status="Terminé" />
             </StackLayout>
         </ScrollView>
-        <ScrollView
-            HeightRequest="200"
-            HorizontalOptions="End"
-            VerticalOptions="Center">
-            <VerticalStackLayout Margin="0,0,2,0" HorizontalOptions="End">
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+        <ScrollView Style="{StaticResource ScrollViewAlphabet}">
+            <VerticalStackLayout Margin="0,0,5,0" HorizontalOptions="End">
+                <Label Style="{StaticResource AlphabetLabel}">
                     A
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     B
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     C
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     D
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     E
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     F
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     G
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     H
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     I
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     J
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     K
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     L
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     M
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     N
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     O
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     P
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     Q
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     R
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     S
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     T
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     U
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     V
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     W
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     X
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     Y
                 </Label>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    HorizontalOptions="End"
-                    TextColor="{StaticResource BlueAlphabet}">
+                <Label Style="{StaticResource AlphabetLabel}">
                     Z
                 </Label>
             </VerticalStackLayout>
