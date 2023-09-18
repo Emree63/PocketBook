@@ -1,3 +1,5 @@
+using System.Windows.Input;
+
 namespace PocketBook.Views;
 
 public partial class FilterView : ContentView
@@ -32,6 +34,12 @@ public partial class FilterView : ContentView
         set => SetValue(BottomBorderProperty, value);
     }
 
+    public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(FilterView), null);
+    public ICommand Command
+    {
+        get => GetValue(CommandProperty) as ICommand;
+        set => SetValue(CommandProperty, value);
+    }
     public FilterView()
 	{
 		InitializeComponent();
