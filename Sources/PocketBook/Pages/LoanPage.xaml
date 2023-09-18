@@ -34,6 +34,17 @@
 
     <ScrollView Style="{StaticResource ScrollView}">
         <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+            <Border Style="{StaticResource selector2Style}">
+            <Grid ColumnDefinitions="*,*" Margin="1" >
+                <Border Style="{StaticResource selectorItemSelectedStyle}"/>
+                <Border IsVisible="false"
+                        Style="{StaticResource selectorItemSelectedStyle}"/>
+                <Label Text="Prêts"
+                        Style="{StaticResource selectorLabelStyle}"/>
+                <Label Text="Emprunts" Grid.Column="1" 
+                        Style="{StaticResource selectorLabelStyle}"/>
+            </Grid>
+        </Border>
             <views:AuthorTitleView Title="Scott Snyder" />
             <views:BookInfoView
                 Title="The wake"

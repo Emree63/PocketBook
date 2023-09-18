@@ -19,6 +19,12 @@
     <Color x:Key="GrayDark">#252525</Color>
     <Color x:Key="ListBackground">#F8F8F8</Color>
     <Color x:Key="BlueAlphabet">#007BFE</Color>
+    <Color x:Key="selectorSelectedLight">White</Color>
+    <Color x:Key="selectorSelectedDark">#6A696F</Color>
+    <Color x:Key="selectorLabelLight">Black</Color>
+    <Color x:Key="selectorLabelDark">#FDFDFD</Color>
+    <Color x:Key="selectorBackgroundLight">#E1E1E1</Color>
+    <Color x:Key="selectorBackgroundDark">#323137</Color>
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}" />
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}" />
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}" />

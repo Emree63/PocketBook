@@ -102,9 +102,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\FilteringDatePage.xaml.cs">
-	    <DependentUpon>FilteringDatePage.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Pages\FilteringPage.xaml.cs">
 	    <DependentUpon>FilteringPage.xaml</DependentUpon>
 	  </Compile>
@@ -118,9 +115,6 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Pages\CollectionPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\FilteringDatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\FilteringPage.xaml">

@@ -83,6 +83,13 @@
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="Margin" Value="20,5,0,5" />
     </Style>
+    <Style TargetType="Label" x:Key="selectorLabelStyle">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="FontFamily" Value="SF Pro Display Regular"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource selectorLabelLight}, Dark={StaticResource selectorLabelDark}}"/>
+    </Style>
 
     <!--  Image  -->
     <Style x:Key="ChevronRightImage" TargetType="Image">
@@ -160,11 +167,52 @@
     </Style>
 
     <!--  SearchBar  -->
-    <Style x:Key="SearchBarFiltering" TargetType="SearchBar">
+    <Style TargetType="SearchBar" x:Key="searchBarBaseStyle">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
         <Setter Property="PlaceholderColor" Value="{StaticResource Gray500}" />
-        <Setter Property="TextColor" Value="{StaticResource Gray600}" />
-        <Setter Property="BackgroundColor" Value="{StaticResource GrayLight}" />
-        <Setter Property="Margin" Value="10" />
+        <Setter Property="CancelButtonColor" Value="{StaticResource Gray500}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                            <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
     </Style>
-
+    
+    <!--  Border  -->
+    <Style TargetType="Border" x:Key="selector2Style">
+        <Setter Property="Stroke" Value="Transparent"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="Margin" Value="0, 15"/>
+        <Setter Property="HeightRequest" Value="33"/>
+        <Setter Property="WidthRequest" Value="222"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource selectorBackgroundLight}, Dark={StaticResource selectorBackgroundDark}}"/>
+        <Setter Property="StrokeShape">
+            <RoundRectangle CornerRadius="8"/>
+        </Setter>
+    </Style>
+    <Style TargetType="Border" x:Key="selectorItemSelectedStyle">
+        <Setter Property="Stroke" Value="Transparent"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource selectorSelectedLight}, Dark={StaticResource selectorSelectedDark}}"/>
+        <Setter Property="HeightRequest" Value="29"/>
+        <Setter Property="WidthRequest" Value="108"/>
+        <Setter Property="StrokeShape">
+            <RoundRectangle CornerRadius="6"/>
+        </Setter>
+    </Style>
 </ResourceDictionary>

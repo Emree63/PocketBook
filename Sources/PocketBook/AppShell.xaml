@@ -22,7 +22,7 @@
             Icon="{StaticResource ListBulletIcon}" />
         <ShellContent
             Title="My Readings"
-            ContentTemplate="{DataTemplate pages:CollectionPage}"
+            ContentTemplate="{DataTemplate pages:BooksPage}"
             Icon="{StaticResource BookmarkFillIcon}" />
         <ShellContent
             Title="Search"
