@@ -30,6 +30,10 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFF" />
@@ -94,6 +98,8 @@
 	  <None Remove="Resources\Images\text_book_closed_fill.svg" />
 	  <None Remove="Resources\Images\tray.svg" />
 	  <None Remove="Resources\Images\tray_fill.svg" />
+	  <None Remove="ViewModels\" />
+	  <None Remove="Resources\Fonts\SF-Pro-Display-Bold.otf" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -161,5 +167,10 @@
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
 	</ItemGroup>
-
+	<ItemGroup>
+	  <ProjectReference Include="..\ViewModel\ViewModel.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Fonts\SF-Pro-Display-Bold.otf" />
+	</ItemGroup>
 </Project>

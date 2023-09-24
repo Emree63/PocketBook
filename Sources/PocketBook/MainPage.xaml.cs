@@ -1,17 +1,16 @@
 ﻿using System.Windows.Input;
+using PocketBook.ViewModels;
 
 namespace PocketBook;
 
 public partial class MainPage : ContentPage
 {
-	// public NavigationManagerVM Navigator {get; set;} = new NavigatorManagerVM();
+	public NavigationVM Navigator {get; set;} = new NavigationVM();
+	
 	public MainPage()
 	{
 		InitializeComponent();
 		BindingContext = this;
 	}
 
-	// Command="{Binding Navigator.NavigatorToBooksPagCommand}"
-
 }
-

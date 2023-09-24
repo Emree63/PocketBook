@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView
     x:Class="PocketBook.Views.BookInfoView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,16 +7,14 @@
     x:Name="this">
     <StackLayout Style="{StaticResource LayoutBookInfo}">
         <StackLayout
-            Margin="20,10,0,10"
+            Margin="0,10,0,10"
             HorizontalOptions="FillAndExpand"
             Orientation="Horizontal">
-            <AbsoluteLayout WidthRequest="90">
-                <Image
-                    Margin="1"
-                    HeightRequest="93"
-                    Source="{Binding Image, Source={x:Reference this}}" />
-                <Image HeightRequest="108" Source="{StaticResource BookMockupIcon}" />
-            </AbsoluteLayout>
+            <views:ImageBookView
+                                Image="{Binding Image, Source={x:Reference this}}"
+                                Margin="-10,0,-20,0"
+                                VerticalOptions="Center"
+                                HeightRequest="86"/>
 
             <StackLayout VerticalOptions="FillAndExpand">
                 <Label

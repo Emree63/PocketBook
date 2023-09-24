@@ -13,7 +13,8 @@ public static class MauiProgram
             .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("SF-Pro-Display-Bold.otf", "SF Pro Display Bold");
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddFont("SF-Pro-Text-Heavy.otf", "SFProHeavy");
                 fonts.AddFont("SF-Pro-Text-Semibold.otf", "SFProSemibold");

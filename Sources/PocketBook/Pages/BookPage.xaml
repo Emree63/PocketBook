@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="PocketBook.Pages.BookPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -9,11 +9,6 @@
     Shell.BackgroundColor="{StaticResource GrayLight}">
     <Shell.TitleView>
         <Grid>
-            <Image Source="{StaticResource ChevronLeftIcon}" Style="{StaticResource ChevronLeftImage}">
-                <Image.Behaviors>
-                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
-                </Image.Behaviors>
-            </Image>
             <Label Style="{StaticResource ComeBackLabel}" Text="Tous" />
             <Label Style="{StaticResource TitlePage}" TextColor="{StaticResource Black}">
                 Détails du livre
@@ -23,29 +18,19 @@
 
     <ScrollView>
         <VerticalStackLayout>
-            <BoxView HeightRequest="35" Color="{StaticResource GrayLight}" />
-            <Line BackgroundColor="{StaticResource Gray100}" />
             <VerticalStackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
-                <StackLayout
-                    Margin="10"
-                    HorizontalOptions="FillAndExpand"
-                    Orientation="Horizontal">
-                    <AbsoluteLayout HorizontalOptions="End" WidthRequest="90">
-                        <Image
-                            Margin="1"
-                            HeightRequest="120"
-                            Source="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg" />
-                        <Image HeightRequest="140" Source="{StaticResource BookMockupIcon}" />
-                    </AbsoluteLayout>
-                    <StackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
-                        <Label
-                            Style="{StaticResource TitleBookInfo}"
-                            VerticalOptions="StartAndExpand">
-                            La horde du contrevent
-                        </Label>
-                        <views:StarsView />
-                    </StackLayout>
-                </StackLayout>
+                <Grid ColumnDefinitions="110, *" RowDefinitions="*,*" Margin="0, 10, 0, 0" >
+                    <views:ImageBookView Grid.RowSpan="2"
+                                         Image="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg"
+                                         VerticalOptions="Center"
+                                         HeightRequest="127" Margin="8, 1, 0, 0"/>
+                    <Label Text="La horde du contrevent"
+                           Style="{StaticResource TitleBookInfo}"
+                           Grid.Column="1"/>
+                    <views:StarsView Grid.Column="1" Grid.Row="1"
+                                     Margin="-2, 2, 0, 0"
+                                     VerticalOptions="End"/>
+                </Grid>
                 <Line Margin="5,0,0,0" BackgroundColor="{StaticResource Gray200}" />
                 <StackLayout
                     Margin="10"

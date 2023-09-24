@@ -1,36 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="PocketBook.Pages.LoanPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:views="clr-namespace:PocketBook.Views"
-    Title="LoanPage">
-    <Shell.TitleView>
-        <Grid>
-            <Image Source="{StaticResource ChevronLeftIcon}" Style="{StaticResource ChevronLeftImage}">
-                <Image.Behaviors>
-                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
-                </Image.Behaviors>
-            </Image>
-            <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" />
-            <Label Style="{StaticResource TitlePage}">
-                Tous
-            </Label>
-            <Image Source="{StaticResource PlusIcon}" Style="{StaticResource PlusTitleImage}">
-                <Image.Behaviors>
-                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
-                </Image.Behaviors>
-            </Image>
-            <Image Source="{StaticResource ArrowUpDownIcon}" Style="{StaticResource ArrowUpDownImage}">
-                <Image.Behaviors>
-                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
-                </Image.Behaviors>
-            </Image>
+    Title="LoanPage"
+    Shell.NavBarIsVisible="True"
+    Shell.ForegroundColor="{StaticResource Primary}">
+    <ContentPage.Resources>
+            
 
-        </Grid>
-    </Shell.TitleView>
-
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ajouter" Priority="1"
+                     Order="Primary" IconImageSource="{StaticResource PlusIcon}"/>
+        <ToolbarItem Text="Order" Priority="2"
+                     Order="Primary" IconImageSource="{StaticResource ArrowUpDownIcon}"/>
+    </ContentPage.ToolbarItems>
 
     <ScrollView Style="{StaticResource ScrollView}">
         <StackLayout Orientation="Vertical" VerticalOptions="Fill">

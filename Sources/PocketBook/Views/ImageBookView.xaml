@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PocketBook.Views.ImageBookView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+              x:Name="this"
+>
+    <ContentView.Resources>
+        <toolkit:MathExpressionConverter x:Key="widthConverter" />
+    </ContentView.Resources>
+    <AbsoluteLayout x:Name="root"
+                    WidthRequest="{Binding Height, Source={x:Reference root},
+                    Converter={StaticResource widthConverter},
+                    ConverterParameter='x*140/98'}"
+                    >
+        <Image Source="{StaticResource BookMockupIcon}"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"/>
+        <Image Source="{Binding Image, Source={x:Reference this}}" Aspect="Fill"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.36 , 0.84"/>
+    </AbsoluteLayout>
+</ContentView>
+

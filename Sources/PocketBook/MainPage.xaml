@@ -32,16 +32,18 @@
                 Text="Mes Livres" />
             <Line Style="{StaticResource GrayLine}" />
             <views:FilterView
+                Command="{Binding Navigator.NavigatorToBooksPageCommand}"
                 Title="Tous"
                 Icon="{StaticResource TrayFillIcon}"
                 Number="45" />
             <views:FilterView
+                Command="{Binding Navigator.NavigatorToLoanPageCommand}"
                 Title="En prêt"
                 Icon="{StaticResource PersonBadgeClockFillIcon}"
                 Number="1" />
-            <views:FilterView Title="À lire plus tard" Icon="{StaticResource ArrowForwardIcon}" />
-            <views:FilterView Title="Statut de lecture" Icon="{StaticResource EyeglassesIcon}" />
-            <views:FilterView Title="Favoris" Icon="{StaticResource HeartFillIcon}" />
+            <views:FilterView Title="À lire plus tard" Command="{Binding Navigator.NavigatorToFilteringPageCommand}" Icon="{StaticResource ArrowForwardIcon}" />
+            <views:FilterView Title="Statut de lecture" Command="{Binding Navigator.NavigatorToFilteringPageCommand}" Icon="{StaticResource EyeglassesIcon}" />
+            <views:FilterView Title="Favoris" Command="{Binding Navigator.NavigatorToFilteringPageCommand}" Icon="{StaticResource HeartFillIcon}" />
             <views:FilterView
                 Title="Étiquettes"
                 BottomBorder="false"
@@ -51,14 +53,15 @@
             <Label
                 Margin="15,20,0,20"
                 FontAttributes="Bold"
-                FontSize="20"
-                HorizontalOptions="Start"
+                FontSize="Medium"
+                FontFamily="SF Pro Display Bold"
                 Text="Filtres" />
 
             <Line Style="{StaticResource GrayLine}" />
-            <views:FilterView Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
-            <views:FilterView Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
+            <views:FilterView Command="{Binding Navigator.NavigatorToFilteringPageCommand}" Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
+            <views:FilterView Command="{Binding Navigator.NavigatorToFilteringPageCommand}" Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
             <views:FilterView
+                Command="{Binding Navigator.NavigatorToFilteringPageCommand}"
                 Title="Note"
                 BottomBorder="false"
                 Icon="{StaticResource SparklesIcon}" />
