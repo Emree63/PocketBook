@@ -169,6 +169,8 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\ViewModel\ViewModel.csproj" />
+	  <ProjectReference Include="..\Stub\Stub.csproj" />
+	  <ProjectReference Include="..\MyMVVM_ToolKit\MyMVVM_ToolKit.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\SF-Pro-Display-Bold.otf" />

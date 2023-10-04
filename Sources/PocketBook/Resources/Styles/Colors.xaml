@@ -25,6 +25,15 @@
     <Color x:Key="selectorLabelDark">#FDFDFD</Color>
     <Color x:Key="selectorBackgroundLight">#E1E1E1</Color>
     <Color x:Key="selectorBackgroundDark">#323137</Color>
+    <Color x:Key="scanMenuBackgroundLight">#F4F4F4</Color>
+    <Color x:Key="scanMenuBackgroundDark">#262626</Color>
+    <Color x:Key="scanMenuTitleLight">#C8C8C8</Color>
+    <Color x:Key="scanMenuTitleDark">#9E9F13</Color>
+    <Color x:Key="scanMenuDividerLight">#C8C8C8</Color>
+    <Color x:Key="scanMenuDividerDark">#726D6A</Color>
+    <Color x:Key="scanMenuStrongDividerLight">#C8C8C8</Color>
+    <Color x:Key="scanMenuStrongDividerDark">#242424</Color>
+
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}" />
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}" />
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}" />

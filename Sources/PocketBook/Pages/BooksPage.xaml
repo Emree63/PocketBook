@@ -23,34 +23,17 @@
         <ScrollView Style="{StaticResource ScrollView}">
             <StackLayout Orientation="Vertical" VerticalOptions="Fill">
                 <views:AuthorTitleView Title="Alain Damasio" />
-                <views:BookInfoView
-                    Title="La horde du contrevent"
-                    Author="Alain Damasio"
-                    Image="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg"
-                    Status="Non lu" />
-                <views:BookInfoView
-                    Title="Alain Damasio"
-                    Author="Alain Damasio"
-                    BottomBorder="False"
-                    Image="https://www.eurekastreet.fr/cache/images/product/0001241-image-9782072927522.jpg"
-                    Status="Terminé" />
-                <views:AuthorTitleView Title="Cixin Liu" />
-                <views:BookInfoView
-                    Title="L'équateur d'Einstein"
-                    Author="Cixin Liu"
-                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330160906.jpg"
-                    Status="Terminé" />
-                <views:BookInfoView
-                    Title="La forêt sombre"
-                    Author="Cixin Liu"
-                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330125110.jpg"
-                    Status="Terminé" />
-                <views:BookInfoView
-                    Title="Le problème à trois corps"
-                    Author="Cixin Liu"
-                    BottomBorder="False"
-                    Image="https://www.actes-sud.fr/sites/default/files/couvertures/9782330070748.jpg"
-                    Status="Terminé" />
+                <CollectionView ItemsSource="{Binding Books}" SelectionMode="Single" SelectionChangedCommand="{Binding Navigator.NavigatorToBookPageCommand}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <views:BookInfoView
+                                Title="{Binding Title}"
+                                Author="{Binding Author}"
+                                Image="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg"
+                                Status="Non lu" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
         </ScrollView>
         <ScrollView Style="{StaticResource ScrollViewAlphabet}">

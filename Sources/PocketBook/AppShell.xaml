@@ -10,7 +10,7 @@
     Shell.NavBarIsVisible="True">
 
     <Shell.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="#FFF" StatusBarStyle="DarkContent" />
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" StatusBarStyle="DarkContent" />
     </Shell.Behaviors>
 
     <TabBar>

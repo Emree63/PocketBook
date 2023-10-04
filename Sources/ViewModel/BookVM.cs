@@ -1,27 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 using Model;
+using MyMVVM_ToolKit;
 
 namespace ViewModel
 {
-	public class BookVM
+	public class BookVM : BaseViewModel<Book>
 	{
-		public BookVM(Book book)
+		public BookVM(Book book) : base(book)
 		{
-			model = book;
 		}
 
-		public Book Model
-		{
-			get => model;
-			set
-			{
-				if(model != value)
-				{
-                    model = value;
-				}
-			}
-		}
-		private Book model;
-	}
+        public string Title
+        {
+            get => Model.Title;
+            set
+            {
+                Model.Title = value;
+            }
+        }
+
+    }
 }
 

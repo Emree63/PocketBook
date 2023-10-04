@@ -1,3 +1,5 @@
+using System.Windows.Input;
+
 namespace PocketBook.Views;
 
 public partial class BookInfoView : ContentView
@@ -38,6 +40,7 @@ public partial class BookInfoView : ContentView
         get => (bool)GetValue(BottomBorderProperty);
         set => SetValue(BottomBorderProperty, value);
     }
+
     public BookInfoView()
 	{
 		InitializeComponent();

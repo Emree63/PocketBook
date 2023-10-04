@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PocketBook.Views.MenuView">
+     <Border BackgroundColor="{AppThemeBinding Light={StaticResource scanMenuBackgroundLight}, Dark={StaticResource scanMenuBackgroundDark}}"
+            Stroke="{AppThemeBinding Light={StaticResource scanMenuDividerLight}, Dark={StaticResource scanMenuDividerDark}}"
+            WidthRequest="258">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="14"/>
+        </Border.StrokeShape>
+        <VerticalStackLayout>
+            <Label Text="Ajouter un livre"
+                   Style="{StaticResource scanMenuTitleStyle}"
+                   Margin="15, 10, 0, 8"/>
+            <BoxView Style="{StaticResource scanMenuDividerStyle}"/>
+            <Grid ColumnDefinitions="*, Auto" Margin="15, 11" RowDefinitions="Auto">
+                <Label Text="Scanner un code-barres"
+                       Style="{StaticResource scanMenuItemStyle}"/>             
+                <Image Source="barcode_viewfinder.png" Grid.Column="1"
+                       Style="{StaticResource scanMenuIconStyle}">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                    </Image.Behaviors>
+                </Image>
+            </Grid>
+            <BoxView Style="{StaticResource scanMenuDividerStyle}"/>
+            <Grid ColumnDefinitions="*, Auto" Margin="15, 11" RowDefinitions="Auto">
+                <Label Text="Scanner des
+                       codes-barres"
+                       Style="{StaticResource scanMenuItemStyle}"/>             
+                <Image Source="barcode.png" Grid.Column="1" VerticalOptions="Start"
+                       Style="{StaticResource scanMenuIconStyle}">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                    </Image.Behaviors>
+                </Image>
+            </Grid>
+            <BoxView Style="{StaticResource scanMenuStrongDividerStyle}"
+                     Margin="0, 2"/>
+            <Grid ColumnDefinitions="*, Auto" Margin="15, 11" RowDefinitions="Auto">
+                <Label Text="Rechercher en ligne"
+                       Style="{StaticResource scanMenuItemStyle}"/>             
+                <Image Source="magnifyingglass.png" Grid.Column="1"
+                       WidthRequest="20" HeightRequest="20"
+                       Margin="0, 0, 2, 0"
+                       Style="{StaticResource scanMenuIconStyle}">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                    </Image.Behaviors>
+                </Image>
+            </Grid>
+            <BoxView Style="{StaticResource scanMenuDividerStyle}"/>
+            <Grid ColumnDefinitions="*, Auto" Margin="15, 11" RowDefinitions="Auto">
+                <Label Text="Saisir l'ISBN"
+                       Style="{StaticResource scanMenuItemStyle}"/>             
+                <Image Source="keyboard.png" Grid.Column="1"
+                       WidthRequest="20" HeightRequest="20"
+                       Margin="0, 0, 2, 0"
+                       Style="{StaticResource scanMenuIconStyle}">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                    </Image.Behaviors>
+                </Image>
+            </Grid>
+        </VerticalStackLayout>
+    </Border>
+</ContentView>
+

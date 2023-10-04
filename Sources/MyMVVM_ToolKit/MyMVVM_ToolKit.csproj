@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj" />
-    <ProjectReference Include="..\MyMVVM_ToolKit\MyMVVM_ToolKit.csproj" />
-  </ItemGroup>
 </Project>

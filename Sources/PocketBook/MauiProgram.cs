@@ -1,5 +1,10 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Model;
+using PocketBook.Pages;
+using PocketBook.ViewModels;
+using StubLib;
+using ViewModel;
 
 namespace PocketBook;
 
@@ -8,7 +13,16 @@ public static class MauiProgram
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
-		builder
+		builder.Services
+			.AddSingleton<ManagerVM>()
+            .AddSingleton<MainPageVM>()
+            .AddSingleton<NavigationVM>();
+
+        builder.Services
+            .AddTransient<MainPage>()
+			.AddTransient<BooksPage>();
+
+        builder
 			.UseMauiApp<App>()
             .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>

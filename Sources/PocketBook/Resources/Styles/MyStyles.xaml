@@ -105,6 +105,18 @@
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource selectorLabelLight}, Dark={StaticResource selectorLabelDark}}"/>
     </Style>
 
+    <Style TargetType="Label" x:Key="scanMenuTitleStyle">
+        <Setter Property="FontFamily" Value="SF Pro Display Regular"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource scanMenuTitleLight}, Dark={StaticResource scanMenuTitleDark}}"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="scanMenuItemStyle">
+        <Setter Property="FontFamily" Value="SF Pro Display Regular"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+    </Style>
+
     <!--  Image  -->
     <Style x:Key="ChevronRightImage" TargetType="Image">
         <Setter Property="Margin" Value="0,0,15,0" />
@@ -139,6 +151,12 @@
     <Style x:Key="StarIcon" TargetType="Image">
         <Setter Property="WidthRequest" Value="20" />
         <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <Style TargetType="Image" x:Key="scanMenuIconStyle">
+        <Setter Property="WidthRequest" Value="16"/>
+        <Setter Property="HeightRequest" Value="16"/>
+        <Setter Property="Margin" Value="0, 0, 4, 0"/>
     </Style>
 
     <!--  Layout  -->
@@ -177,6 +195,15 @@
     <Style x:Key="BookBoxView" TargetType="BoxView">
         <Setter Property="HeightRequest" Value="100" />
         <Setter Property="Color" Value="Transparent" />
+    </Style>
+    <Style TargetType="BoxView" x:Key="scanMenuDividerStyle">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource scanMenuDividerLight}, Dark={StaticResource scanMenuDividerDark}}"/>
+        <Setter Property="HeightRequest" Value="1"/>
+    </Style>
+
+    <Style TargetType="BoxView" x:Key="scanMenuStrongDividerStyle">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource scanMenuStrongDividerLight}, Dark={StaticResource scanMenuStrongDividerDark}}"/>
+        <Setter Property="HeightRequest" Value="8"/>
     </Style>
 
     <!--  ScrollView  -->
