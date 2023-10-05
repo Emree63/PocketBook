@@ -23,7 +23,7 @@
         <ScrollView Style="{StaticResource ScrollView}">
             <StackLayout Orientation="Vertical" VerticalOptions="Fill">
                 <views:AuthorTitleView Title="Alain Damasio" />
-                <CollectionView ItemsSource="{Binding Books}" SelectionMode="Single" SelectionChangedCommand="{Binding Navigator.NavigatorToBookPageCommand}">
+                <CollectionView ItemsSource="{Binding BooksPageVM.Manager.Books}" SelectionMode="Single" SelectionChangedCommand="{Binding Navigator.NavigatorToBookPageCommand}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <views:BookInfoView

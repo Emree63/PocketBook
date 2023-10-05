@@ -14,7 +14,10 @@ public static class MauiProgram
 	{
 		var builder = MauiApp.CreateBuilder();
 		builder.Services
-			.AddSingleton<ManagerVM>()
+            .AddSingleton<IUserLibraryManager, UserLibraryStub>()
+            .AddSingleton<ILibraryManager, LibraryStub>()
+            .AddSingleton<ManagerVM>()
+            .AddSingleton<Manager>()
             .AddSingleton<MainPageVM>()
             .AddSingleton<NavigationVM>();
 

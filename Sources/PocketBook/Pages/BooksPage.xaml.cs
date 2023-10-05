@@ -5,8 +5,11 @@ namespace PocketBook.Pages;
 
 public partial class BooksPage : ContentPage
 {
-    public BooksPage()
+    public BooksPageVM BooksPageVM { get; set; }
+
+    public BooksPage(BooksPageVM booksPageVM)
 	{
+        BooksPageVM = booksPageVM;
         InitializeComponent();
         BindingContext = this;
     }

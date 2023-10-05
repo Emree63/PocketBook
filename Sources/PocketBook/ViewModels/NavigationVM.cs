@@ -11,13 +11,11 @@ namespace PocketBook.ViewModels
         public ICommand NavigatorToLoanPageCommand { get; set; }
         public ICommand NavigatorToFilteringPageCommand { get; set; }
         public ICommand NavigatorToBookPageCommand { get; set; }
-        //public ManagerVM MgrVM = (App.Current as App).MgrVM;
 
-        public NavigationVM()
+        public NavigationVM(ManagerVM manager)
 		{
 			NavigatorToBooksPageCommand = new Command(async () => {
-				//MgrVM.GetBooksCommand.Execute(null);
-				await navigation.PushAsync(new BooksPage());
+				await navigation.PushAsync(new BooksPage(new BooksPageVM(this, manager)));
 			});
             NavigatorToLoanPageCommand = new Command(async () => {
                 await navigation.PushAsync(new LoanPage());

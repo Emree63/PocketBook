@@ -32,7 +32,7 @@
                 Text="Mes Livres" />
             <Line Style="{StaticResource GrayLine}" />
             <views:FilterView
-                Command="{Binding MainPageVM.Navigation.NavigatorToBooksPageCommand}"
+                Command="{Binding MainPageVM.NavigatorToBooksPageCommand}"
                 Title="Tous"
                 Icon="{StaticResource TrayFillIcon}"
                 Number="45" />
