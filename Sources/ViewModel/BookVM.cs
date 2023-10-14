@@ -46,6 +46,27 @@ namespace ViewModel
             }
         }
 
+        public string FirstAuthor
+        {
+            get
+            {
+                var allAuthors = Model.Authors.Union(
+                    Model.Works.SelectMany(work => work.Authors)
+                );
+
+                var firstAuthor = allAuthors.FirstOrDefault();
+
+                if (firstAuthor != null)
+                {
+                    return firstAuthor.Name;
+                }
+                else
+                {
+                    return "no author";
+                }
+            }
+        }
+
         public string Publishers
         {
             get => string.Join(", ", Model.Publishers);

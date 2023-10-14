@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Input;
 using Model;
@@ -12,8 +13,8 @@ public class ManagerVM : BaseViewModel<Manager>
     public ICommand GetAuthorsFromCollectionCommand { get; private set; }
     public ICommand GetBookByIdCommand { get; private set; }
 
-    public ReadOnlyObservableCollection<BookVM> Books { get; private set; }
-    private readonly ObservableCollection<BookVM> books = new ObservableCollection<BookVM>();
+    public ReadOnlyObservableCollection<IGrouping<string, BookVM>> Books { get; private set; }
+    private readonly ObservableCollection<IGrouping<string, BookVM>> books = new ObservableCollection<IGrouping<string, BookVM>>();
 
     public ReadOnlyObservableCollection<Tuple<String, List<BookVM>>> Filters { get; private set; }
     private readonly ObservableCollection<Tuple<String, List<BookVM>>> filters = new ObservableCollection<Tuple<String, List<BookVM>>>();
@@ -29,7 +30,7 @@ public class ManagerVM : BaseViewModel<Manager>
 
     public ManagerVM(Manager model) : base(model)
     {
-        Books = new ReadOnlyObservableCollection<BookVM>(books);
+        Books = new ReadOnlyObservableCollection<IGrouping<string, BookVM>>(books);
         Filters = new ReadOnlyObservableCollection<Tuple<String, List<BookVM>>>(filters);
         GetBooksFromCollectionCommand = new RelayCommandAsync(GetBooksFromCollection);
         GetAuthorsFromCollectionCommand = new RelayCommandAsync(GetAuthorsFromCollection);
@@ -43,11 +44,15 @@ public class ManagerVM : BaseViewModel<Manager>
         IEnumerable<Book> resBooks = result.books;
         nbBooks = result.count;
         books.Clear();
-        foreach (var B in resBooks)
+        var booksVM = resBooks.Select(b => new BookVM(b));
+        var groupedBooks = booksVM.GroupBy(book => book.FirstAuthor);
+        foreach (var group in groupedBooks)
         {
-            books.Add(new BookVM(B));
+            books.Add(group);
         }
     }
+
+
 
     private async Task GetAuthorsFromCollection()
     {

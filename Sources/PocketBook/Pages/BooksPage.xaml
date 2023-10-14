@@ -40,11 +40,15 @@
                     AbsoluteLayout.LayoutFlags="PositionProportional" ZIndex="1" IsVisible="{Binding ScanMenuVM.MenuIsVisible, Source={x:Reference this}}"/>
             <ScrollView Style="{StaticResource ScrollView}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-                    <CollectionView ItemsSource="{Binding BooksPageVM.Manager.Books}" SelectionMode="Single">
+                    <CollectionView ItemsSource="{Binding BooksPageVM.Manager.Books}" IsGrouped="True">
+                        <CollectionView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <views:AuthorTitleView Title="{Binding Key}" />
+                            </DataTemplate>
+                        </CollectionView.GroupHeaderTemplate>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <VerticalStackLayout>
-                                    <views:AuthorTitleView Title="Alain Damasio" />
                                     <views:BookInfoView
                                         Title="{Binding Title}"
                                         Author="{Binding Authors}"
@@ -52,12 +56,13 @@
                                         Value="{Binding UserRating}"
                                         Status="{Binding Status}"
                                         Command="{Binding BooksPageVM.NavigatorToBookPageCommand, Source={x:Reference this}}"
-                                        Id="{Binding Id}"/>
+                                        Id="{Binding Id}" />
                                 </VerticalStackLayout>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </StackLayout>
+
             </ScrollView>
             <ScrollView Style="{StaticResource ScrollViewAlphabet}" AbsoluteLayout.LayoutBounds="1, 0.5, -1, -1"
                     AbsoluteLayout.LayoutFlags="PositionProportional">
