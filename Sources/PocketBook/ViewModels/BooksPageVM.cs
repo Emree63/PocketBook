@@ -9,6 +9,8 @@ namespace PocketBook.ViewModels
         public ManagerVM Manager { get; set; }
 
         public ICommand NavigatorToBookPageCommand { get; set; }
+        public ICommand NextBooksCommand { get; set; }
+        public ICommand PreviousBooksCommand { get; set; }
 
         public BooksPageVM(NavigationVM navVM, ManagerVM mgrVM)
         {
@@ -17,6 +19,12 @@ namespace PocketBook.ViewModels
             NavigatorToBookPageCommand = new Command(async (Id) => {
                 Manager.GetBookByIdCommand.Execute(Id);
                 Navigation.NavigatorToBookPageCommand.Execute(null);
+            });
+            NextBooksCommand = new Command(async () => {
+                Manager.NextBooksCollectionCommand.Execute(null);
+            });
+            PreviousBooksCommand = new Command(async () => {
+                Manager.PreviousBooksCollectionCommand.Execute(null);
             });
         }
     }

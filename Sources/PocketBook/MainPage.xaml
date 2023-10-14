@@ -35,7 +35,7 @@
                 Command="{Binding MainPageVM.NavigatorToBooksPageCommand}"
                 Title="Tous"
                 Icon="{StaticResource TrayFillIcon}"
-                Number="{Binding MainPageVM.Manager.nbBooks}" />
+                Number="{Binding MainPageVM.Manager.NbBooks}" />
             <views:FilterView
                 Command="{Binding MainPageVM.Navigation.NavigatorToLoanPageCommand}"
                 Title="En prêt"
@@ -58,7 +58,7 @@
                 Text="Filtres" />
 
             <Line Style="{StaticResource GrayLine}" />
-            <views:FilterView Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}" Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
+            <views:FilterView Command="{Binding MainPageVM.NavigatorToAuthorsPageCommand}" Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
             <views:FilterView Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}" Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
             <views:FilterView
                 Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}"

@@ -21,11 +21,13 @@ public static class MauiProgram
             .AddSingleton<MainPageVM>()
             .AddSingleton<BooksPageVM>()
             .AddSingleton<ScanMenuVM>()
+            .AddSingleton<ScanMenuVM>()
             .AddSingleton<NavigationVM>();
 
         builder.Services
             .AddTransient<MainPage>()
-			.AddTransient<BooksPage>();
+			.AddTransient<BooksPage>()
+            .AddTransient<FilteringPage>();
 
         builder
 			.UseMauiApp<App>()

@@ -25,5 +25,8 @@
     <x:String x:Key="BookMockupIcon">book_mockup.png</x:String>
     <x:String x:Key="ChevronLeftIcon">chevron_left.png</x:String>
     <x:String x:Key="ArrowUpDownIcon">arrow_up_down.png</x:String>
+    <x:String x:Key="NextIcon">arrow_right_to_line_square.png</x:String>
+    <x:String x:Key="PreviousIcon">arrow_left_to_line_square.png</x:String>
+
 
 </ResourceDictionary>

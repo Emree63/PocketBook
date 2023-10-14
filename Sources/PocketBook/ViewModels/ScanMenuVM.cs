@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using MyMVVM_ToolKit;
+using ViewModel;
 
 namespace PocketBook.ViewModels
 {
@@ -23,12 +24,17 @@ namespace PocketBook.ViewModels
         public ICommand ToggleScanMenu { get; set; }
         public ICommand DisplayScanMenu { get; set; }
 
-        public ScanMenuVM()
+        public ScanMenuVM(ManagerVM mgrVM)
 		{
             MenuIsVisible = false;
             DisplayScanMenu = new Command(async () =>
             {
-                await (App.Current as App).MainPage.DisplayPromptAsync("Saisir l'ISBN", "Entrez l'ISBN pour ajouter le livre à votre collection");
+                string isbn = await (App.Current as App).MainPage.DisplayPromptAsync("Saisir l'ISBN", "Entrez l'ISBN pour ajouter le livre à votre collection");
+
+                if (!string.IsNullOrEmpty(isbn))
+                {
+                    mgrVM.AddBookByISBNCommand.Execute(isbn);
+                }
             });
 
             ToggleScanMenu = new Command(() => {

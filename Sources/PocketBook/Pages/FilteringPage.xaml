@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:views="clr-namespace:PocketBook.Views"
-    Title="FilteringPage">
+    Title="FilteringPage"
+    x:Name="this">
     <Shell.TitleView>
         <Grid>
             <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" />
@@ -30,58 +31,17 @@
         </StackLayout>
         <ScrollView Grid.Row="1" Style="{StaticResource ScrollView}">
             <VerticalStackLayout Margin="20,0,0,0" Style="{StaticResource BooksViewLayout}">
-                <views:BooksView
-                    Title="Alain Damasio"
-                    Icon="{StaticResource BookIcon}"
-                    Number="2" />
-                <views:BooksView
-                    Title="Cixin Liu"
-                    Icon="{StaticResource BookIcon}"
-                    Number="3" />
-                <views:BooksView
-                    Title="Alain Damasio"
-                    Icon="{StaticResource BookIcon}"
-                    Number="2" />
-                <views:BooksView
-                    Title="Cixin Liu"
-                    Icon="{StaticResource BookIcon}"
-                    Number="3" />
-                <views:BooksView
-                    Title="Daniel Pennac"
-                    Icon="{StaticResource BookIcon}"
-                    Number="2" />
-                <views:BooksView
-                    Title="Evgenij Ivanovic Zamatin"
-                    Icon="{StaticResource BookIcon}"
-                    Number="1" />
-                <views:BooksView
-                    Title="Frank Herbert"
-                    Icon="{StaticResource BookIcon}"
-                    Number="6" />
-                <views:BooksView
-                    Title="Herbert George Wells"
-                    Icon="{StaticResource BookIcon}"
-                    Number="3" />
-                <views:BooksView
-                    Title="James S. A. Corey"
-                    Icon="{StaticResource BookIcon}"
-                    Number="6" />
-                <views:BooksView
-                    Title="James Tynion"
-                    Icon="{StaticResource BookIcon}"
-                    Number="1" />
-                <views:BooksView
-                    Title="James Tynion (IV)"
-                    Icon="{StaticResource BookIcon}"
-                    Number="1" />
-                <views:BooksView
-                    Title="Ken Kesey"
-                    Icon="{StaticResource BookIcon}"
-                    Number="1" />
-                <views:BooksView
-                    Title="Ken Liu"
-                    Icon="{StaticResource BookIcon}"
-                    Number="1" />
+                <CollectionView ItemsSource="{Binding FilteringPageVM.Manager.Filters}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <views:BooksView
+                                Title="{Binding Item1}"
+                                Icon="{StaticResource BookIcon}"
+                                Command="{Binding FilteringPageVM.NavigatorToBooksPageCommand, Source={x:Reference this}}"
+                                Number="{Binding Item2}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>

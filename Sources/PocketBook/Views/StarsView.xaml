@@ -3,10 +3,10 @@
     x:Class="PocketBook.Views.StarsView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:PocketBook.Views"
+    xmlns:converters="clr-namespace:PocketBook.Converters"
     x:Name="this">
     <ContentView.Resources>
-        <local:ValueToRectConverter x:Key="ValueToRectConverter" />
+        <converters:ValueToRectConverter x:Key="ValueToRectConverter" />
     </ContentView.Resources>
     <Grid>
         <Image Source="{StaticResource StarFillIcon}" WidthRequest="90" Style="{StaticResource StarIcon}" />

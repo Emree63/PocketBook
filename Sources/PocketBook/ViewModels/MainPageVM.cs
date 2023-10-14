@@ -12,6 +12,7 @@ namespace PocketBook.ViewModels
         public ManagerVM Manager { get; set; }
 
         public ICommand NavigatorToBooksPageCommand { get; set; }
+        public ICommand NavigatorToAuthorsPageCommand { get; set; }
 
         public MainPageVM(NavigationVM navVM, ManagerVM mgrVM)
 		{
@@ -20,6 +21,10 @@ namespace PocketBook.ViewModels
             NavigatorToBooksPageCommand = new Command(async () => {
                 Manager.GetBooksFromCollectionCommand.Execute(null);
                 Navigation.NavigatorToBooksPageCommand.Execute(null);
+            });
+            NavigatorToAuthorsPageCommand = new Command(async () => {
+                Manager.GetAuthorsFromCollectionCommand.Execute(null);
+                Navigation.NavigatorToFilteringAuthorsPageCommand.Execute(null);
             });
         }
 	}

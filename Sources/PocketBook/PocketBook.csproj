@@ -104,6 +104,9 @@
 	  <None Remove="Resources\Images\keyboard.svg" />
 	  <None Remove="Resources\Images\barcode_viewfinder.svg" />
 	  <None Remove="Resources\Images\star_fill_yellow.svg" />
+	  <None Remove="Converters\" />
+	  <None Remove="Resources\Images\arrow_right_to_line_square.svg" />
+	  <None Remove="Resources\Images\arrow_left_to_line_square.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -170,6 +173,7 @@
 
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
+	  <Folder Include="Converters\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\ViewModel\ViewModel.csproj" />
@@ -182,5 +186,7 @@
 	  <BundleResource Include="Resources\Images\keyboard.svg" />
 	  <BundleResource Include="Resources\Images\barcode_viewfinder.svg" />
 	  <BundleResource Include="Resources\Images\star_fill_yellow.svg" />
+	  <BundleResource Include="Resources\Images\arrow_right_to_line_square.svg" />
+	  <BundleResource Include="Resources\Images\arrow_left_to_line_square.svg" />
 	</ItemGroup>
 </Project>

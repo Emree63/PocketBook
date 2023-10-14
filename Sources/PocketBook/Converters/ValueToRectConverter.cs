@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace PocketBook.Views
+namespace PocketBook.Converters
 {
 	public class ValueToRectConverter: IValueConverter
 	{

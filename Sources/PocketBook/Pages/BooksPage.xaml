@@ -5,13 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:views="clr-namespace:PocketBook.Views"
+    xmlns:converters="clr-namespace:PocketBook.Converters"
     Title="BooksPage"
     Shell.NavBarIsVisible="True"
     x:Name="this"
     Shell.ForegroundColor="{StaticResource Primary}">
     <ContentPage.Resources>
-            
-
+        <ResourceDictionary>
+            <converters:GroupSizeConverter x:Key="GroupSizeConverter" />
+        </ResourceDictionary>
     </ContentPage.Resources>
     <Shell.TitleView>
         <Grid>
@@ -43,7 +45,7 @@
                     <CollectionView ItemsSource="{Binding BooksPageVM.Manager.Books}" IsGrouped="True">
                         <CollectionView.GroupHeaderTemplate>
                             <DataTemplate>
-                                <views:AuthorTitleView Title="{Binding Key}" />
+                                <views:AuthorTitleView Title="{Binding Key}" Value="{Binding ., Converter={StaticResource GroupSizeConverter}}" />
                             </DataTemplate>
                         </CollectionView.GroupHeaderTemplate>
                         <CollectionView.ItemTemplate>
@@ -147,6 +149,35 @@
                     </Label>
                 </VerticalStackLayout>
             </ScrollView>
+            <StackLayout Orientation="Horizontal" 
+                     AbsoluteLayout.LayoutBounds="0.5, 1, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Image Source="{StaticResource PreviousIcon}" Style="{StaticResource PaginationImage}">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Blue100Accent}" />
+                    </Image.Behaviors>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Previous" TextColor="{StaticResource Blue100Accent}" Margin="0,0,20,10">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Next" TextColor="{StaticResource Blue100Accent}" Margin="20,0,0,10">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BooksPageVM.NextBooksCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Image Source="{StaticResource NextIcon}" Style="{StaticResource PaginationImage}">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Blue100Accent}" />
+                    </Image.Behaviors>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BooksPageVM.NextBooksCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
         </AbsoluteLayout>
     </Grid>
 </ContentPage>

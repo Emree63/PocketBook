@@ -9,6 +9,14 @@ public partial class AuthorTitleView : ContentView
         get => (string)GetValue(TitleProperty);
         set => SetValue(TitleProperty, value);
     }
+
+    public static readonly BindableProperty ValueProperty = BindableProperty.Create(nameof(Value), typeof(int), typeof(AuthorTitleView), 0);
+
+    public int Value
+    {
+        get => (int)GetValue(ValueProperty);
+        set => SetValue(ValueProperty, value);
+    }
     public AuthorTitleView()
 	{
 		InitializeComponent();

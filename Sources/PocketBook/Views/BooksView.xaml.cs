@@ -1,3 +1,5 @@
+using System.Windows.Input;
+
 namespace PocketBook.Views;
 
 public partial class BooksView : ContentView
@@ -23,6 +25,13 @@ public partial class BooksView : ContentView
     {
         get => (string)GetValue(NumberProperty);
         set => SetValue(NumberProperty, value);
+    }
+
+    public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(BooksView), null);
+    public ICommand Command
+    {
+        get => GetValue(CommandProperty) as ICommand;
+        set => SetValue(CommandProperty, value);
     }
 
     public BooksView()
