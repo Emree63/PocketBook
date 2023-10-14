@@ -1,34 +1,19 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView
     x:Class="PocketBook.Views.StarsView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
-    <StackLayout HorizontalOptions="Fill" Orientation="Horizontal">
-        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
-            <Image.Behaviors>
-                <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
-            </Image.Behaviors>
+    xmlns:local="clr-namespace:PocketBook.Views"
+    x:Name="this">
+    <ContentView.Resources>
+        <local:ValueToRectConverter x:Key="ValueToRectConverter" />
+    </ContentView.Resources>
+    <Grid>
+        <Image Source="{StaticResource StarFillIcon}" WidthRequest="90" Style="{StaticResource StarIcon}" />
+        <Image Source="{StaticResource StarFillYellowIcon}" WidthRequest="90" Style="{StaticResource StarIcon}">
+            <Image.Clip>
+                <RectangleGeometry Rect="{Binding Value, Converter={StaticResource ValueToRectConverter}, Source={x:Reference this}}" />
+            </Image.Clip>
         </Image>
-        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
-            <Image.Behaviors>
-                <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
-            </Image.Behaviors>
-        </Image>
-        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
-            <Image.Behaviors>
-                <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
-            </Image.Behaviors>
-        </Image>
-        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
-            <Image.Behaviors>
-                <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
-            </Image.Behaviors>
-        </Image>
-        <Image Source="{StaticResource StarFillIcon}" Style="{StaticResource StarIcon}">
-            <Image.Behaviors>
-                <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
-            </Image.Behaviors>
-        </Image>
-    </StackLayout>
+    </Grid>
 </ContentView>

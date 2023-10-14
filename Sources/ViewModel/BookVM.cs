@@ -84,6 +84,15 @@ namespace ViewModel
             }
         }
 
+        public float? UserRating
+        {
+            get => Model.UserRating;
+            set
+            {
+                Model.UserRating = value;
+            }
+        }
+
         public string PublishDate
         {
             get => Model.PublishDate.ToString("dd MMMM yyyy");

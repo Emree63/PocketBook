@@ -27,7 +27,7 @@
                     VerticalOptions="Start" />
                 <Label Style="{StaticResource DescriptionBookInfo}" Text="{Binding Author, Source={x:Reference this}}" />
                 <Label Style="{StaticResource StatusBookInfo}" Text="{Binding Status, Source={x:Reference this}}" />
-                <views:StarsView />
+                <views:StarsView Value="{Binding Value, Source={x:Reference this}}"/>
             </StackLayout>
         </StackLayout>
         <Line

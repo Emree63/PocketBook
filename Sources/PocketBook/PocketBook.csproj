@@ -103,6 +103,7 @@
 	  <None Remove="Resources\Images\barcode.svg" />
 	  <None Remove="Resources\Images\keyboard.svg" />
 	  <None Remove="Resources\Images\barcode_viewfinder.svg" />
+	  <None Remove="Resources\Images\star_fill_yellow.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -180,5 +181,6 @@
 	  <BundleResource Include="Resources\Images\barcode.svg" />
 	  <BundleResource Include="Resources\Images\keyboard.svg" />
 	  <BundleResource Include="Resources\Images\barcode_viewfinder.svg" />
+	  <BundleResource Include="Resources\Images\star_fill_yellow.svg" />
 	</ItemGroup>
 </Project>

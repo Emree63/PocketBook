@@ -20,6 +20,7 @@
     <x:String x:Key="AddCircledOutlineIcon">add_circled_outline.png</x:String>
     <x:String x:Key="FolderIcon">folder.png</x:String>
     <x:String x:Key="StarFillIcon">star_fill.png</x:String>
+    <x:String x:Key="StarFillYellowIcon">star_fill_yellow.png</x:String>
     <x:String x:Key="BookIcon">book.png</x:String>
     <x:String x:Key="BookMockupIcon">book_mockup.png</x:String>
     <x:String x:Key="ChevronLeftIcon">chevron_left.png</x:String>

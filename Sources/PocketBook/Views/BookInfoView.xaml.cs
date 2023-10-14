@@ -12,6 +12,14 @@ public partial class BookInfoView : ContentView
         set => SetValue(ImageProperty, value);
     }
 
+    public static readonly BindableProperty ValueProperty = BindableProperty.Create(nameof(Value), typeof(float), typeof(StarsView), (float)0);
+
+    public float Value
+    {
+        get => (float)GetValue(ValueProperty);
+        set => SetValue(ValueProperty, value);
+    }
+
     public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(BookInfoView), string.Empty);
 
     public string Title

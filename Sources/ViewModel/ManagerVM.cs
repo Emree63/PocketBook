@@ -33,7 +33,7 @@ public class ManagerVM : BaseViewModel<Manager>
         Filters = new ReadOnlyObservableCollection<Tuple<String, List<BookVM>>>(filters);
         GetBooksFromCollectionCommand = new RelayCommandAsync(GetBooksFromCollection);
         GetAuthorsFromCollectionCommand = new RelayCommandAsync(GetAuthorsFromCollection);
-        GetBookByIdCommand = new RelayCommandAsync<string>(GetBookById);
+        GetBookByIdCommand = new RelayCommandAsync<string>(GetBookByIdFromCollection);
         GetBooksFromCollectionCommand.Execute(null);
     }
 
@@ -84,9 +84,9 @@ public class ManagerVM : BaseViewModel<Manager>
         //borrowingBooks.Clear();
     }
 
-    private async Task GetBookById(string Id)
+    private async Task GetBookByIdFromCollection(string Id)
     {
-        var result = await Model.GetBookById(Id);
+        var result = await Model.GetBookByIdFromCollection(Id);
         book = new BookVM(result);
     }
 

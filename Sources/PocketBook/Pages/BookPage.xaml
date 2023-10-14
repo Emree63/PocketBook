@@ -32,7 +32,7 @@
                     <Label Text="{Binding BookPageVM.Manager.Book.Title}"
                            Style="{StaticResource TitleBookInfo}"
                            Grid.Column="1"/>
-                    <views:StarsView Grid.Column="1" Grid.Row="1"
+                    <views:StarsView Value="{Binding BookPageVM.Manager.Book.UserRating}" Grid.Column="1" Grid.Row="1"
                                      Margin="-2, 2, 0, 0"
                                      VerticalOptions="End"/>
                 </Grid>

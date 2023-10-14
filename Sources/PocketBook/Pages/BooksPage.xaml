@@ -49,6 +49,7 @@
                                         Title="{Binding Title}"
                                         Author="{Binding Authors}"
                                         Image="{Binding Image}"
+                                        Value="{Binding UserRating}"
                                         Status="{Binding Status}"
                                         Command="{Binding BooksPageVM.NavigatorToBookPageCommand, Source={x:Reference this}}"
                                         Id="{Binding Id}"/>
