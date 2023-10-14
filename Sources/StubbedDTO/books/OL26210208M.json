@@ -1,0 +1,30 @@
+{
+  "publishers": [ "Gallimard" ],
+  "number_of_pages": 736,
+  "covers": [ 7891413 ],
+  "physical_format": "Paperback",
+  "key": "/books/OL26210208M",
+  "isbn_13": [ "9782070464234" ],
+  "pagination": "700",
+  "classifications": {},
+  "title": "La Horde du Contrevent",
+  "identifiers": { "goodreads": [ "25135826" ] },
+  "languages": [ { "key": "/languages/fre" } ],
+  "isbn_10": [ "2070464237" ],
+  "publish_date": "2015",
+  "works": [ { "key": "/works/OL15505243W" } ],
+  "type": { "key": "/type/edition" },
+  "physical_dimensions": "17.8 x 10.8 x  centimeters",
+  "local_id": [ "urn:bwbsku:W7-DET-916" ],
+  "source_records": [ "promise:bwb_daily_pallets_2022-09-01" ],
+  "latest_revision": 5,
+  "revision": 5,
+  "created": {
+    "type": "/type/datetime",
+    "value": "2017-01-01T23:14:47.314119"
+  },
+  "last_modified": {
+    "type": "/type/datetime",
+    "value": "2022-12-04T13:20:06.799989"
+  }
+}

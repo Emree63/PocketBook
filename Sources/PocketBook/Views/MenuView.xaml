@@ -2,7 +2,8 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="PocketBook.Views.MenuView">
+             x:Class="PocketBook.Views.MenuView"
+             x:Name="this">
      <Border BackgroundColor="{AppThemeBinding Light={StaticResource scanMenuBackgroundLight}, Dark={StaticResource scanMenuBackgroundDark}}"
             Stroke="{AppThemeBinding Light={StaticResource scanMenuDividerLight}, Dark={StaticResource scanMenuDividerDark}}"
             WidthRequest="258">
@@ -52,6 +53,9 @@
             </Grid>
             <BoxView Style="{StaticResource scanMenuDividerStyle}"/>
             <Grid ColumnDefinitions="*, Auto" Margin="15, 11" RowDefinitions="Auto">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ScanMenuVM.DisplayScanMenu, Source={x:Reference this}}"/>
+                </Grid.GestureRecognizers>
                 <Label Text="Saisir l'ISBN"
                        Style="{StaticResource scanMenuItemStyle}"/>             
                 <Image Source="keyboard.png" Grid.Column="1"

@@ -100,6 +100,9 @@
 	  <None Remove="Resources\Images\tray_fill.svg" />
 	  <None Remove="ViewModels\" />
 	  <None Remove="Resources\Fonts\SF-Pro-Display-Bold.otf" />
+	  <None Remove="Resources\Images\barcode.svg" />
+	  <None Remove="Resources\Images\keyboard.svg" />
+	  <None Remove="Resources\Images\barcode_viewfinder.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -174,5 +177,8 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Fonts\SF-Pro-Display-Bold.otf" />
+	  <BundleResource Include="Resources\Images\barcode.svg" />
+	  <BundleResource Include="Resources\Images\keyboard.svg" />
+	  <BundleResource Include="Resources\Images\barcode_viewfinder.svg" />
 	</ItemGroup>
 </Project>

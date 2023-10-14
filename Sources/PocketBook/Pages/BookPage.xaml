@@ -5,26 +5,31 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:views="clr-namespace:PocketBook.Views"
-    Title="BookPage"
-    Shell.BackgroundColor="{StaticResource GrayLight}">
+    Title="BookPage">
     <Shell.TitleView>
         <Grid>
-            <Label Style="{StaticResource ComeBackLabel}" Text="Tous" />
-            <Label Style="{StaticResource TitlePage}" TextColor="{StaticResource Black}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Label Style="{StaticResource ComeBackLabel}" Text="Tous" Grid.Column="0"/>
+            <Label Style="{StaticResource TitlePage}" Grid.Column="1" Margin="0,0,50,0">
                 Détails du livre
             </Label>
+           
         </Grid>
     </Shell.TitleView>
 
     <ScrollView>
         <VerticalStackLayout>
             <VerticalStackLayout Margin="10,0,0,0" VerticalOptions="FillAndExpand">
-                <Grid ColumnDefinitions="110, *" RowDefinitions="*,*" Margin="0, 10, 0, 0" >
+                <Grid ColumnDefinitions="110, *" RowDefinitions="*,*" Margin="0, 10, 0, 10" >
                     <views:ImageBookView Grid.RowSpan="2"
-                                         Image="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg"
+                                         Image="{Binding BookPageVM.Manager.Book.Image}"
                                          VerticalOptions="Center"
                                          HeightRequest="127" Margin="8, 1, 0, 0"/>
-                    <Label Text="La horde du contrevent"
+                    <Label Text="{Binding BookPageVM.Manager.Book.Title}"
                            Style="{StaticResource TitleBookInfo}"
                            Grid.Column="1"/>
                     <views:StarsView Grid.Column="1" Grid.Row="1"
@@ -52,25 +57,19 @@
 
                 <views:InfoView Title="Auteur">
                     <views:InfoView.Content>
-                        <Label Style="{StaticResource DescriptionBookPage}">
-                            Alain Damasio
-                        </Label>
+                        <Label Style="{StaticResource DescriptionBookPage}" Text="{Binding BookPageVM.Manager.Book.Authors}"/>
                     </views:InfoView.Content>
                 </views:InfoView>
 
                 <views:InfoView Title="Maison d'édition">
                     <views:InfoView.Content>
-                        <Label Style="{StaticResource DescriptionBookPage}">
-                            Gallimard (2015)
-                        </Label>
+                        <Label Style="{StaticResource DescriptionBookPage}" Text="{Binding BookPageVM.Manager.Book.Publishers}"/>
                     </views:InfoView.Content>
                 </views:InfoView>
 
                 <views:InfoView Title="Résumé">
                     <views:InfoView.Content>
-                        <Label Style="{StaticResource DescriptionBookPage}">
-                            Un groupe d'élite, formé dès l'enfance à faire face, part des confins d'une terre féroce, saignée de rafales, pour aller chercher l'origine du vent. Ils sont vingt-trois, un bloc, un nœud de courage : la Horde. Ils sont pilier, ailier, traceur, aéromètre et géomètre, feuleuse et sourcière, troubadour et scribe. Ils traversent leur monde debout, à pied, en quête d'un Extrême-Amont qui fuit devant eux comme un horizon fou. Expérience de lecture unique, La Horde du Contrevent est un livre-univers qui fond d'un même feu l'aventure et la poésie des parcours, le combat nu et la quête d'un sens profond du vivant qui unirait le mouvement et le lien. Chaque mot résonne, claque, fuse : Alain Damasio joue de sa plume comme d'un pinceau, d'une caméra ou d'une arme...
-                        </Label>
+                        <Label Style="{StaticResource DescriptionBookPage}" Text="{Binding BookPageVM.Manager.Book.Resume}"/>
                     </views:InfoView.Content>
                 </views:InfoView>
 
@@ -81,25 +80,19 @@
                                 <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                     Nombre de pages
                                 </Label>
-                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
-                                    700
-                                </Label>
+                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}" Text="{Binding BookPageVM.Manager.Book.NbPages}"/>
                             </StackLayout>
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                                 <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                     Langue
                                 </Label>
-                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
-                                    français
-                                </Label>
+                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}" Text="{Binding BookPageVM.Manager.Book.Language}"/>
                             </StackLayout>
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                                 <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                     ISBN
                                 </Label>
-                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
-                                    9782070464234
-                                </Label>
+                                <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}" Text="{Binding BookPageVM.Manager.Book.ISBN13}"/>
                             </StackLayout>
                         </VerticalStackLayout>
                     </views:InfoView.Content>
@@ -112,9 +105,7 @@
                             <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                 Statut
                             </Label>
-                            <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
-                                Non lu
-                            </Label>
+                            <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}" Text="{Binding BookPageVM.Manager.Book.Status}"/>
                         </StackLayout>
                     </views:InfoView.Content>
                 </views:InfoView>
@@ -125,9 +116,7 @@
                             <Label HorizontalOptions="StartAndExpand" Style="{StaticResource DescriptionBookPage}">
                                 Ajouté le
                             </Label>
-                            <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}">
-                                10 août 2023
-                            </Label>
+                            <Label HorizontalOptions="End" Style="{StaticResource DescriptionBookPage}" Text="{Binding BookPageVM.Manager.Book.PublishDate}"/>
                         </StackLayout>
                     </views:InfoView.Content>
                 </views:InfoView>

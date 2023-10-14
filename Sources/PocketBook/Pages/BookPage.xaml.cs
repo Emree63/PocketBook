@@ -1,9 +1,15 @@
+using PocketBook.ViewModels;
+
 namespace PocketBook.Pages;
 
 public partial class BookPage : ContentPage
 {
-	public BookPage()
+    public BookPageVM BookPageVM { get; set; }
+
+    public BookPage(BookPageVM bookPageVM)
 	{
-		InitializeComponent();
-	}
+        BookPageVM = bookPageVM;
+        InitializeComponent();
+        BindingContext = this;
+    }
 }

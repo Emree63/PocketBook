@@ -24,7 +24,7 @@ namespace PocketBook.ViewModels
                 await navigation.PushAsync(new FilteringPage());
             });
             NavigatorToBookPageCommand = new Command(async () => {
-                await navigation.PushAsync(new BookPage());
+                await navigation.PushAsync(new BookPage(new BookPageVM(this, manager)));
             });
         }
 	}

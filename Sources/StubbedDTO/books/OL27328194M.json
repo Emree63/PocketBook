@@ -1,0 +1,26 @@
+{
+  "publishers": [ "Folio", "FOLIO", "GALLIMARD" ],
+  "source_records": [ "amazon:207285329X" ],
+  "title": "Dans la toile du temps",
+  "identifiers": { "amazon": [ "207285329X" ] },
+  "isbn_13": [ "9782072853296" ],
+  "covers": [ 8792712 ],
+  "physical_format": "mass market paperback",
+  "isbn_10": [ "207285329X" ],
+  "publish_date": "2019",
+  "key": "/books/OL27328194M",
+  "authors": [ { "key": "/authors/OL7468980A" } ],
+  "works": [ { "key": "/works/OL20148560W" } ],
+  "type": { "key": "/type/edition" },
+  "number_of_pages": 704,
+  "latest_revision": 2,
+  "revision": 2,
+  "created": {
+    "type": "/type/datetime",
+    "value": "2019-10-02T21:11:02.625762"
+  },
+  "last_modified": {
+    "type": "/type/datetime",
+    "value": "2023-04-07T18:08:17.514602"
+  }
+}

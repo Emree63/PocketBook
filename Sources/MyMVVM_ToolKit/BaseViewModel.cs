@@ -5,7 +5,7 @@ namespace MyMVVM_ToolKit
 	{
 		public TModel Model
 		{
-			get => Model;
+			get => model;
 			set
 			{
                 SetProperty(ref model, value);

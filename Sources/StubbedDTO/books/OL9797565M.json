@@ -1,0 +1,29 @@
+{
+  "publishers": [ "Hachette" ],
+  "physical_format": "Unknown Binding",
+  "source_records": [ "amazon:2010144236:2-au:1680493645:142556", "promise:bwb_daily_pallets_2020-11-19", "promise:bwb_daily_pallets_2021-03-30" ],
+  "title": "L'homme Invisible",
+  "identifiers": {
+    "librarything": [ "21214" ],
+    "goodreads": [ "1337072" ]
+  },
+  "isbn_13": [ "9782010144233" ],
+  "isbn_10": [ "2010144236" ],
+  "key": "/books/OL9797565M",
+  "authors": [ { "key": "/authors/OL13066A" } ],
+  "oclc_numbers": [ "417795539" ],
+  "works": [ { "key": "/works/OL52266W" } ],
+  "type": { "key": "/type/edition" },
+  "subjects": [ "Language readers" ],
+  "local_id": [ "urn:bwbsku:KO-352-184", "urn:bwbsku:UE-795-266" ],
+  "latest_revision": 9,
+  "revision": 9,
+  "created": {
+    "type": "/type/datetime",
+    "value": "2008-04-30T09:38:13.731961"
+  },
+  "last_modified": {
+    "type": "/type/datetime",
+    "value": "2023-01-14T23:55:47.329525"
+  }
+}

@@ -2,7 +2,7 @@
 
 namespace Model;
 
-public class Book
+public class Book : IEquatable<Book>
 {
 	public string Id { get; set; }
 	public string Title { get; set; }
@@ -19,5 +19,23 @@ public class Book
 	public string ImageLarge  => $"https://covers.openlibrary.org/b/isbn/{ISBN13}-L.jpg";
     public List<Work> Works { get; set; } = new List<Work>();
 	public List<Author> Authors { get; set; } = new List<Author>();
+	public Status Status { get; set; }
+	public List<string> UserTags { get; set; } = new List<string>();
+	public float? UserRating { get; set; }
+	public string UserNote { get; set; }
+
+    public bool Equals(Book? other)
+		=> Id == other.Id;
+
+    public override bool Equals(object? obj)
+    {
+		if(ReferenceEquals(obj, null)) return false;
+		if(ReferenceEquals(this, obj)) return true;
+		if(GetType() != obj.GetType()) return false;
+        return Equals(obj as Book);
+    }
+
+    public override int GetHashCode()
+		=> Id.GetHashCode();
 }
 

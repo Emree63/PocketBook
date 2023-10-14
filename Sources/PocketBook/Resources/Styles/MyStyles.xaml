@@ -8,7 +8,7 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="VerticalOptions" Value="Center" />
-        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
     </Style>
 
     <Style x:Key="ModifyLabel" TargetType="Label">
@@ -43,8 +43,8 @@
 
     <Style x:Key="ComeBackLabel" TargetType="Label">
         <Setter Property="TextColor" Value="{StaticResource Primary}" />
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
     </Style>

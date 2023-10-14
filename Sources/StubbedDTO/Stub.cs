@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlTypes;
+using System.Reflection;
 using DtoAbstractLayer;
 using JsonReader;
 using LibraryDTO;
@@ -14,23 +15,27 @@ public class Stub : IDtoManager
 
     public static List<WorkDTO> Works { get; set; } = new List<WorkDTO>();
 
-    public static string BasePath { get; set; } = "";
+    public static Assembly Assembly => typeof(Stub).Assembly;
 
     static Stub()
     {
-        foreach(var fileAuthor in new DirectoryInfo($"{BasePath}authors/").GetFiles())
-        { 
-            using(StreamReader reader = File.OpenText(fileAuthor.FullName))
+        foreach(var resource in Assembly.GetManifestResourceNames().Where(n => n.Contains("authors")))
+        {
+            using(Stream stream = Assembly.GetManifestResourceStream(resource))
+            using(StreamReader reader = new StreamReader(stream))
             {
                 Authors.Add(AuthorJsonReader.ReadAuthor(reader.ReadToEnd()));
             }
         }
 
-        foreach(var fileWork in new DirectoryInfo($"{BasePath}works/").GetFiles())
+        foreach(var resource in Assembly.GetManifestResourceNames().Where(n => n.Contains("works")))
         {
-            var ratingsFile = $"{BasePath}ratings/{fileWork.Name.Insert((int)(fileWork.Name.Length - fileWork.Extension.Length), ".ratings")}";
-            using(StreamReader reader = File.OpenText(fileWork.FullName))
-            using(StreamReader readerRatings = File.OpenText(ratingsFile))
+            var ratingsResource = resource.Insert(resource.LastIndexOf('.'), ".ratings").Replace("works", "ratings");
+
+            using(Stream stream = Assembly.GetManifestResourceStream(resource))
+            using(StreamReader reader = new StreamReader(stream))
+            using(Stream streamRatings = Assembly.GetManifestResourceStream(ratingsResource))
+            using(StreamReader readerRatings = new StreamReader(streamRatings))
             {
                 var work = WorkJsonReader.ReadWork(reader.ReadToEnd(), readerRatings.ReadToEnd());
                 if(work.Authors != null)
@@ -44,9 +49,10 @@ public class Stub : IDtoManager
             }
         }
 
-        foreach(var fileBook in new DirectoryInfo($"{BasePath}books/").GetFiles())
-        { 
-            using(StreamReader reader = File.OpenText(fileBook.FullName))
+        foreach(var resource in Assembly.GetManifestResourceNames().Where(n => n.Contains("books")))
+        {
+            using(Stream stream = Assembly.GetManifestResourceStream(resource))
+            using(StreamReader reader = new StreamReader(stream))
             {
                 var book = BookJsonReader.ReadBook(reader.ReadToEnd());
                 foreach(var author in book.Authors.ToList())
@@ -64,7 +70,6 @@ public class Stub : IDtoManager
                 Books.Add(book);
             }
         }
-        
     }
 
     public Task<AuthorDTO> GetAuthorById(string id)
@@ -124,7 +129,7 @@ public class Stub : IDtoManager
                 break;
 
         }
-        return Task.FromResult(Tuple.Create((long)books.Count(), books.Skip(index*count).Take(count)));
+        return Task.FromResult(Tuple.Create(books.LongCount(), books.Skip(index*count).Take(count)));
     }
 
     public async Task<Tuple<long, IEnumerable<BookDTO>>> GetBooks(int index, int count, string sort = "")

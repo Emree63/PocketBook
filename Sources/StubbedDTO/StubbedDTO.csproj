@@ -6,27 +6,31 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <None Remove="books\" />
     <None Remove="authors\" />
     <None Remove="works\" />
     <None Remove="ratings\" />
-  </ItemGroup>
+    <None Remove="authors\OL13066A.json" />
+  </ItemGroup>-->
   <ItemGroup>
     <Folder Include="books\" />
     <Folder Include="authors\" />
     <Folder Include="works\" />
     <Folder Include="ratings\" />
   </ItemGroup>
-  <ItemGroup>
+  <!--<ItemGroup>
     <None Include="*\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
-  </ItemGroup>
+  </ItemGroup>-->
   <ItemGroup>
     <ProjectReference Include="..\DtoAbstractLayer\DtoAbstractLayer.csproj" />
     <ProjectReference Include="..\JsonReader\JsonReader.csproj" />
     <ProjectReference Include="..\LibraryDTO\LibraryDTO.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="*\*.json" />
   </ItemGroup>
 </Project>

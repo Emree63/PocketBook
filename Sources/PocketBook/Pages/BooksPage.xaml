@@ -7,116 +7,140 @@
     xmlns:views="clr-namespace:PocketBook.Views"
     Title="BooksPage"
     Shell.NavBarIsVisible="True"
+    x:Name="this"
     Shell.ForegroundColor="{StaticResource Primary}">
     <ContentPage.Resources>
             
 
     </ContentPage.Resources>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Ajouter" Priority="1"
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" Grid.Column="0"/>
+            <Label Style="{StaticResource TitlePage}" Grid.Column="1">
+                Tous
+            </Label>
+           
+        </Grid>
+    </Shell.TitleView>
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ajouter" Priority="1" x:Name="addButton" Command="{Binding ScanMenuVM.ToggleScanMenu, Source={x:Reference this}}"
                      Order="Primary" IconImageSource="{StaticResource PlusIcon}"/>
         <ToolbarItem Text="Order" Priority="2"
                      Order="Primary" IconImageSource="{StaticResource ArrowUpDownIcon}"/>
     </ContentPage.ToolbarItems>
-
     <Grid>
-        <ScrollView Style="{StaticResource ScrollView}">
-            <StackLayout Orientation="Vertical" VerticalOptions="Fill">
-                <views:AuthorTitleView Title="Alain Damasio" />
-                <CollectionView ItemsSource="{Binding BooksPageVM.Manager.Books}" SelectionMode="Single" SelectionChangedCommand="{Binding Navigator.NavigatorToBookPageCommand}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <views:BookInfoView
-                                Title="{Binding Title}"
-                                Author="{Binding Author}"
-                                Image="https://images2.medimops.eu/product/f0ec08/M02070464237-large.jpg"
-                                Status="Non lu" />
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
-        </ScrollView>
-        <ScrollView Style="{StaticResource ScrollViewAlphabet}">
-            <VerticalStackLayout Margin="0,0,5,0" HorizontalOptions="End">
-                <Label Style="{StaticResource AlphabetLabel}">
-                    A
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    B
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    C
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    D
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    E
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    F
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    G
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    H
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    I
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    J
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    K
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    L
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    M
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    N
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    O
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    P
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    Q
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    R
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    S
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    T
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    U
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    V
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    W
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    X
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    Y
-                </Label>
-                <Label Style="{StaticResource AlphabetLabel}">
-                    Z
-                </Label>
-            </VerticalStackLayout>
-        </ScrollView>
+        <AbsoluteLayout>
+            <views:MenuView Margin="0, 8, 8, 0"
+                    AbsoluteLayout.LayoutBounds="1, 0"
+                    AbsoluteLayout.LayoutFlags="PositionProportional" ZIndex="1" IsVisible="{Binding ScanMenuVM.MenuIsVisible, Source={x:Reference this}}"/>
+            <ScrollView Style="{StaticResource ScrollView}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                    <CollectionView ItemsSource="{Binding BooksPageVM.Manager.Books}" SelectionMode="Single">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <VerticalStackLayout>
+                                    <views:AuthorTitleView Title="Alain Damasio" />
+                                    <views:BookInfoView
+                                        Title="{Binding Title}"
+                                        Author="{Binding Authors}"
+                                        Image="{Binding Image}"
+                                        Status="{Binding Status}"
+                                        Command="{Binding BooksPageVM.NavigatorToBookPageCommand, Source={x:Reference this}}"
+                                        Id="{Binding Id}"/>
+                                </VerticalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
+            <ScrollView Style="{StaticResource ScrollViewAlphabet}" AbsoluteLayout.LayoutBounds="1, 0.5, -1, -1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional">
+                <VerticalStackLayout Margin="0,0,5,0" HorizontalOptions="End">
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        A
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        B
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        C
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        D
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        E
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        F
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        G
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        H
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        I
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        J
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        K
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        L
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        M
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        N
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        O
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        P
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        Q
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        R
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        S
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        T
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        U
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        V
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        W
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        X
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        Y
+                    </Label>
+                    <Label Style="{StaticResource AlphabetLabel}">
+                        Z
+                    </Label>
+                </VerticalStackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
     </Grid>
 </ContentPage>

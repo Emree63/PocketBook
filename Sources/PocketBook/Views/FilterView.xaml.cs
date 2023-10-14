@@ -40,6 +40,7 @@ public partial class FilterView : ContentView
         get => GetValue(CommandProperty) as ICommand;
         set => SetValue(CommandProperty, value);
     }
+
     public FilterView()
 	{
 		InitializeComponent();

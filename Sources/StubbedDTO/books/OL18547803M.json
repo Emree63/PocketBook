@@ -1,0 +1,35 @@
+{
+  "publishers": [ "Denoe\u0308l" ],
+  "title": "Le voyageur imprudent.",
+  "notes": {
+    "type": "/type/text",
+    "value": "French text."
+  },
+  "identifiers": {
+    "librarything": [ "182578" ],
+    "goodreads": [ "106786" ]
+  },
+  "covers": [ 7267304 ],
+  "languages": [ { "key": "/languages/fre" } ],
+  "isbn_10": [ "2070364852" ],
+  "isbn_13": [ "9782070364852" ],
+  "publish_date": "1958",
+  "publish_country": "fr ",
+  "key": "/books/OL18547803M",
+  "authors": [ { "key": "/authors/OL152472A" } ],
+  "publish_places": [ "Paris" ],
+  "works": [ { "key": "/works/OL11466820W" } ],
+  "type": { "key": "/type/edition" },
+  "local_id": [ "urn:bwbsku:O6-CHO-999" ],
+  "source_records": [ "promise:bwb_daily_pallets_2022-05-23" ],
+  "latest_revision": 7,
+  "revision": 7,
+  "created": {
+    "type": "/type/datetime",
+    "value": "2008-10-17T19:42:31.933490"
+  },
+  "last_modified": {
+    "type": "/type/datetime",
+    "value": "2023-01-14T06:54:32.286139"
+  }
+}

@@ -12,6 +12,20 @@
             
 
     </ContentPage.Resources>
+    <Shell.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" Grid.Column="0"/>
+            <Label Style="{StaticResource TitlePage}" Grid.Column="1">
+                Tous
+            </Label>
+           
+        </Grid>
+    </Shell.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Ajouter" Priority="1"
                      Order="Primary" IconImageSource="{StaticResource PlusIcon}"/>

@@ -10,7 +10,7 @@
     Shell.NavBarIsVisible="True">
 
     <Shell.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" StatusBarStyle="DarkContent" />
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" StatusBarStyle="DarkContent" />
     </Shell.Behaviors>
 
     <TabBar>
@@ -20,7 +20,7 @@
             Icon="{StaticResource BooksVerticalFillIcon}" />
         <ShellContent
             Title="My Lists"
-            ContentTemplate="{DataTemplate pages:FilteringPage}"
+            ContentTemplate="{DataTemplate pages:BooksPage}"
             Icon="{StaticResource ListBulletIcon}" />
         <ShellContent
             Title="My Readings"
@@ -28,7 +28,7 @@
             Icon="{StaticResource BookmarkFillIcon}" />
         <ShellContent
             Title="Search"
-            ContentTemplate="{DataTemplate pages:BookPage}"
+            ContentTemplate="{DataTemplate pages:BooksPage}"
             Icon="{StaticResource MagnifyingglassIcon}" />
     </TabBar>
 

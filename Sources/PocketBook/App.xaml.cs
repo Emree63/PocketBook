@@ -1,10 +1,13 @@
-﻿namespace PocketBook;
+﻿using PocketBook.ViewModels;
+
+namespace PocketBook;
 
 public partial class App : Application
 {
-
-	public App()
+    public ScanMenuVM ScanMenuVM { get; set; }
+    public App(ScanMenuVM scanMenuVM)
 	{
+        ScanMenuVM = scanMenuVM;
 		InitializeComponent();
 
 		MainPage = new AppShell();

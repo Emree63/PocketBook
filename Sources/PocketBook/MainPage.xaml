@@ -35,7 +35,7 @@
                 Command="{Binding MainPageVM.NavigatorToBooksPageCommand}"
                 Title="Tous"
                 Icon="{StaticResource TrayFillIcon}"
-                Number="45" />
+                Number="{Binding MainPageVM.Manager.nbBooks}" />
             <views:FilterView
                 Command="{Binding MainPageVM.Navigation.NavigatorToLoanPageCommand}"
                 Title="En prêt"
