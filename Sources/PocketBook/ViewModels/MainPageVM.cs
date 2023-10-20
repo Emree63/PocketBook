@@ -13,6 +13,9 @@ namespace PocketBook.ViewModels
 
         public ICommand NavigatorToBooksPageCommand { get; set; }
         public ICommand NavigatorToAuthorsPageCommand { get; set; }
+        public ICommand NavigatorToDatesPageCommand { get; set; }
+        public ICommand NavigatorToFavoritePageCommand { get; set; }
+        public ICommand NavigatorToLoanPageCommand { get; set; }
 
         public MainPageVM(NavigationVM navVM, ManagerVM mgrVM)
 		{
@@ -25,6 +28,19 @@ namespace PocketBook.ViewModels
             NavigatorToAuthorsPageCommand = new Command(async () => {
                 Manager.GetAuthorsFromCollectionCommand.Execute(null);
                 Navigation.NavigatorToFilteringAuthorsPageCommand.Execute(null);
+            });
+            NavigatorToDatesPageCommand = new Command(async () => {
+                Manager.GetDatesFromCollectionCommand.Execute(null);
+                Navigation.NavigatorToFilteringDatesPageCommand.Execute(null);
+            });
+            NavigatorToFavoritePageCommand = new Command(async () => {
+                Manager.GetFavoriteBooksCommand.Execute(null);
+                Navigation.NavigatorToBooksPageCommand.Execute(null);
+            });
+            NavigatorToLoanPageCommand = new Command(async () => {
+                Manager.GetLoansBookCommand.Execute(null);
+                Manager.GetBorrowingsBookCommand.Execute(null);
+                Navigation.NavigatorToLoanPageCommand.Execute(null);
             });
         }
 	}

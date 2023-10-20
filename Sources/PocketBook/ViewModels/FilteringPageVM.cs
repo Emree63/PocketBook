@@ -6,9 +6,11 @@ namespace PocketBook.ViewModels
 {
 	public class FilteringPageVM
 	{
-		public NavigationVM Navigation { get; set; }
+        public string TitlePage { get; set; }
+        public bool ExitText { get; set; }
+        public NavigationVM Navigation { get; set; }
 		public ManagerVM Manager { get; set; }
-		public ICommand NavigatorToBooksPageCommand { get; set; }
+		public virtual ICommand NavigatorToBooksPageCommand { get; set; }
 
         public FilteringPageVM(NavigationVM navVM, ManagerVM mgrVM)
         {

@@ -8,31 +8,48 @@
     <ContentView.GestureRecognizers>
         <TapGestureRecognizer Command="{Binding Command, Source={x:Reference this}}" CommandParameter="{Binding Id, Source={x:Reference this}}"/>
     </ContentView.GestureRecognizers>
+    <SwipeView> 
+        <SwipeView.LeftItems>
+            <SwipeItems>
+                <SwipeItem Text="Favorite"
+                           IconImageSource="favorite.png"
+                           BackgroundColor="LightGreen"
+                            />
+            </SwipeItems>
+        </SwipeView.LeftItems>
+        <SwipeView.RightItems>
+            <SwipeItems>
+                <SwipeItem Text="Delete"
+                           IconImageSource="delete.png"
+                           BackgroundColor="LightPink"
+                            />
+            </SwipeItems>
+        </SwipeView.RightItems>
+        <StackLayout Style="{StaticResource LayoutBookInfo}">
+            <StackLayout
+                Margin="0,10,0,10"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal">
+                <views:ImageBookView
+                                    Image="{Binding Image, Source={x:Reference this}}"
+                                    Margin="-10,0,-20,0"
+                                    VerticalOptions="Center"
+                                    HeightRequest="86"/>
 
-    <StackLayout Style="{StaticResource LayoutBookInfo}">
-        <StackLayout
-            Margin="0,10,0,10"
-            HorizontalOptions="FillAndExpand"
-            Orientation="Horizontal">
-            <views:ImageBookView
-                                Image="{Binding Image, Source={x:Reference this}}"
-                                Margin="-10,0,-20,0"
-                                VerticalOptions="Center"
-                                HeightRequest="86"/>
-
-            <StackLayout VerticalOptions="FillAndExpand">
-                <Label
-                    Style="{StaticResource TitleBookInfo}"
-                    Text="{Binding Title, Source={x:Reference this}}"
-                    VerticalOptions="Start" />
-                <Label Style="{StaticResource DescriptionBookInfo}" Text="{Binding Author, Source={x:Reference this}}" />
-                <Label Style="{StaticResource StatusBookInfo}" Text="{Binding Status, Source={x:Reference this}}" />
-                <views:StarsView Value="{Binding Value, Source={x:Reference this}}"/>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <Label
+                        Style="{StaticResource TitleBookInfo}"
+                        Text="{Binding Title, Source={x:Reference this}}"
+                        VerticalOptions="Start" />
+                    <Label Style="{StaticResource DescriptionBookInfo}" Text="{Binding Author, Source={x:Reference this}}" />
+                    <Label Style="{StaticResource StatusBookInfo}" Text="{Binding Status, Source={x:Reference this}}" />
+                    <views:StarsView Value="{Binding Value, Source={x:Reference this}}"/>
+                </StackLayout>
             </StackLayout>
+            <Line
+                Margin="20,0,0,0"
+                IsVisible="{Binding BottomBorder, Source={x:Reference this}}"
+                Style="{StaticResource GrayLine}" />
         </StackLayout>
-        <Line
-            Margin="20,0,0,0"
-            IsVisible="{Binding BottomBorder, Source={x:Reference this}}"
-            Style="{StaticResource GrayLine}" />
-    </StackLayout>
+    </SwipeView>
 </ContentView>

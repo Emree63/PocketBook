@@ -46,20 +46,28 @@
                         Style="{StaticResource selectorLabelStyle}"/>
             </Grid>
         </Border>
-            <views:AuthorTitleView Title="Scott Snyder" />
-            <views:BookInfoView
-                Title="The wake"
-                Author="Scott Snyder"
-                BottomBorder="False"
-                Image="https://bdi.dlpdomain.com/album/9782365774208/couv/M385x862/the-wake.jpg"
-                Status="Terminé" />
-            <views:AuthorTitleView Title="James S. A. Corey" />
-            <views:BookInfoView
-                Title="Les feux de cibola"
-                Author="James S. A. Corey"
-                BottomBorder="False"
-                Image="https://m.media-amazon.com/images/I/51q7bgAN8DL.jpg"
-                Status="Terminé" />
+            <CollectionView ItemsSource="{Binding LoanPageVM.Manager.Loans}" IsGrouped="True">
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <views:AuthorTitleView Title="{Binding Key}" Value="{Binding ., Converter={StaticResource GroupSizeConverter}}" />
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <views:BookInfoView
+                                Title="{Binding Title}"
+                                Author="{Binding Authors}"
+                                Image="{Binding Image}"
+                                Value="{Binding UserRating}"
+                                Status="{Binding Status}"
+                                Command="{Binding BooksPageVM.NavigatorToBookPageCommand, Source={x:Reference this}}"
+                                BottomBorder="False"
+                                Id="{Binding Id}" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ScrollView>
 </ContentPage>

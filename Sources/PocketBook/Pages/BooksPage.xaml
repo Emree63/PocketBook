@@ -32,7 +32,7 @@
      <ContentPage.ToolbarItems>
         <ToolbarItem Text="Ajouter" Priority="1" x:Name="addButton" Command="{Binding ScanMenuVM.ToggleScanMenu, Source={x:Reference this}}"
                      Order="Primary" IconImageSource="{StaticResource PlusIcon}"/>
-        <ToolbarItem Text="Order" Priority="2"
+        <ToolbarItem Text="Order" Priority="2" Command="{Binding BooksPageVM.NextBooksCommand, Source={x:Reference this}}"
                      Order="Primary" IconImageSource="{StaticResource ArrowUpDownIcon}"/>
     </ContentPage.ToolbarItems>
     <Grid>
@@ -58,6 +58,7 @@
                                         Value="{Binding UserRating}"
                                         Status="{Binding Status}"
                                         Command="{Binding BooksPageVM.NavigatorToBookPageCommand, Source={x:Reference this}}"
+                                        BottomBorder="False"
                                         Id="{Binding Id}" />
                                 </VerticalStackLayout>
                             </DataTemplate>
@@ -151,27 +152,37 @@
             </ScrollView>
             <StackLayout Orientation="Horizontal" 
                      AbsoluteLayout.LayoutBounds="0.5, 1, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
-                <Image Source="{StaticResource PreviousIcon}" Style="{StaticResource PaginationImage}">
+                <Image Source="{StaticResource PreviousIcon}" Style="{StaticResource PaginationImage}" IsVisible="{Binding BooksPageVM.Manager.possibilityPrevious}">
                     <Image.Behaviors>
-                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Blue100Accent}" />
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                     </Image.Behaviors>
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Label Text="Previous" TextColor="{StaticResource Blue100Accent}" Margin="0,0,20,10">
+                <Label Text="Previous" TextColor="{StaticResource Primary}" Margin="0,0,20,10" IsVisible="{Binding BooksPageVM.Manager.possibilityPrevious}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="Next" TextColor="{StaticResource Blue100Accent}" Margin="20,0,0,10">
+                <Label Text="{Binding BooksPageVM.Manager.IndexForPagination, Source={x:Reference this}, StringFormat='{0}/'}" TextColor="{StaticResource GrayDark}" Margin="0,0,0,10">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="{Binding BooksPageVM.Manager.nbPagesForPagination, Source={x:Reference this}}" TextColor="{StaticResource GrayDark}" Margin="0,0,0,10">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Next" TextColor="{StaticResource Primary}" Margin="20,0,0,10" IsVisible="{Binding BooksPageVM.Manager.possibilityNext}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding BooksPageVM.NextBooksCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
-                <Image Source="{StaticResource NextIcon}" Style="{StaticResource PaginationImage}">
+                <Image Source="{StaticResource NextIcon}" Style="{StaticResource PaginationImage}" IsVisible="{Binding BooksPageVM.Manager.possibilityNext}">
                     <Image.Behaviors>
-                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Blue100Accent}" />
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                     </Image.Behaviors>
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding BooksPageVM.NextBooksCommand}" />

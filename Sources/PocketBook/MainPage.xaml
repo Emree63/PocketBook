@@ -37,13 +37,13 @@
                 Icon="{StaticResource TrayFillIcon}"
                 Number="{Binding MainPageVM.Manager.NbBooks}" />
             <views:FilterView
-                Command="{Binding MainPageVM.Navigation.NavigatorToLoanPageCommand}"
+                Command="{Binding MainPageVM.NavigatorToLoanPageCommand}"
                 Title="En prêt"
                 Icon="{StaticResource PersonBadgeClockFillIcon}"
                 Number="1" />
             <views:FilterView Title="À lire plus tard" Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}" Icon="{StaticResource ArrowForwardIcon}" />
             <views:FilterView Title="Statut de lecture" Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}" Icon="{StaticResource EyeglassesIcon}" />
-            <views:FilterView Title="Favoris" Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}" Icon="{StaticResource HeartFillIcon}" />
+            <views:FilterView Title="Favoris" Command="{Binding MainPageVM.NavigatorToFavoritePageCommand}" Icon="{StaticResource HeartFillIcon}" />
             <views:FilterView
                 Title="Étiquettes"
                 BottomBorder="false"
@@ -59,7 +59,7 @@
 
             <Line Style="{StaticResource GrayLine}" />
             <views:FilterView Command="{Binding MainPageVM.NavigatorToAuthorsPageCommand}" Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
-            <views:FilterView Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}" Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
+            <views:FilterView Command="{Binding MainPageVM.NavigatorToDatesPageCommand}" Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
             <views:FilterView
                 Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}"
                 Title="Note"

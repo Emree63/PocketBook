@@ -10,6 +10,8 @@ namespace PocketBook.ViewModels
 
         public FilteringAuthorPageVM(NavigationVM navVM, ManagerVM mgrVM) : base(navVM,mgrVM)
         {
+            ExitText = true;
+            TitlePage = "Auteur";
             NavigatorToBooksPageCommand = new Command(async (author) => {
                 Manager.GetBooksByAuthorCommand.Execute(author);
                 Navigation.NavigatorToBooksPageCommand.Execute(null);

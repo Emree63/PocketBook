@@ -11,6 +11,7 @@ namespace PocketBook.ViewModels
         public ICommand NavigatorToBookPageCommand { get; set; }
         public ICommand NextBooksCommand { get; set; }
         public ICommand PreviousBooksCommand { get; set; }
+        public ICommand Reverse { get; set; }
 
         public BooksPageVM(NavigationVM navVM, ManagerVM mgrVM)
         {
@@ -25,6 +26,9 @@ namespace PocketBook.ViewModels
             });
             PreviousBooksCommand = new Command(async () => {
                 Manager.PreviousBooksCollectionCommand.Execute(null);
+            });
+            Reverse = new Command(() => {
+                Manager.ReverseBooksCommand.Execute(null);
             });
         }
     }

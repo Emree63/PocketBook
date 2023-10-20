@@ -60,8 +60,10 @@ namespace Model
 		public async Task<Book> GetBookByIdFromCollection(string id)
 			=> await UserLibraryManager.GetBookById(id);
 
+        public async Task<Tuple<long, IEnumerable<Book>>> GetFavoritesBooks(int index, int count)
+			=> await UserLibraryManager.GetFavoritesBooks(index, count);
 
-		public Task<Book> UpdateBook(Book book)
+        public Task<Book> UpdateBook(Book book)
 		{
 			return UserLibraryManager.UpdateBook(book);
 		}

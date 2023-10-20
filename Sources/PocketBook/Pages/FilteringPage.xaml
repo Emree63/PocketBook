@@ -9,10 +9,8 @@
     x:Name="this">
     <Shell.TitleView>
         <Grid>
-            <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" />
-            <Label Style="{StaticResource TitlePage}">
-                Auteur
-            </Label>
+            <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" IsVisible="{Binding FilteringPageVM.ExitText}"/>
+            <Label Style="{StaticResource TitlePage}" Text="{Binding FilteringPageVM.TitlePage}"/>
             <Image Source="{StaticResource ArrowUpDownIcon}" Style="{StaticResource ArrowUpDownImage}">
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />

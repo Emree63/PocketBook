@@ -118,6 +118,11 @@ namespace ViewModel
         {
             get => Model.PublishDate.ToString("dd MMMM yyyy");
         }
+
+        public string Year
+        {
+            get => Model.PublishDate.ToString("yyyy");
+        }
     }
 }
 
