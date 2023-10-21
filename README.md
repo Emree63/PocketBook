@@ -24,6 +24,20 @@ Cette application exploite les fonctionnalités d'Open Library et propose égale
 
 👉 [**Solution de l'application**](Sources/PocketBook.sln)
 
+### Branches
+
+[**Master**](https://codefirst.iut.uca.fr/git/emre.kartal/PocketBook) : Contient l'ensemble des fonctionnalités et utilise mon propre Toolkit MVVM.
+
+[**Community**](https://codefirst.iut.uca.fr/git/emre.kartal/PocketBook/src/branch/Community) : Utilise le Community Toolkit MVVM.
+
+
+# Vues
+
+<img src="Documentation/Images/MainPage.png" width="200" >
+<img src="Documentation/Images/AllPage.png" width="200" >
+<img src="Documentation/Images/BookPage.png" width="200" >
+<img src="Documentation/Images/AuthorPage.png" width="200" >
+
 # Fonctionnalités
 
 ### OS le mieux adaptés : IOS
@@ -75,14 +89,6 @@ Cette application exploite les fonctionnalités d'Open Library et propose égale
 :white_check_mark: [**Partie 1**](Sources/PocketBook/Resources/Styles/MyStyles.xaml) : **DarkMode**
 
 :x: [**Partie 2**]() : **MVVM Community Toolkit**
-
-
-# Vues
-
-<img src="Documentation/Images/MainPage.png" width="200" >
-<img src="Documentation/Images/AllPage.png" width="200" >
-<img src="Documentation/Images/BookPage.png" width="200" >
-<img src="Documentation/Images/AuthorPage.png" width="200" >
 
 # Architecture de l'application
 
