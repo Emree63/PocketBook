@@ -19,8 +19,7 @@ public static class MauiProgram
             .AddSingleton<ManagerVM>()
             .AddSingleton<Manager>()
             .AddSingleton<MainPageVM>()
-            .AddSingleton<BooksPageVM>()
-            .AddSingleton<ScanMenuVM>()
+            .AddSingleton<BooksPageVM, AllBooksPageVM>()
             .AddSingleton<ScanMenuVM>()
             .AddSingleton<NavigationVM>();
 

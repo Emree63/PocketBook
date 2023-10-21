@@ -54,7 +54,7 @@
             <BoxView Style="{StaticResource scanMenuDividerStyle}"/>
             <Grid ColumnDefinitions="*, Auto" Margin="15, 11" RowDefinitions="Auto">
                 <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ScanMenuVM.DisplayScanMenu, Source={x:Reference this}}"/>
+                    <TapGestureRecognizer Command="{Binding Command, Source={x:Reference this}}"/>
                 </Grid.GestureRecognizers>
                 <Label Text="Saisir l'ISBN"
                        Style="{StaticResource scanMenuItemStyle}"/>             

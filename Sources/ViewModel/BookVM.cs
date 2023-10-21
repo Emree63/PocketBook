@@ -77,9 +77,14 @@ namespace ViewModel
             get => Model.Works.FirstOrDefault().Description ?? "";
         }
 
-        public string Status
+        public Status Status
         {
-            get => Model.Status.ToString();
+            get => Model.Status;
+            set
+            {
+                Model.Status = value;
+                OnPropertyChanged(nameof(Status));
+            }
         }
 
         public int NbPages

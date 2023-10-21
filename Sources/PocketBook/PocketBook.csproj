@@ -107,6 +107,8 @@
 	  <None Remove="Converters\" />
 	  <None Remove="Resources\Images\arrow_right_to_line_square.svg" />
 	  <None Remove="Resources\Images\arrow_left_to_line_square.svg" />
+	  <None Remove="Resources\Images\delete.svg" />
+	  <None Remove="Resources\Images\favoris.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -188,5 +190,7 @@
 	  <BundleResource Include="Resources\Images\star_fill_yellow.svg" />
 	  <BundleResource Include="Resources\Images\arrow_right_to_line_square.svg" />
 	  <BundleResource Include="Resources\Images\arrow_left_to_line_square.svg" />
+	  <BundleResource Include="Resources\Images\delete.svg" />
+	  <BundleResource Include="Resources\Images\favorite.svg" />
 	</ItemGroup>
 </Project>

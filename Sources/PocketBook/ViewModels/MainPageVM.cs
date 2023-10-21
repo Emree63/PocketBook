@@ -22,8 +22,9 @@ namespace PocketBook.ViewModels
             Navigation = navVM;
             Manager = mgrVM;
             NavigatorToBooksPageCommand = new Command(async () => {
-                Manager.GetBooksFromCollectionCommand.Execute(null);
-                Navigation.NavigatorToBooksPageCommand.Execute(null);
+                Manager.RefreshPaginationCommand.Execute(null);
+                Manager.GetBooksFromCollectionCommand.Execute("author");
+                Navigation.NavigatorToAllBooksPageCommand.Execute(null);
             });
             NavigatorToAuthorsPageCommand = new Command(async () => {
                 Manager.GetAuthorsFromCollectionCommand.Execute(null);
@@ -34,8 +35,9 @@ namespace PocketBook.ViewModels
                 Navigation.NavigatorToFilteringDatesPageCommand.Execute(null);
             });
             NavigatorToFavoritePageCommand = new Command(async () => {
+                Manager.RefreshPaginationCommand.Execute(null);
                 Manager.GetFavoriteBooksCommand.Execute(null);
-                Navigation.NavigatorToBooksPageCommand.Execute(null);
+                Navigation.NavigatorToFavoriteBooksPageCommand.Execute(null);
             });
             NavigatorToLoanPageCommand = new Command(async () => {
                 Manager.GetLoansBookCommand.Execute(null);

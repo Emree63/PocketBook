@@ -12,7 +12,7 @@ namespace PocketBook.ViewModels
             TitlePage = "Date de publication";
             NavigatorToBooksPageCommand = new Command(async (author) => {
                 //Manager.GetBooksByDateCommand.Execute(author);
-                Navigation.NavigatorToBooksPageCommand.Execute(null);
+                Navigation.NavigatorToAllBooksPageCommand.Execute(null);
             });
         }
     }

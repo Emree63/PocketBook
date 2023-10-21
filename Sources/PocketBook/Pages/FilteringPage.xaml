@@ -12,6 +12,9 @@
             <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" IsVisible="{Binding FilteringPageVM.ExitText}"/>
             <Label Style="{StaticResource TitlePage}" Text="{Binding FilteringPageVM.TitlePage}"/>
             <Image Source="{StaticResource ArrowUpDownIcon}" Style="{StaticResource ArrowUpDownImage}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FilteringPageVM.ReverseCommand}"/>
+                </Image.GestureRecognizers>
                 <Image.Behaviors>
                     <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
                 </Image.Behaviors>

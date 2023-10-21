@@ -350,6 +350,16 @@ namespace StubLib
                 case "new":
                     books = books.OrderByDescending(b => b.PublishDate);
                     break;
+                case "author":
+                    books = books.OrderBy(b => b.Authors.Union(
+                        b.Works.SelectMany(work => work.Authors)
+                    ).FirstOrDefault()?.Name ?? "no author");
+                    break;
+                case "author_reverse":
+                    books = books.OrderByDescending(b => b.Authors.Union(
+                        b.Works.SelectMany(work => work.Authors)
+                    ).FirstOrDefault()?.Name ?? "no author");
+                    break;
                 case "old":
                     books = books.OrderBy(b => b.PublishDate);
                     break;

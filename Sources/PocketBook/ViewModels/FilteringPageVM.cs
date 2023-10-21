@@ -11,11 +11,16 @@ namespace PocketBook.ViewModels
         public NavigationVM Navigation { get; set; }
 		public ManagerVM Manager { get; set; }
 		public virtual ICommand NavigatorToBooksPageCommand { get; set; }
+        public ICommand ReverseCommand { get; set; }
 
         public FilteringPageVM(NavigationVM navVM, ManagerVM mgrVM)
         {
             Navigation = navVM;
             Manager = mgrVM;
+            ReverseCommand = new Command( () =>
+            {
+                Manager.ReverseFilteringsCommand.Execute(null);
+            });
         }
     }
 }

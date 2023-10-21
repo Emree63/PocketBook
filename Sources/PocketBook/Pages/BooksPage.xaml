@@ -14,6 +14,9 @@
         <ResourceDictionary>
             <converters:GroupSizeConverter x:Key="GroupSizeConverter" />
         </ResourceDictionary>
+        <ResourceDictionary>
+            <converters:IncrementConverter x:Key="IncrementConverter" />
+        </ResourceDictionary>
     </ContentPage.Resources>
     <Shell.TitleView>
         <Grid>
@@ -23,26 +26,24 @@
 
             </Grid.ColumnDefinitions>
             <Label Style="{StaticResource ComeBackLabel}" Text="Mes livres" Grid.Column="0"/>
-            <Label Style="{StaticResource TitlePage}" Grid.Column="1">
-                Tous
-            </Label>
-           
+            <Label Style="{StaticResource TitlePage}" Grid.Column="1" Text="{Binding BooksPageVM.TitlePage}"/>
         </Grid>
     </Shell.TitleView>
      <ContentPage.ToolbarItems>
         <ToolbarItem Text="Ajouter" Priority="1" x:Name="addButton" Command="{Binding ScanMenuVM.ToggleScanMenu, Source={x:Reference this}}"
                      Order="Primary" IconImageSource="{StaticResource PlusIcon}"/>
-        <ToolbarItem Text="Order" Priority="2" Command="{Binding BooksPageVM.NextBooksCommand, Source={x:Reference this}}"
+        <ToolbarItem Text="Order" Priority="2" Command="{Binding BooksPageVM.ReverseCommand, Source={x:Reference this}}"
                      Order="Primary" IconImageSource="{StaticResource ArrowUpDownIcon}"/>
     </ContentPage.ToolbarItems>
     <Grid>
         <AbsoluteLayout>
             <views:MenuView Margin="0, 8, 8, 0"
                     AbsoluteLayout.LayoutBounds="1, 0"
+                    Command="{Binding ScanMenuVM.DisplayScanMenu, Source={x:Reference this}}"
                     AbsoluteLayout.LayoutFlags="PositionProportional" ZIndex="1" IsVisible="{Binding ScanMenuVM.MenuIsVisible, Source={x:Reference this}}"/>
             <ScrollView Style="{StaticResource ScrollView}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-                    <CollectionView ItemsSource="{Binding BooksPageVM.Manager.Books}" IsGrouped="True">
+                    <CollectionView ItemsSource="{Binding BooksPageVM.Manager.GroupedBooks}" IsGrouped="True">
                         <CollectionView.GroupHeaderTemplate>
                             <DataTemplate>
                                 <views:AuthorTitleView Title="{Binding Key}" Value="{Binding ., Converter={StaticResource GroupSizeConverter}}" />
@@ -57,7 +58,10 @@
                                         Image="{Binding Image}"
                                         Value="{Binding UserRating}"
                                         Status="{Binding Status}"
+                                        CanAdd="{Binding BooksPageVM.CanAdd, Source={x:Reference this}}"
                                         Command="{Binding BooksPageVM.NavigatorToBookPageCommand, Source={x:Reference this}}"
+                                        CommandAdd="{Binding BooksPageVM.AddCommand, Source={x:Reference this}}"
+                                        CommandDelete="{Binding BooksPageVM.DeleteCommand, Source={x:Reference this}}"
                                         BottomBorder="False"
                                         Id="{Binding Id}" />
                                 </VerticalStackLayout>
@@ -165,12 +169,12 @@
                         <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="{Binding BooksPageVM.Manager.IndexForPagination, Source={x:Reference this}, StringFormat='{0}/'}" TextColor="{StaticResource GrayDark}" Margin="0,0,0,10">
+                <Label Text="{Binding BooksPageVM.Manager.Index, Source={x:Reference this}, Converter={StaticResource IncrementConverter}, StringFormat='{0}/'}" TextColor="{AppThemeBinding Light={StaticResource GrayDark}, Dark={StaticResource White}}" Margin="0,0,0,10">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="{Binding BooksPageVM.Manager.nbPagesForPagination, Source={x:Reference this}}" TextColor="{StaticResource GrayDark}" Margin="0,0,0,10">
+                <Label Text="{Binding BooksPageVM.Manager.nbPages, Source={x:Reference this}, Converter={StaticResource IncrementConverter}, ConverterParameter=1}" TextColor="{AppThemeBinding Light={StaticResource GrayDark}, Dark={StaticResource White}}" Margin="0,0,0,10">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding BooksPageVM.PreviousBooksCommand}" />
                     </Label.GestureRecognizers>

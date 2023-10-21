@@ -68,19 +68,19 @@ Cette application exploite les fonctionnalités d'Open Library et propose égale
 
 ### Côté Model :
 
-:x: [**Partie 1**]() : **Changer le statut de lecture d'un livre**
+:white_check_mark: [**Partie 1**]() : **Changer le statut de lecture d'un livre**
 
-:warning: [**Partie 2**](Sources/ViewModel/ManagerVM.cs) : **Ajouter un livre aux favoris**
+:white_check_mark: [**Partie 2**](Sources/ViewModel/ManagerVM.cs) : **Ajouter un livre aux favoris**
 
 :white_check_mark: [**Partie 3**](Sources/ViewModel/ManagerVM.cs) : **Filtrer les livres par Auteur, Date de publication, Note**
 
 :white_check_mark: [**Partie 4**](Sources/PocketBook/ViewModels/ScanMenuVM.cs) : **Ajouter un livre à sa collection en saisissant l'ISBN**
 
-:warning: [**Partie 5**](Sources/ViewModel/ManagerVM.cs) : **Supprimer un livre**
+:white_check_mark: [**Partie 5**](Sources/ViewModel/ManagerVM.cs) : **Supprimer un livre**
 
 :x: [**Partie 6**]() : **Prêter un livre**
 
-:warning: [**Partie 7**](Sources/ViewModel/ManagerVM.cs) : **Pagination**
+:white_check_mark: [**Partie 7**](Sources/ViewModel/ManagerVM.cs) : **Pagination**
 
 :white_check_mark: [**Partie 8**](Sources/PocketBook/ViewModels/NavigationVM.cs) : **Navigation**
 

@@ -1,0 +1,31 @@
+﻿using System;
+using ViewModel;
+
+namespace PocketBook.ViewModels
+{
+	public class AllBooksPageVM : BooksPageVM
+	{
+		public AllBooksPageVM(NavigationVM navVM, ManagerVM mgrVM) : base(navVM, mgrVM)
+
+        {
+            CanAdd = true;
+            TitlePage = "Tous";
+            NextBooksCommand = new Command(async () => {
+                Manager.NextBooksCollectionCommand.Execute(null);
+            });
+            PreviousBooksCommand = new Command(async () => {
+                Manager.PreviousBooksCollectionCommand.Execute(null);
+            });
+            ReverseCommand = new Command(() => {
+                Manager.ReverseBooksCommand.Execute(null);
+            });
+            AddCommand = new Command(async (Id) => {
+                Manager.AddBookToFavoriteCommand.Execute(Id);
+            });
+            DeleteCommand = new Command(async (Id) => {
+                Manager.DeleteBookToCollectionCommand.Execute(Id);
+            });
+        }
+	}
+}
+

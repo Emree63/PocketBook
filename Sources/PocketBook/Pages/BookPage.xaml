@@ -125,7 +125,7 @@
                 <BoxView Style="{StaticResource BookBoxView}" />
                 <views:OptionView Title="Déplacer le livre" Icon="{StaticResource FolderIcon}" />
                 <views:OptionView Title="Ajouter à la liste À lire plus tard" Icon="{StaticResource AddCircledOutlineIcon}" />
-                <views:OptionView Title="Changer le statut de lecture" Icon="{StaticResource EyeglassesIcon}" />
+                <views:OptionView Title="Changer le statut de lecture" Icon="{StaticResource EyeglassesIcon}" Command="{Binding StatusMenuVM.DisplayStatusMenu}" Id="{Binding BookPageVM.Manager.Book.Id}"/>
                 <views:OptionView Title="Prêter le livre" Icon="{StaticResource PersonIcon}" />
             </VerticalStackLayout>
         </VerticalStackLayout>

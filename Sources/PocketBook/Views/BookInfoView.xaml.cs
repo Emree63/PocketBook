@@ -49,12 +49,34 @@ public partial class BookInfoView : ContentView
         set => SetValue(BottomBorderProperty, value);
     }
 
+    public static readonly BindableProperty CanAddProperty = BindableProperty.Create(nameof(CanAdd), typeof(bool), typeof(BookInfoView), true);
+    public bool CanAdd
+    {
+        get => (bool)GetValue(CanAddProperty);
+        set => SetValue(CanAddProperty, value);
+    }
+
     public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(FilterView), null);
     public ICommand Command
     {
         get => GetValue(CommandProperty) as ICommand;
         set => SetValue(CommandProperty, value);
     }
+
+    public static readonly BindableProperty CommandAddProperty = BindableProperty.Create(nameof(CommandAdd), typeof(ICommand), typeof(FilterView), null);
+    public ICommand CommandAdd
+    {
+        get => GetValue(CommandAddProperty) as ICommand;
+        set => SetValue(CommandAddProperty, value);
+    }
+
+    public static readonly BindableProperty CommandDeleteProperty = BindableProperty.Create(nameof(CommandDelete), typeof(ICommand), typeof(FilterView), null);
+    public ICommand CommandDelete
+    {
+        get => GetValue(CommandDeleteProperty) as ICommand;
+        set => SetValue(CommandDeleteProperty, value);
+    }
+
 
     public static readonly BindableProperty IdProperty = BindableProperty.Create(nameof(Id), typeof(string), typeof(FilterView), null);
     public string Id

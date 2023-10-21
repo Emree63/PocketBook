@@ -12,16 +12,21 @@
         <SwipeView.LeftItems>
             <SwipeItems>
                 <SwipeItem Text="Favorite"
-                           IconImageSource="favorite.png"
+                           IconImageSource="{StaticResource PlusIcon}"
                            BackgroundColor="LightGreen"
+                           Command="{Binding CommandAdd, Source={x:Reference this}}"
+                           CommandParameter="{Binding Id, Source={x:Reference this}}"
+                           IsVisible="{Binding CanAdd, Source={x:Reference this}}"
                             />
             </SwipeItems>
         </SwipeView.LeftItems>
         <SwipeView.RightItems>
             <SwipeItems>
                 <SwipeItem Text="Delete"
-                           IconImageSource="delete.png"
+                           IconImageSource="{StaticResource DeleteIcon}"
                            BackgroundColor="LightPink"
+                           Command="{Binding CommandDelete, Source={x:Reference this}}"
+                           CommandParameter="{Binding Id, Source={x:Reference this}}"  
                             />
             </SwipeItems>
         </SwipeView.RightItems>

@@ -68,7 +68,16 @@ namespace Model
 			return UserLibraryManager.UpdateBook(book);
 		}
 
-		public Task<(long count, IEnumerable<Book> books)> GetBooksFromCollection(int index, int count, string sort = "")
+        public Task<bool> AddToFavorites(string id)
+			=> UserLibraryManager.AddToFavorites(id);
+
+        public Task<bool> RemoveBook(string id)
+			=> UserLibraryManager.RemoveBook(id);
+
+        public Task<bool> RemoveFromFavorites(string id)
+			=> UserLibraryManager.RemoveFromFavorites(id);
+
+        public Task<(long count, IEnumerable<Book> books)> GetBooksFromCollection(int index, int count, string sort = "")
 		{
 			var result = UserLibraryManager.GetBooksFromCollection(index, count, sort).Result;
 			return Task.FromResult((result.Item1, result.Item2));
