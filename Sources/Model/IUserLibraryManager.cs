@@ -33,7 +33,9 @@ namespace Model
         Task<Tuple<long, IEnumerable<Loan>>> GetCurrentLoans(int index, int count);
         Task<Tuple<long, IEnumerable<Loan>>> GetPastLoans(int index, int count);
 
-		Task<Tuple<long, IEnumerable<Borrowing>>> GetCurrentBorrowings(int index, int count);
+        Task<Tuple<long, IEnumerable<Book>>> GetBooksByNote(string note, int index, int count, string sort = "");
+
+        Task<Tuple<long, IEnumerable<Borrowing>>> GetCurrentBorrowings(int index, int count);
         Task<Tuple<long, IEnumerable<Borrowing>>> GetPastBorrowings(int index, int count);
 
 		Task<Tuple<long, IEnumerable<Contact>>> GetContacts(int index, int count);

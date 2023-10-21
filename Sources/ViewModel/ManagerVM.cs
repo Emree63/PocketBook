@@ -12,7 +12,10 @@ public class ManagerVM : BaseViewModel<Manager>
     public ICommand GetFavoriteBooksCommand { get; private set; }
     public ICommand GetBookByIdCommand { get; private set; }
     public ICommand GetBooksByAuthorCommand { get; private set; }
+    public ICommand GetBooksByDateCommand { get; private set; }
+    public ICommand GetBooksByNoteCommand { get; private set; }
     public ICommand GetDatesFromCollectionCommand { get; private set; }
+    public ICommand GetNotesFromCollectionCommand { get; private set; }
     public ICommand AddBookByISBNCommand { get; private set; }
     public ICommand RefreshPaginationCommand { get; private set; }
     public ICommand NextBooksCollectionCommand { get; private set; }
@@ -60,7 +63,10 @@ public class ManagerVM : BaseViewModel<Manager>
         GetBooksFromCollectionCommand = new RelayCommandAsync<string>(GetBooksFromCollection);
         GetAuthorsFromCollectionCommand = new RelayCommandAsync(GetAuthorsFromCollection);
         GetDatesFromCollectionCommand = new RelayCommandAsync(GetDatesFromCollection);
+        GetNotesFromCollectionCommand = new RelayCommandAsync(GetNotesFromCollection);
         GetBooksByAuthorCommand = new RelayCommandAsync<string>(GetBooksByAuthor);
+        GetBooksByDateCommand = new RelayCommandAsync<string>(GetBooksByDate);
+        GetBooksByNoteCommand = new RelayCommandAsync<string>(GetBooksByNote);
         GetBookByIdCommand = new RelayCommandAsync<string>(GetBookByIdFromCollection);
         AddBookByISBNCommand = new RelayCommandAsync<string>(AddBookByISBN);
         RefreshPaginationCommand = new RelayCommand(RefreshPagination);
@@ -167,20 +173,20 @@ public class ManagerVM : BaseViewModel<Manager>
 
     private async Task GetDatesFromCollection()
     {
-        var result = await Model.GetBooksFromCollection(0, 1000);
+        var result = await Model.GetBooksByTitle("", 0, 1000);
         IEnumerable<BookVM> resAuthors = result.books.Select(b => new BookVM(b));
 
         var groupedBooksByDate = resAuthors.GroupBy(book => book.Year).OrderByDescending(group => group.Key);
 
-        var dateCountTuples = groupedBooksByDate.Select(group =>
+        var dates = groupedBooksByDate.Select(group =>
             new Tuple<string, int>(group.Key, group.Count())
         );
 
         filters.Clear();
 
-        foreach (var tuple in dateCountTuples)
+        foreach (var date in dates)
         {
-            filters.Add(tuple);
+            filters.Add(date);
         }
     }
 
@@ -191,15 +197,15 @@ public class ManagerVM : BaseViewModel<Manager>
 
         var groupedBooksByDate = resAuthors.GroupBy(book => book.UserRating.ToString()).OrderByDescending(group => group.Key);
 
-        var dateCountTuples = groupedBooksByDate.Select(group =>
-            new Tuple<string, int>(group.Key, group.Count())
+        var notes = groupedBooksByDate.Select(group =>
+            new Tuple<string, int>(string.IsNullOrEmpty(group.Key) ? "0 étoiles" : group.Key + " étoiles", group.Count())
         );
 
         filters.Clear();
 
-        foreach (var tuple in dateCountTuples)
+        foreach (var note in notes)
         {
-            filters.Add(tuple);
+            filters.Add(note);
         }
     }
 
@@ -229,6 +235,32 @@ public class ManagerVM : BaseViewModel<Manager>
     private async Task GetBooksByAuthor(string author)
     {
         var result = await Model.GetBooksByAuthor(author, Index, Count);
+        IEnumerable<Book> resBooks = result.books;
+        NbBooks = result.count;
+        books.Clear();
+        var booksVM = resBooks.Select(b => new BookVM(b));
+        foreach (var book in booksVM)
+        {
+            books.Add(book);
+        }
+    }
+
+    private async Task GetBooksByDate(string date)
+    {
+        var result = await Model.GetBooksByDate(date, Index, Count);
+        IEnumerable<Book> resBooks = result.books;
+        NbBooks = result.count;
+        books.Clear();
+        var booksVM = resBooks.Select(b => new BookVM(b));
+        foreach (var book in booksVM)
+        {
+            books.Add(book);
+        }
+    }
+
+    private async Task GetBooksByNote(string note)
+    {
+        var result = await Model.GetBooksByNoteFromCollection(note, Index, Count);
         IEnumerable<Book> resBooks = result.books;
         NbBooks = result.count;
         books.Clear();

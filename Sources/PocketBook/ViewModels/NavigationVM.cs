@@ -12,6 +12,7 @@ namespace PocketBook.ViewModels
         public ICommand NavigatorToLoanPageCommand { get; set; }
         public ICommand NavigatorToFilteringAuthorsPageCommand { get; set; }
         public ICommand NavigatorToFilteringDatesPageCommand { get; set; }
+        public ICommand NavigatorToFilteringNotesPageCommand { get; set; }
         public ICommand NavigatorToBookPageCommand { get; set; }
 
         public NavigationVM(ManagerVM manager)
@@ -30,6 +31,9 @@ namespace PocketBook.ViewModels
             });
             NavigatorToFilteringDatesPageCommand = new Command(async () => {
                 await navigation.PushAsync(new FilteringPage(new FilteringDatePageVM(this, manager)));
+            });
+            NavigatorToFilteringNotesPageCommand = new Command(async () => {
+                await navigation.PushAsync(new FilteringPage(new FilteringNotePageVM(this, manager)));
             });
             NavigatorToBookPageCommand = new Command(async () => {
                 await navigation.PushAsync(new BookPage(new BookPageVM(this, manager), new StatusMenuVM(manager)));

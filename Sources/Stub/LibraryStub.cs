@@ -40,6 +40,12 @@ public class LibraryStub : ILibraryManager
         return Tuple.Create(result.Item1, result.Item2.ToPocos());
     }
 
+    public async Task<Tuple<long, IEnumerable<Book>>> GetBooksByDate(string date, int index, int count, string sort = "")
+    {
+        var result = await StubDTO.GetBooksByDate(date, index, count, sort);
+        return Tuple.Create(result.Item1, result.Item2.ToPocos());
+    }
+
     public async Task<Tuple<long, IEnumerable<Book>>> GetBooksByTitle(string title, int index, int count, string sort = "")
     {
         var result = await StubDTO.GetBooksByTitle(title, index, count, sort);

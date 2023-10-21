@@ -61,7 +61,7 @@
             <views:FilterView Command="{Binding MainPageVM.NavigatorToAuthorsPageCommand}" Title="Auteur" Icon="{StaticResource PersonFillIcon}" />
             <views:FilterView Command="{Binding MainPageVM.NavigatorToDatesPageCommand}" Title="Date de publication" Icon="{StaticResource CalendarIcon}" />
             <views:FilterView
-                Command="{Binding MainPageVM.Navigation.NavigatorToFilteringPageCommand}"
+                Command="{Binding MainPageVM.NavigatorToNotesPageCommand}"
                 Title="Note"
                 BottomBorder="false"
                 Icon="{StaticResource SparklesIcon}" />

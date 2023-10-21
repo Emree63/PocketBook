@@ -164,6 +164,12 @@ public class Stub : IDtoManager
         return await OrderBooks(books, index, count, sort);
     }
 
+    public async Task<Tuple<long, IEnumerable<BookDTO>>> GetBooksByDate(string date, int index, int count, string sort = "")
+    {
+        var books = Stub.Books.Where(b => EqualsDate(b, date));
+        return await OrderBooks(books, index, count, sort);
+    }
+
     private bool ContainsAuthorName(BookDTO book, string name)
     {
         IEnumerable<AuthorDTO> authors = new List<AuthorDTO>();
@@ -186,6 +192,16 @@ public class Stub : IDtoManager
                 return true;
             }
         }
+        return false;
+    }
+
+    private bool EqualsDate(BookDTO book, string date)
+    {
+        IEnumerable<AuthorDTO> authors = new List<AuthorDTO>();
+        if (book.PublishDate.ToString("yyyy").Equals(date))
+        {
+            return true;
+        }     
         return false;
     }
 

@@ -43,6 +43,18 @@ namespace Model
 			return (result.Item1, result.Item2);
 		}
 
+        public async Task<(long count, IEnumerable<Book> books)> GetBooksByNoteFromCollection(string note, int index, int count, string sort = "")
+        {
+            var result = await UserLibraryManager.GetBooksByNote(note, index, count, sort);
+            return (result.Item1, result.Item2);
+        }
+
+        public async Task<(long count, IEnumerable<Book> books)> GetBooksByDate(string date, int index, int count, string sort = "")
+        {
+            var result = await LibraryManager.GetBooksByDate(date, index, count, sort);
+            return (result.Item1, result.Item2);
+        }
+
         public async Task<Author> GetAuthorById(string id)
 			=> await LibraryManager.GetAuthorById(id);
 

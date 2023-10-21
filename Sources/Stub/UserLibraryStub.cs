@@ -393,6 +393,17 @@ namespace StubLib
             return false;
         }
 
+        private bool EqualsNote(Book book, string note)
+        {
+
+            if ((book.UserRating + " étoiles").Contains(note) || (book.UserRating is null && note.Contains("0 étoiles")))
+            {
+                return true;
+            }
+            
+            return false;
+        }
+
         public Task<Tuple<long, IEnumerable<Book>>> GetBooksFromCollection(int index, int count, string sort = "")
         {
             return OrderBooks(Books, index, count, sort);
@@ -435,6 +446,17 @@ namespace StubLib
         public Task<Tuple<long, IEnumerable<Author>>> GetAuthorsFromCollection(int index, int count, string sort = "")
         {
             return OrderAuthors(Authors, index, count, sort);
+        }
+
+        public Task<Tuple<long, IEnumerable<Book>>> GetBooksByDate(string date, int index, int count, string sort = "")
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Tuple<long, IEnumerable<Book>>> GetBooksByNote(string note, int index, int count, string sort = "")
+        {
+            var foundBooks = Books.Where(b => EqualsNote(b, note));
+            return OrderBooks(foundBooks, index, count, sort);
         }
     }
 }
