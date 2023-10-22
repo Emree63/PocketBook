@@ -154,6 +154,17 @@
                     </Label>
                 </VerticalStackLayout>
             </ScrollView>
+            <Picker HorizontalTextAlignment="Center" TextColor="{StaticResource Primary}" x:Name="PickerCount"
+                    Title="5" AbsoluteLayout.LayoutBounds="0.1, 1, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>5</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>15</x:Int32>
+                        <x:Int32>20</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
             <StackLayout Orientation="Horizontal" 
                      AbsoluteLayout.LayoutBounds="0.5, 1, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
                 <Image Source="{StaticResource PreviousIcon}" Style="{StaticResource PaginationImage}" IsVisible="{Binding BooksPageVM.Manager.possibilityPrevious}">

@@ -25,6 +25,10 @@ namespace PocketBook.ViewModels
             DeleteCommand = new Command(async (Id) => {
                 Manager.DeleteBookToCollectionCommand.Execute(Id);
             });
+            ChangeCountCommand = new Command(async (Id) => {
+                Manager.ChangeCountCommand.Execute(Id);
+                Manager.GetBooksFromCollectionCommand.Execute(null);
+            });
         }
 	}
 }

@@ -11,6 +11,7 @@ namespace PocketBook.ViewModels
         public virtual bool CanAdd { get; set; }
         public string TitlePage { get; set; }
         public ICommand NavigatorToBookPageCommand { get; set; }
+        public virtual ICommand ChangeCountCommand { get; set; }
         public virtual ICommand NextBooksCommand { get; set; }
         public virtual ICommand PreviousBooksCommand { get; set; }
         public virtual ICommand ReverseCommand { get; set; }

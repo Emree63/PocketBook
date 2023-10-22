@@ -8,6 +8,7 @@ namespace PocketBook.ViewModels
 	{
 		public INavigation navigation = (App.Current as App).MainPage.Navigation;
 		public ICommand NavigatorToAllBooksPageCommand { get; set; }
+        public ICommand NavigatorToFiltersBooksPageCommand { get; set; }
         public ICommand NavigatorToFavoriteBooksPageCommand { get; set; }
         public ICommand NavigatorToLoanPageCommand { get; set; }
         public ICommand NavigatorToFilteringAuthorsPageCommand { get; set; }
@@ -20,6 +21,9 @@ namespace PocketBook.ViewModels
 			NavigatorToAllBooksPageCommand = new Command(async () => {
 				await navigation.PushAsync(new BooksPage(new AllBooksPageVM(this, manager)));
 			});
+            NavigatorToFiltersBooksPageCommand = new Command(async () => {
+                await navigation.PushAsync(new BooksPage(new FiltersBookPageVM(this, manager)));
+            });
             NavigatorToFavoriteBooksPageCommand = new Command(async () => {
                 await navigation.PushAsync(new BooksPage(new FavoriteBooksPageVM(this, manager)));
             });

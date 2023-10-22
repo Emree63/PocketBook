@@ -30,7 +30,7 @@ namespace PocketBook.ViewModels
         {
             Navigation = navVM;
             Manager = mgrVM;
-            ReverseCommand = new Command( () =>
+            ReverseCommand = new Command(() =>
             {
                 Manager.ReverseFilteringsCommand.Execute(null);
             });

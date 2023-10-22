@@ -20,15 +20,20 @@ public class ManagerVM : BaseViewModel<Manager>
     public ICommand RefreshPaginationCommand { get; private set; }
     public ICommand NextBooksCollectionCommand { get; private set; }
     public ICommand PreviousBooksCollectionCommand { get; private set; }
+    public ICommand NextFavoriteBooksCollectionCommand { get; private set; }
+    public ICommand PreviousFavoriteBooksCollectionCommand { get; private set; }
     public ICommand GetLoansBookCommand { get; private set; }
     public ICommand GetBorrowingsBookCommand { get; private set; }
     public ICommand ReverseBooksCommand { get; private set; }
+    public ICommand ReverseFavoriteBooksCommand { get; private set; }
     public ICommand ReverseFilteringsCommand { get; private set; }
     public ICommand AddBookToFavoriteCommand { get; private set; }
     public ICommand DeleteBookToCollectionCommand { get; private set; }
     public ICommand DeleteBookToFavoriteCommand { get; private set; }
     public ICommand UpdateStatusCommand { get; private set; }
     public ICommand SearchFiltersCommand { get; private set; }
+    public ICommand ChangeCountCommand { get; private set; }
+    public ICommand RefreshSearchCommand { get; private set; }
 
     public ReadOnlyObservableCollection<BookVM> Books { get; private set; }
     private readonly ObservableCollection<BookVM> books = new ObservableCollection<BookVM>();
@@ -84,7 +89,10 @@ public class ManagerVM : BaseViewModel<Manager>
         GetFavoriteBooksCommand = new RelayCommandAsync(GetFavoriteBooks);
         NextBooksCollectionCommand = new RelayCommandAsync(NextBooks);
         PreviousBooksCollectionCommand = new RelayCommandAsync(PreviousBooks);
+        NextFavoriteBooksCollectionCommand = new RelayCommandAsync(NextFavoriteBooks);
+        PreviousFavoriteBooksCollectionCommand = new RelayCommandAsync(PreviousFavoriteBooks);
         ReverseBooksCommand = new RelayCommandAsync(ReverseBooks);
+        ReverseFavoriteBooksCommand = new RelayCommandAsync(ReverseFavoriteBooks);
         ReverseFilteringsCommand = new RelayCommand(ReverseFilterings);
         GetBooksFromCollectionCommand.Execute("author");
         GetLoansBookCommand = new RelayCommandAsync(GetLoansBook);
@@ -94,6 +102,8 @@ public class ManagerVM : BaseViewModel<Manager>
         DeleteBookToFavoriteCommand = new RelayCommandAsync<string>(DeleteBookToFavorite);
         UpdateStatusCommand = new RelayCommand<string>(UpdateStatus);
         SearchFiltersCommand = new RelayCommand<string>(SearchFilters);
+        ChangeCountCommand = new RelayCommand<int>(ChangeCount);
+        RefreshSearchCommand = new RelayCommand(RefreshSearch);
         books.CollectionChanged += (sender, e) =>
         {
             OnPropertyChanged(nameof(GroupedBooks));
@@ -113,6 +123,15 @@ public class ManagerVM : BaseViewModel<Manager>
         }
     }
 
+    private void ChangeCount(int number)
+    {
+        Index = 0;
+        Count = number;
+        OnPropertyChanged(nameof(nbPages));
+        OnPropertyChanged(nameof(possibilityNext));
+        OnPropertyChanged(nameof(possibilityPrevious));
+    }
+
     private async Task ReverseBooks()
     {
         if (sortBooks == "asc")
@@ -128,12 +147,36 @@ public class ManagerVM : BaseViewModel<Manager>
         OnPropertyChanged(nameof(GroupedBooks));
     }
 
+    private async Task ReverseFavoriteBooks()
+    {
+        if (sortBooks == "asc")
+        {
+            sortBooks = "desc";
+            await GetFavoriteBooks();
+        }
+        else
+        {
+            sortBooks = "asc";
+            await GetFavoriteBooks();
+        }
+        OnPropertyChanged(nameof(GroupedBooks));
+    }
+
     public async Task NextBooks()
     {
         if (Index < nbPages)
         {
             Index++;
             await GetBooksFromCollection(sortBooks == "asc" ? "author" : "author_reverse");
+        }
+    }
+
+    public async Task NextFavoriteBooks()
+    {
+        if (Index < nbPages)
+        {
+            Index++;
+            await GetFavoriteBooks();
         }
     }
 
@@ -175,6 +218,20 @@ public class ManagerVM : BaseViewModel<Manager>
         {
             Index--;
             await GetBooksFromCollection(sortBooks == "asc" ? "author" : "author_reverse");
+        }
+    }
+
+    public void RefreshSearch()
+    {
+        search = "";
+    }
+
+    public async Task PreviousFavoriteBooks()
+    {
+        if (Index > 0)
+        {
+            Index--;
+            await GetFavoriteBooks();
         }
     }
 
@@ -249,6 +306,7 @@ public class ManagerVM : BaseViewModel<Manager>
         {
             filters.Add(item);
         }
+        OnPropertyChanged(nameof(Filters));
     }
 
     private async Task GetBooksByAuthor(string author)
@@ -384,6 +442,8 @@ public class ManagerVM : BaseViewModel<Manager>
                 nbBooks = value;
                 OnPropertyChanged(nameof(NbBooks));
                 OnPropertyChanged(nameof(nbPages));
+                OnPropertyChanged(nameof(possibilityNext));
+                OnPropertyChanged(nameof(possibilityPrevious));
             }
         }
     }

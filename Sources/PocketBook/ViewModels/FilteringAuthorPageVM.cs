@@ -15,7 +15,7 @@ namespace PocketBook.ViewModels
             NavigatorToBooksPageCommand = new Command(async (author) => {
                 Manager.RefreshPaginationCommand.Execute(null);
                 Manager.GetBooksByAuthorCommand.Execute(author);
-                Navigation.NavigatorToAllBooksPageCommand.Execute(null);
+                Navigation.NavigatorToFiltersBooksPageCommand.Execute(null);
             });
         }
 	}

@@ -1,3 +1,4 @@
+using Model;
 using PocketBook.ViewModels;
 using ViewModel;
 
@@ -13,5 +14,13 @@ public partial class BooksPage : ContentPage
         BooksPageVM = booksPageVM;
         InitializeComponent();
         BindingContext = this;
+        PickerCount.SelectedIndexChanged += PickerSelectedIndexChanged;
+    }
+
+    private void PickerSelectedIndexChanged(object sender, EventArgs e)
+    {
+        int selectedValue = (int)PickerCount.SelectedItem;
+
+        BooksPageVM.ChangeCountCommand.Execute(selectedValue);
     }
 }

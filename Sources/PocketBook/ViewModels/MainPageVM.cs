@@ -28,14 +28,17 @@ namespace PocketBook.ViewModels
                 Navigation.NavigatorToAllBooksPageCommand.Execute(null);
             });
             NavigatorToAuthorsPageCommand = new Command(async () => {
+                Manager.RefreshSearchCommand.Execute(null);
                 Manager.GetAuthorsFromCollectionCommand.Execute(null);
                 Navigation.NavigatorToFilteringAuthorsPageCommand.Execute(null);
             });
             NavigatorToDatesPageCommand = new Command(async () => {
+                Manager.RefreshSearchCommand.Execute(null);
                 Manager.GetDatesFromCollectionCommand.Execute(null);
                 Navigation.NavigatorToFilteringDatesPageCommand.Execute(null);
             });
             NavigatorToNotesPageCommand = new Command(async () => {
+                Manager.RefreshSearchCommand.Execute(null);
                 Manager.GetNotesFromCollectionCommand.Execute(null);
                 Navigation.NavigatorToFilteringNotesPageCommand.Execute(null);
             });

@@ -11,8 +11,9 @@ namespace PocketBook.ViewModels
             TitlePage = "Notes";
             NavigatorToBooksPageCommand = new Command(async (note) =>
             {
+                Manager.RefreshPaginationCommand.Execute(null);
                 Manager.GetBooksByNoteCommand.Execute(note);
-                Navigation.NavigatorToAllBooksPageCommand.Execute(null);
+                Navigation.NavigatorToFiltersBooksPageCommand.Execute(null);
             });
         }
     }
