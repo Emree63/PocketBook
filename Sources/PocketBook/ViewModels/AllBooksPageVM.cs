@@ -11,10 +11,10 @@ namespace PocketBook.ViewModels
             CanAdd = true;
             TitlePage = "Tous";
             NextBooksCommand = new Command(async () => {
-                Manager.NextBooksCollectionCommand.Execute(null);
+                Manager.NextBooksCommand.Execute(null);
             });
             PreviousBooksCommand = new Command(async () => {
-                Manager.PreviousBooksCollectionCommand.Execute(null);
+                Manager.PreviousBooksCommand.Execute(null);
             });
             ReverseCommand = new Command(() => {
                 Manager.ReverseBooksCommand.Execute(null);

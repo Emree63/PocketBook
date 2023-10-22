@@ -182,7 +182,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\ViewModel\ViewModel.csproj" />
-	  <ProjectReference Include="..\MyMVVM_ToolKit\MyMVVM_ToolKit.csproj" />
 	  <ProjectReference Include="..\Stub\Stub.csproj" />
 	</ItemGroup>
 	<ItemGroup>

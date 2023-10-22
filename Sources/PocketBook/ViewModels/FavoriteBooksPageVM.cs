@@ -1,6 +1,4 @@
-﻿
-using System;
-using ViewModel;
+﻿using ViewModel;
 
 namespace PocketBook.ViewModels
 {
@@ -11,10 +9,10 @@ namespace PocketBook.ViewModels
 			CanAdd = false;
 			TitlePage = "Favoris";
             NextBooksCommand = new Command(async () => {
-                Manager.NextFavoriteBooksCollectionCommand.Execute(null);
+                Manager.NextFavoriteBooksCommand.Execute(null);
             });
             PreviousBooksCommand = new Command(async () => {
-                Manager.PreviousFavoriteBooksCollectionCommand.Execute(null);
+                Manager.PreviousFavoriteBooksCommand.Execute(null);
             });
             ReverseCommand = new Command(() => {
                 Manager.ReverseFavoriteBooksCommand.Execute(null);

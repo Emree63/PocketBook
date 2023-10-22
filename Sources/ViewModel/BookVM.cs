@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Model;
-using MyMVVM_ToolKit;
+﻿using Model;
 
 namespace ViewModel
 {

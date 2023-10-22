@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Windows.Input;
-using MyMVVM_ToolKit;
+﻿using System.Windows.Input;
 using ViewModel;
 
 namespace PocketBook.ViewModels

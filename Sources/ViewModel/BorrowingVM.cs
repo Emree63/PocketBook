@@ -1,6 +1,4 @@
-﻿using System;
-using Model;
-using MyMVVM_ToolKit;
+﻿using Model;
 
 namespace ViewModel
 {

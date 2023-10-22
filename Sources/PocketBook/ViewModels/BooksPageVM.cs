@@ -23,7 +23,7 @@ namespace PocketBook.ViewModels
             Navigation = navVM;
             Manager = mgrVM;
             NavigatorToBookPageCommand = new Command(async (Id) => {
-                Manager.GetBookByIdCommand.Execute(Id);
+                Manager.GetBookByIdFromCollectionCommand.Execute(Id);
                 Navigation.NavigatorToBookPageCommand.Execute(null);
             });
         }
