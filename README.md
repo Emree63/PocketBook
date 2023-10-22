@@ -64,11 +64,11 @@ Cette application exploite les fonctionnalités d'Open Library et propose égale
 
 :white_check_mark: [**Partie 8**](Sources/PocketBook/Pages/FilteringPage.xaml) : **Réalisation de la page permettant de lister les auteurs et de filtrer les livres par auteur**
 
-:x: [**Partie 8**](Sources/PocketBook/Pages/FilteringPage.xaml) : **Réalisation de la page Scan**
+:x: [**Partie 8**]() : **Réalisation de la page Scan**
 
 ### Côté Model :
 
-:white_check_mark: [**Partie 1**]() : **Changer le statut de lecture d'un livre**
+:white_check_mark: [**Partie 1**](Sources/PocketBook/ViewModels/StatusMenuVM.cs) : **Changer le statut de lecture d'un livre**
 
 :white_check_mark: [**Partie 2**](Sources/ViewModel/ManagerVM.cs) : **Ajouter un livre aux favoris**
 
@@ -88,7 +88,7 @@ Cette application exploite les fonctionnalités d'Open Library et propose égale
 
 :white_check_mark: [**Partie 1**](Sources/PocketBook/Resources/Styles/MyStyles.xaml) : **DarkMode**
 
-:white_check_mark: [**Partie 2**]() : **MVVM Community Toolkit**
+:white_check_mark: [**Partie 2**](https://codefirst.iut.uca.fr/git/emre.kartal/PocketBook/src/branch/Community/Sources/ViewModel/ManagerVM.cs) : **MVVM Community Toolkit**
 
 # Architecture de l'application
 
