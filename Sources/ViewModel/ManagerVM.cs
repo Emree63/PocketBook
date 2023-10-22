@@ -28,6 +28,7 @@ public class ManagerVM : BaseViewModel<Manager>
     public ICommand DeleteBookToCollectionCommand { get; private set; }
     public ICommand DeleteBookToFavoriteCommand { get; private set; }
     public ICommand UpdateStatusCommand { get; private set; }
+    public ICommand SearchFiltersCommand { get; private set; }
 
     public ReadOnlyObservableCollection<BookVM> Books { get; private set; }
     private readonly ObservableCollection<BookVM> books = new ObservableCollection<BookVM>();
@@ -43,8 +44,19 @@ public class ManagerVM : BaseViewModel<Manager>
     public IEnumerable<IGrouping<string, BookVM>> GroupedBooks
         => books.MyGroupBy(book => book.FirstAuthor);
 
-    public ReadOnlyObservableCollection<Tuple<string, int>> Filters { get; private set; }
+    public ReadOnlyObservableCollection<Tuple<string, int>> Filters
+    {
+        get
+        {
+            var filteredList = filters.Where(filter => filter.Item1.Contains(search));
+
+            return new ReadOnlyObservableCollection<Tuple<string, int>>(new ObservableCollection<Tuple<string, int>>(filteredList));
+        }
+    }
+
     private readonly ObservableCollection<Tuple<string, int>> filters = new ObservableCollection<Tuple<string, int>>();
+
+    private string search = "";
 
     public BookVM? Book {
         get => book;
@@ -59,7 +71,6 @@ public class ManagerVM : BaseViewModel<Manager>
     {
         Books = new ReadOnlyObservableCollection<BookVM>(books);
         Loans = new ReadOnlyObservableCollection<IGrouping<string, LoanVM>>(loans);
-        Filters = new ReadOnlyObservableCollection<Tuple<string, int>>(filters);
         GetBooksFromCollectionCommand = new RelayCommandAsync<string>(GetBooksFromCollection);
         GetAuthorsFromCollectionCommand = new RelayCommandAsync(GetAuthorsFromCollection);
         GetDatesFromCollectionCommand = new RelayCommandAsync(GetDatesFromCollection);
@@ -82,6 +93,7 @@ public class ManagerVM : BaseViewModel<Manager>
         DeleteBookToCollectionCommand = new RelayCommandAsync<string>(DeleteBookToCollection);
         DeleteBookToFavoriteCommand = new RelayCommandAsync<string>(DeleteBookToFavorite);
         UpdateStatusCommand = new RelayCommand<string>(UpdateStatus);
+        SearchFiltersCommand = new RelayCommand<string>(SearchFilters);
         books.CollectionChanged += (sender, e) =>
         {
             OnPropertyChanged(nameof(GroupedBooks));
@@ -125,6 +137,12 @@ public class ManagerVM : BaseViewModel<Manager>
         }
     }
 
+    public void SearchFilters(string search)
+    {
+        this.search = search;
+        OnPropertyChanged(nameof(Filters));
+    }
+
     public void UpdateStatus(string status)
     {
         switch (status)
@@ -148,6 +166,7 @@ public class ManagerVM : BaseViewModel<Manager>
                 Book.Status = Status.Unknown;
                 break;
         }
+        OnPropertyChanged(nameof(GroupedBooks));
     }
 
     public async Task PreviousBooks()

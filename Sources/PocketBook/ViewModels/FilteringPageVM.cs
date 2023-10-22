@@ -12,6 +12,19 @@ namespace PocketBook.ViewModels
 		public ManagerVM Manager { get; set; }
 		public virtual ICommand NavigatorToBooksPageCommand { get; set; }
         public ICommand ReverseCommand { get; set; }
+        private string searchText;
+        public string SearchText
+        {
+            get { return searchText; }
+            set
+            {
+                if (searchText != value)
+                {
+                    searchText = value;
+                    Manager.SearchFiltersCommand.Execute(searchText);
+                }
+            }
+        }
 
         public FilteringPageVM(NavigationVM navVM, ManagerVM mgrVM)
         {

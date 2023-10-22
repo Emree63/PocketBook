@@ -12,4 +12,8 @@ public partial class FilteringPage : ContentPage
 		InitializeComponent();
         BindingContext = this;
     }
+
+    void SearchBar_TextChanged(System.Object sender, Microsoft.Maui.Controls.TextChangedEventArgs e)
+    {
+    }
 }

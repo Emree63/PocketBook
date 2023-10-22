@@ -28,7 +28,9 @@
             <SearchBar
                 Grid.Row="0"
                 Placeholder="Rechercher"
-                Style="{StaticResource searchBarStyle}" />
+                Text="{Binding FilteringPageVM.SearchText}"
+                Style="{StaticResource searchBarStyle}"
+                />
         </StackLayout>
         <ScrollView Grid.Row="1" Style="{StaticResource ScrollView}">
             <VerticalStackLayout Margin="20,0,0,0" Style="{StaticResource BooksViewLayout}">
