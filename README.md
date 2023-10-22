@@ -88,10 +88,13 @@ Cette application exploite les fonctionnalités d'Open Library et propose égale
 
 :white_check_mark: [**Partie 1**](Sources/PocketBook/Resources/Styles/MyStyles.xaml) : **DarkMode**
 
-:x: [**Partie 2**]() : **MVVM Community Toolkit**
+:white_check_mark: [**Partie 2**]() : **MVVM Community Toolkit**
 
 # Architecture de l'application
 
+*Voici un petit schéma vraiment simplifié (sans toutes les commandes et relations que les classes possèdent) pour comprendre comment fonctionne l'application et le MVVM.*
+
+<img src="Documentation/Images/PocketBook_Classes.png" >
 
 # Technicien 
 
